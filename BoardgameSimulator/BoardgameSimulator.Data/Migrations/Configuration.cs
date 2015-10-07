@@ -18,11 +18,13 @@ namespace BoardgameSimulator.Data.Migrations
 
         protected override void Seed(BoardgameSimulatorDbContext context)
         {
+            /*
             this.SeedUnits(context);
             this.SeedSkills(context);
             this.SeedHeroes(context);
             this.SeedAlignments(context);
             this.SeedArmies(context);
+             * */
         }
 
         public void SeedHeroes(BoardgameSimulatorDbContext context)

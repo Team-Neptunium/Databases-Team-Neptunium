@@ -2,6 +2,7 @@
 {
     using System.Data.Entity;
 
+    using Migrations;
     using Models;
 
     public class BoardgameSimulatorDbContext : DbContext, IBoardgameSimulatorDbContext
@@ -9,9 +10,9 @@
         public BoardgameSimulatorDbContext()
             : base()
         {
-            //Database.SetInitializer(new MigrateDatabaseToLatestVersion<BoardgameSimulatorDbContext, Configuration>());
+            Database.SetInitializer(new MigrateDatabaseToLatestVersion<BoardgameSimulatorDbContext, Configuration>());
 
-            Database.SetInitializer(new DropCreateDatabaseAlways<BoardgameSimulatorDbContext>());
+            //Database.SetInitializer(new DropCreateDatabaseAlways<BoardgameSimulatorDbContext>());
         }
 
         public IDbSet<AlignmentPerk> AlignmentPerks { get; set; }
