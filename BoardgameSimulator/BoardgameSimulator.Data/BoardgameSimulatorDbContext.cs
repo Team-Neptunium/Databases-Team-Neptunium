@@ -8,7 +8,7 @@
     public class BoardgameSimulatorDbContext : DbContext, IBoardgameSimulatorDbContext
     {
         public BoardgameSimulatorDbContext()
-            : base()
+            : base("BoardgameSimulatorConnection")
         {
             Database.SetInitializer(new MigrateDatabaseToLatestVersion<BoardgameSimulatorDbContext, Configuration>());
 
