@@ -1,6 +1,4 @@
-﻿using BoardgameSimulator.Data.Migrations;
-
-namespace BoardgameSimulator.Data
+﻿namespace BoardgameSimulator.Data
 {
     using System.Data.Entity;
 
@@ -11,7 +9,9 @@ namespace BoardgameSimulator.Data
         public BoardgameSimulatorDbContext()
             : base()
         {
-            Database.SetInitializer(new MigrateDatabaseToLatestVersion<BoardgameSimulatorDbContext, Configuration>());
+            //Database.SetInitializer(new MigrateDatabaseToLatestVersion<BoardgameSimulatorDbContext, Configuration>());
+
+            Database.SetInitializer(new DropCreateDatabaseAlways<BoardgameSimulatorDbContext>());
         }
 
         public IDbSet<AlignmentPerk> AlignmentPerks { get; set; }
@@ -35,5 +35,21 @@ namespace BoardgameSimulator.Data
         {
             base.SaveChanges();
         }
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            //one-to-many 
+            
+            modelBuilder.Entity<Hero>()
+                .HasRequired(h => h.Unit)
+                .WithMany()
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<Hero>()
+                .HasRequired(h => h.Skill)
+                .WithMany()
+                .WillCascadeOnDelete(false);
+        }
+
     }
 }

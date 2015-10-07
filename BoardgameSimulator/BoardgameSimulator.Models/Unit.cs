@@ -1,14 +1,12 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
-
-namespace BoardgameSimulator.Models
+﻿namespace BoardgameSimulator.Models
 {
     using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations.Schema;
 
     public class Unit
     {
         [Key]
-        [Column("Id")]
-        public int UnitId { get; set; }
+        public int Id { get; set; }
 
         [Required]
         public string Name { get; set; }

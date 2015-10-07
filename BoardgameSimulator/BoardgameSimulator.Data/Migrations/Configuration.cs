@@ -21,6 +21,8 @@ namespace BoardgameSimulator.Data.Migrations
             this.SeedUnits(context);
             this.SeedSkills(context);
             this.SeedHeroes(context);
+            this.SeedAlignments(context);
+            this.SeedArmies(context);
         }
 
         public void SeedHeroes(BoardgameSimulatorDbContext context)
@@ -35,7 +37,7 @@ namespace BoardgameSimulator.Data.Migrations
                 Name = "Bucephalus",
                 UnitId = 1,
                 SkillId = 1,
-                Items =
+                Inventory =
                 {
                     new Item
                     {
@@ -94,5 +96,73 @@ namespace BoardgameSimulator.Data.Migrations
                 Name = "Boulder Toss"
             });
         }
+
+        private void SeedAlignments(BoardgameSimulatorDbContext context)
+        {
+            if (context.AlignmentPerks.Any())
+            {
+                return;
+            }
+
+            context.AlignmentPerks.Add(new AlignmentPerk
+            {
+                Name = "Lawful Good",
+                Type = AlignmentType.Good,
+                DamageMultiplier = 1.1,
+                HealthMultiplier = 1.15
+            });
+
+            context.AlignmentPerks.Add(new AlignmentPerk
+            {
+                Name = "Chaotic Evil",
+                Type = AlignmentType.Evil,
+                DamageMultiplier = 1.25,
+                HealthMultiplier = 0.85
+            });
+        }
+
+        private void SeedArmies(BoardgameSimulatorDbContext context)
+        {
+            if (context.Armies.Any())
+            {
+                return;
+            }
+
+            context.Armies.Add(new Army
+            {
+                Unit = new Unit
+                {
+                    AttackRate = 2,
+                    AttackType = AttackType.Siege,
+                    Damage = 50,
+                    Health = 20,
+                    Name = "Ballista"
+                },
+                AlignmentPerk = new AlignmentPerk
+                {
+                    Name = "Mystical Force",
+                    Type = AlignmentType.Selfish,
+                    DamageMultiplier = 1.12,
+                    HealthMultiplier = 1
+                },
+                Hero = new Hero
+                {
+                    Name = "Percephone",
+                    UnitId = 2,
+                    SkillId = 2,
+                    Inventory =
+                {
+                    new Item
+                    {
+                        DamageBonus = 70,
+                        HealthBonus = 55,
+                        Name = "Rainbow Harp"
+                    }
+                }
+                },
+                UnitQuantity = 30
+            });
+        }
+
     }
 }

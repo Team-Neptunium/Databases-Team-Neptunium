@@ -1,22 +1,28 @@
-﻿using System;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace BoardgameSimulator.Models
 {
+    using System.ComponentModel.DataAnnotations.Schema;
+
     public class Army
     {
+        [Key]
         public int Id { get; set; }
 
-        public int AlignemntPerksId { get; set; }
+        public int AlignmentPerkId { get; set; }
 
-        public virtual AlignmentPerk AlignmentPerks { get; set; }
+        [ForeignKey("AlignmentPerkId")]
+        public virtual AlignmentPerk AlignmentPerk { get; set; }
 
-        public Guid HeroId { get; set; }
+        public int HeroId { get; set; }
 
+        [ForeignKey("HeroId")]
         public virtual Hero Hero { get; set; }
 
-        public int UnitsId { get; set; }
+        public int UnitId { get; set; }
 
-        public virtual Unit Units { get; set; }
+        [ForeignKey("UnitId")]
+        public virtual Unit Unit { get; set; }
 
         public int UnitQuantity { get; set; }
     }
