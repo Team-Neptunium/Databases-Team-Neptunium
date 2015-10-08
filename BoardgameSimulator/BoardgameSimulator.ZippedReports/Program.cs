@@ -17,7 +17,7 @@
             var greatestWarStartDate = new DateTime(121, 3, 31);
             var currentDate = greatestWarStartDate;
 
-            int daysWithBattlesCount = rnd.Next(100, 301);
+            int daysWithBattlesCount = rnd.Next(1, 10);
             for (int i = 0; i < daysWithBattlesCount; i++)
             {
                 currentDate = currentDate.AddDays(1 + rnd.NextDouble() * 3);
@@ -25,7 +25,7 @@
                 string currentFolder = Path.Combine(workingDirectory, parsedDate);
                 Directory.CreateDirectory(currentFolder);
 
-                int battlesCount = rnd.Next(20, 201);
+                int battlesCount = rnd.Next(5, 10);
                 for (int j = 1; j <= battlesCount; j++)
                 {
                     generator.GenerateXls(currentFolder + "\\Battle-" + j);
