@@ -13,6 +13,28 @@
             var data = new BoardgameSimulatorData(new BoardgameSimulatorDbContext());
 
             #region sample data
+
+            ////
+            //// Do not add logs as in the lines below yet, battlelogs not fully implemented
+            //// 
+            /*
+            data.BattleLogs.Add(new BattleLog
+            {
+                Army1Id = 5,
+                Army2Id = 10,
+                Date = DateTime.Today
+            });
+
+            data.SaveChanges();
+
+            var log = data.BattleLogs.All().ToList();
+
+            foreach (var battleLog in log)
+            {
+                Console.WriteLine(battleLog.Army1.Hero.Name + " leading army N1 spars against army N2 lead by " + battleLog.Army2.Hero.Name);
+            }
+            */ 
+
             ////
             //// The lines below demonstrate how to add data to an army, thus adding all that supplies the armies like units and heroes
             ////
@@ -38,7 +60,7 @@
             var alignment = new AlignmentPerk
             {
                 Name = "Defiant force",
-                Type = AlignmentType.Neutral,
+                Type = "Neutral",
                 DamageMultiplier = 0.95,
                 HealthMultiplier = 1.4
             };
@@ -97,6 +119,7 @@
             });
             data.SaveChanges();
             */
+
             #endregion
         }
     }

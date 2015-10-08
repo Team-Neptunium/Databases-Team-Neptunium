@@ -27,6 +27,8 @@
 
         public IDbSet<Army> Armies { get; set; }
 
+        public IDbSet<BattleLog> BattleLogs { get; set; }
+
         public new IDbSet<T> Set<T>() where T : class
         {
             return base.Set<T>();
@@ -40,7 +42,7 @@
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             //one-to-many 
-            
+
             modelBuilder.Entity<Hero>()
                 .HasRequired(h => h.Unit)
                 .WithMany()
@@ -48,6 +50,16 @@
 
             modelBuilder.Entity<Hero>()
                 .HasRequired(h => h.Skill)
+                .WithMany()
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<BattleLog>()
+                .HasRequired(bl => bl.Army1)
+                .WithMany()
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<BattleLog>()
+                .HasRequired(bl => bl.Army2)
                 .WithMany()
                 .WillCascadeOnDelete(false);
         }

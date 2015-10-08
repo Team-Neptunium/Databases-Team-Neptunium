@@ -24,6 +24,7 @@ namespace BoardgameSimulator.Models
         [ForeignKey("UnitId")]
         public virtual Unit Unit { get; set; }
 
+        [Required]
         public int UnitQuantity { get; set; }
     }
 }

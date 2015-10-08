@@ -47,9 +47,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AlignmentPerk.cs" />
-    <Compile Include="AlignmentType.cs" />
     <Compile Include="Army.cs" />
     <Compile Include="AttackType.cs" />
+    <Compile Include="BattleLog.cs" />
     <Compile Include="Hero.cs" />
     <Compile Include="Item.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

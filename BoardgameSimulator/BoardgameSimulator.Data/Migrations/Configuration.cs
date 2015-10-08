@@ -61,7 +61,7 @@ namespace BoardgameSimulator.Data.Migrations
             context.Units.Add(new Unit
             {
                 AttackRate = 1.75,
-                AttackType = AttackType.Melee,
+                AttackType = AttackType.LightMelee,
                 Damage = 45,
                 Health = 20,
                 Name = "Vicious Swordsman"
@@ -109,7 +109,7 @@ namespace BoardgameSimulator.Data.Migrations
             context.AlignmentPerks.Add(new AlignmentPerk
             {
                 Name = "Lawful Good",
-                Type = AlignmentType.Good,
+                Type = "Good",
                 DamageMultiplier = 1.1,
                 HealthMultiplier = 1.15
             });
@@ -117,7 +117,7 @@ namespace BoardgameSimulator.Data.Migrations
             context.AlignmentPerks.Add(new AlignmentPerk
             {
                 Name = "Chaotic Evil",
-                Type = AlignmentType.Evil,
+                Type = "Evil",
                 DamageMultiplier = 1.25,
                 HealthMultiplier = 0.85
             });
@@ -143,7 +143,7 @@ namespace BoardgameSimulator.Data.Migrations
                 AlignmentPerk = new AlignmentPerk
                 {
                     Name = "Mystical Force",
-                    Type = AlignmentType.Selfish,
+                    Type = "Selfish",
                     DamageMultiplier = 1.12,
                     HealthMultiplier = 1
                 },

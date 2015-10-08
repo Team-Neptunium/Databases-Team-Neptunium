@@ -24,22 +24,33 @@
         public IGenericRepository<Army> Armies
         {
             get
-            {
-                return this.GetRepository<Army>();
-            }
+            { return this.GetRepository<Army>(); }
         }
 
         public IGenericRepository<Unit> Units
         {
             get
-            {
-                return this.GetRepository<Unit>();
-            }
+            { return this.GetRepository<Unit>(); }
         }
 
         public IGenericRepository<Hero> Heroes
         {
             get { return this.GetRepository<Hero>(); }
+        }
+
+        public IGenericRepository<Item> Items
+        {
+            get { return this.GetRepository<Item>(); }
+        }
+
+        public IGenericRepository<AlignmentPerk> AlignmentPerks
+        {
+            get { return this.GetRepository<AlignmentPerk>(); }
+        }
+
+        public IGenericRepository<BattleLog> BattleLogs
+        {
+            get { return this.GetRepository<BattleLog>(); }
         }
 
         public void SaveChanges()
@@ -50,6 +61,7 @@
         private IGenericRepository<T> GetRepository<T>() where T : class
         {
             var typeOfModel = typeof(T);
+
             if (!this.repositories.ContainsKey(typeOfModel))
             {
                 var type = typeof(GenericRepository<T>);
