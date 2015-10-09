@@ -1,10 +1,16 @@
-﻿namespace BoardgameSimulator.ConsoleApp
+﻿using BoardgameSimulator.DummyInfo.AlignmentPerks;
+using BoardgameSimulator.DummyInfo.Heroes;
+using BoardgameSimulator.DummyInfo.Skills;
+using BoardgameSimulator.DummyInfo.Units;
+
+namespace BoardgameSimulator.ConsoleApp
 {
     using System;
     using System.Linq;
 
     using Models;
     using Data;
+    using DummyInfo;
 
     public class ConsoleApp
     {
@@ -12,6 +18,41 @@
         {
             var data = new BoardgameSimulatorData(new BoardgameSimulatorDbContext());
 
+            /*
+            var dummyUnits = Units.GenerateUnitsList(100, 12345, 10, 10);
+            var i = 0;
+            foreach (var entry in dummyUnits)
+            {
+
+                Console.WriteLine(i + " {0} - Attack: {1}, Dmg: {2}, Rate: {3}, Hp: {4}", entry.Name, entry.AttackType, entry.Damage, entry.AttackRate, entry.Health);
+                i++;
+            }
+
+            Console.WriteLine("\n\n");
+
+            var skills = Skills.GenerateSkillsList();
+            foreach (var skill in skills)
+            {
+                Console.WriteLine("{0} - Damage: {1}, CD: {2}", skill.Name, skill.Damage, skill.Cooldown);
+            }
+
+            Console.WriteLine("\n\n");
+
+            var heroes = Heroes.GenerateHeroesList();
+            foreach (var hero in heroes)
+            {
+                Console.WriteLine("{0} - UnitId: {1}, SkillId: {2}", hero.Name, hero.UnitId, hero.SkillId);
+            }
+
+            Console.WriteLine("\n\n");
+
+            var perks = AlignmentPerks.GenerateAlignmentsList();
+            foreach (var perk in perks)
+            {
+                Console.WriteLine("{0} - Type: {1}, DmgMod: {2}, HpMod: {3}", perk.Name, perk.Type, perk.DamageModifier, perk.HealthModifier);
+            }
+            */
+             
             #region sample data
 
             ////
@@ -33,7 +74,7 @@
             {
                 Console.WriteLine(battleLog.Army1.Hero.Name + " leading army N1 spars against army N2 lead by " + battleLog.Army2.Hero.Name);
             }
-            */ 
+            */
 
             ////
             //// The lines below demonstrate how to add data to an army, thus adding all that supplies the armies like units and heroes

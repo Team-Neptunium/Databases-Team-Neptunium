@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.21005.1
+VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BoardgameSimulator.Models", "BoardgameSimulator.Models\BoardgameSimulator.Models.csproj", "{A17D402A-284A-4204-9EB3-F5BE3DE08389}"
 EndProject
@@ -10,6 +10,10 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BoardgameSimulator.ConsoleApp", "BoardgameSimulator.ConsoleApp\BoardgameSimulator.ConsoleApp.csproj", "{AA62A066-7F31-42AF-920F-AB01DB501D93}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BoardgameSimulator.ZippedReports", "BoardgameSimulator.ZippedReports\BoardgameSimulator.ZippedReports.csproj", "{461B063F-342C-42DD-835B-B55D4D9985B4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BoardgameSimulator.DummyInfo", "BoardgameSimulator.DummyInfo\BoardgameSimulator.DummyInfo.csproj", "{2E21E61C-C85D-4298-90C1-D9DF99899B45}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DataGeneration", "DataGeneration", "{F56FB09A-691D-4909-9351-C9CF3FBBC8A3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,8 +37,16 @@ Global
 		{461B063F-342C-42DD-835B-B55D4D9985B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{461B063F-342C-42DD-835B-B55D4D9985B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{461B063F-342C-42DD-835B-B55D4D9985B4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2E21E61C-C85D-4298-90C1-D9DF99899B45}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2E21E61C-C85D-4298-90C1-D9DF99899B45}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2E21E61C-C85D-4298-90C1-D9DF99899B45}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2E21E61C-C85D-4298-90C1-D9DF99899B45}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{461B063F-342C-42DD-835B-B55D4D9985B4} = {F56FB09A-691D-4909-9351-C9CF3FBBC8A3}
+		{2E21E61C-C85D-4298-90C1-D9DF99899B45} = {F56FB09A-691D-4909-9351-C9CF3FBBC8A3}
 	EndGlobalSection
 EndGlobal

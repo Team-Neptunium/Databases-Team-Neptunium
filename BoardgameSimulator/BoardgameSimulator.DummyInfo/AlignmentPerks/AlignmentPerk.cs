@@ -1,0 +1,18 @@
+﻿namespace BoardgameSimulator.DummyInfo.AlignmentPerks
+{
+    public class AlignmentPerk
+    {
+        public AlignmentPerk(string name, string type, double dmg, double hp)
+        {
+            this.Name = name;
+            this.Type = type;
+            this.DamageModifier = dmg;
+            this.HealthModifier = hp;
+        }
+
+        public string Name { get; set; }
+        public string Type { get; set; }
+        public double DamageModifier { get; set; }
+        public double HealthModifier { get; set; }
+    }
+}

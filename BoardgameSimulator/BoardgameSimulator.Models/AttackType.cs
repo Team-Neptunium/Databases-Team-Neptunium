@@ -7,13 +7,13 @@
         Defensive = 3,
         Ranged = 4,
         Siege = 5,
-        Aerial = 6,
-        Naval = 7,
-        Poison = 8,
-        Psychic = 9,
-        Electric = 10,
-        Magical = 11,
-        Shadow = 12,
-        Fists = 13
+        Poison = 6,
+        Psychic = 7,
+        Electric = 8,
+        Magical = 9,
+        Shadow = 10,
+        Fists = 11,
+        Aerial = 12,
+        Naval = 13,
     }
 }

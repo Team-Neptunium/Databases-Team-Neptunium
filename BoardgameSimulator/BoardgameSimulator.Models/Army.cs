@@ -9,6 +9,8 @@ namespace BoardgameSimulator.Models
         [Key]
         public int Id { get; set; }
 
+        public string Name { get { return this.AlignmentPerk.Name + " of " + this.Unit.Name; } }
+
         public int AlignmentPerkId { get; set; }
 
         [ForeignKey("AlignmentPerkId")]
