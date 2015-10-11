@@ -17,7 +17,7 @@ namespace BoardgameSimulator.MongoDB
             Console.Write("Enter your {0} password: ", dbName);
             var pw = Console.ReadLine().Trim();
 
-            //var connectionString = "mongodb://localhost:27017";
+            // var connectionString = "mongodb://localhost:27017";
             var connectionString = string.Format("mongodb://{0}:{1}@ds033734.mongolab.com:33734/{2}", uname, pw, dbName);
 
             try
@@ -30,6 +30,8 @@ namespace BoardgameSimulator.MongoDB
                 MongoCollection<Unit> units = database.GetCollection<Unit>("units");
                 MongoCollection<AlignmentPerk> perks = database.GetCollection<AlignmentPerk>("perks");
                 MongoCollection<Hero> heroes = database.GetCollection<Hero>("heroes");
+
+                // DropTablesThenCreateThenSeed(database);
             }
             catch (FormatException)
             {
@@ -71,7 +73,7 @@ namespace BoardgameSimulator.MongoDB
             MongoCollection<Hero> heroes = database.GetCollection<Hero>("heroes");
 
             var skillsSeed = Skills.GenerateSkillsList();
-            var unitsSeed = Units.GenerateUnitsList(200);
+            var unitsSeed = Units.GenerateUnitsList(200, 1234, 5, 20);
             var perksSeed = AlignmentPerks.GenerateAlignmentsList(200);
             var heroesSeed = Heroes.GenerateHeroesList(200);
 

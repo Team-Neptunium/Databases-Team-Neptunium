@@ -36,7 +36,13 @@ namespace BoardgameSimulator.DummyInfo.Heroes
             "Siegemaster",
             "Scholar",
             "Warmaster",
-            "Veteran Inquisitor"
+            "Veteran Inquisitor",
+            "Justiciar",
+            "Overseer",
+            "Drinkmaster",
+            "Initiate",
+            "Cultist",
+            "Confessor"
         };
         #endregion
 
@@ -56,9 +62,13 @@ namespace BoardgameSimulator.DummyInfo.Heroes
             "Lady",
             "Faustus",
             "Fade",
+            "Gandalf",
+            "Ghost",
             "Bane",
             "Scythe",
             "Sacrio",
+            "Abaddon",
+            "Nicholas",
             "Timok",
             "Richard",
             "Lucard",
@@ -75,7 +85,26 @@ namespace BoardgameSimulator.DummyInfo.Heroes
             "Syrine",
             "Rhinart",
             "Dinky",
-            "Apatia"
+            "Apatia",
+            "Mhenlo",
+            "Tahlkora",
+            "Lyssa",
+            "Mallyx",
+            "Shiro",
+            "Glint",
+            "Ventari",
+            "Urgoz",
+            "Kanaxai",
+            "Apocrypha",
+            "Arachni",
+            "Margrid",
+            "Pyre",
+            "Zhed Shadowhoof",
+            "Livia",
+            "Gwen",
+            "Zhellix",
+            "Fahralon",
+            "Saevio"
         };
         #endregion
 
@@ -86,6 +115,7 @@ namespace BoardgameSimulator.DummyInfo.Heroes
             "The Vile",
             "The Fiend",
             "The Noble",
+            "The Sly",
             "The Maligned",
             "The Mangler",
             "Breakneck",
@@ -95,15 +125,25 @@ namespace BoardgameSimulator.DummyInfo.Heroes
             "The Cursed",
             "The Violent",
             "The Savage",
+            "The Traveler",
             "The Lazy",
             "The Heroic",
             "The Gifted",
             "The Wise",
-            "The Swift"
+            "The Swift",
+            "Fierceshot",
+            "Proelium",
+            "The Zealous",
+            "The Unforgiving",
+            "Bloodburner",
+            "Stormcaller",
+            "Fleshweaver",
+            "Willcrusher",
+            "The Twisted"
         };
         #endregion
 
-        private const int maxId = 170;
+        private const int maxId = 220;
         private const int maxSId = 107;
 
         public static List<Hero> GenerateHeroesList(int amount = 120, ushort seed = 62523)

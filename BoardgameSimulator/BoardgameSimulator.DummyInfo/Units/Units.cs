@@ -27,7 +27,12 @@ namespace BoardgameSimulator.DummyInfo.Units
             "Pious",
             "Simple",
             "Giant",
-            "Tiny"
+            "Tiny",
+            "Armored",
+            "Fierce",
+            "Wild",
+            "Twisted",
+            "Agile"
         };
         #endregion
 
@@ -82,7 +87,18 @@ namespace BoardgameSimulator.DummyInfo.Units
             "Minotaur",
             "Bicorn",
             "Werewolf",
-            "Assassin"
+            "Assassin",
+            "Banshee",
+            "Mandragora",
+            "Dryad",
+            "Devourer",
+            "Wurm",
+            "Drowner",
+            "Succubus",
+            "Water Hag",
+            "Endrega Warrior",
+            "Elemental",
+            "Arachna"
         };
         #endregion
 
@@ -107,7 +123,8 @@ namespace BoardgameSimulator.DummyInfo.Units
             "Gargoyle",
             "Efreet",
             "Phoenix",
-            "Black Crow"
+            "Black Crow",
+            "Forktail"
         };
         #endregion
 
@@ -135,7 +152,11 @@ namespace BoardgameSimulator.DummyInfo.Units
             "of the Order",
             "of the Coven",
             "servant of the Horned God",
-            "of the Basilisk Order"
+            "of the Basilisk Order",
+            "",
+            "",
+            "",
+            ""
         };
         #endregion
 
@@ -147,7 +168,7 @@ namespace BoardgameSimulator.DummyInfo.Units
 
         private const int maxId = aerialId - 1;
 
-        public static List<Unit> GenerateUnitsList(int amount = 50, ushort seed = 1234, int navalAmount = 0, int aerialAmount = 0)
+        public static List<Unit> GenerateUnitsList(int amount = 50, ushort seed = 1234, int navalAmount = 5, int aerialAmount = 15)
         {
             var dictionary = new List<string>();
 
@@ -172,7 +193,6 @@ namespace BoardgameSimulator.DummyInfo.Units
 
                 if (!dictionary.Contains(currentUnitName))
                 {
-
                     dictionary.Add(currentUnitName);
                     unitsList.Add(new Unit(currentUnitName, idRng.Next(maxId), dmgAndHealth[unitSfRng.Next(seed * 3) % dmgLen], rate[unitPfRng.Next(seed) % rateLen], dmgAndHealth[unitTRng.Next(seed * 2) % dmgLen]));
                 }
@@ -185,7 +205,6 @@ namespace BoardgameSimulator.DummyInfo.Units
 
                 if (!dictionary.Contains(currentUnitName))
                 {
-
                     dictionary.Add(currentUnitName);
                     unitsList.Add(new Unit(currentUnitName, idRng.Next(maxId), dmgAndHealth[unitSfRng.Next(seed * 3) % dmgLen], rate[unitPfRng.Next(seed) % rateLen], dmgAndHealth[unitTRng.Next(seed * 2) % dmgLen]));
                 }
@@ -198,7 +217,6 @@ namespace BoardgameSimulator.DummyInfo.Units
 
                 if (!dictionary.Contains(currentUnitName))
                 {
-
                     dictionary.Add(currentUnitName);
                     unitsList.Add(new Unit(currentUnitName, idRng.Next(maxId), dmgAndHealth[unitSfRng.Next(seed * 3) % dmgLen], rate[unitPfRng.Next(seed) % rateLen], dmgAndHealth[unitTRng.Next(seed * 2) % dmgLen]));
                 }
