@@ -1,4 +1,7 @@
-﻿namespace BoardgameSimulator.DummyInfo.AlignmentPerks
+﻿using MongoDB.Bson;
+using MongoDB.Bson.Serialization.Attributes;
+
+namespace BoardgameSimulator.DummyInfo.AlignmentPerks
 {
     public class AlignmentPerk
     {
@@ -10,9 +13,15 @@
             this.HealthModifier = hp;
         }
 
+        [BsonRepresentation(BsonType.ObjectId)]
+        public string Id { get; set; }
+
         public string Name { get; set; }
+
         public string Type { get; set; }
+
         public double DamageModifier { get; set; }
+
         public double HealthModifier { get; set; }
     }
 }

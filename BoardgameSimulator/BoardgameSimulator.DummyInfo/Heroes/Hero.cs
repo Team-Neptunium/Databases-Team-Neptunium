@@ -1,4 +1,7 @@
-﻿namespace BoardgameSimulator.DummyInfo.Heroes
+﻿using MongoDB.Bson;
+using MongoDB.Bson.Serialization.Attributes;
+
+namespace BoardgameSimulator.DummyInfo.Heroes
 {
     public class Hero
     {
@@ -8,6 +11,9 @@
             this.UnitId = uid;
             this.SkillId = sid;
         }
+
+        [BsonRepresentation(BsonType.ObjectId)]
+        public string Id { get; set; }
 
         public string Name { get; set; }
 

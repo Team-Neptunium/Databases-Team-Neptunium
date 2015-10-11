@@ -1,4 +1,7 @@
-﻿namespace BoardgameSimulator.DummyInfo.Skills
+﻿using MongoDB.Bson;
+using MongoDB.Bson.Serialization.Attributes;
+
+namespace BoardgameSimulator.DummyInfo.Skills
 {
     public class Skill
     {
@@ -8,6 +11,9 @@
             this.Damage = dmg;
             this.Cooldown = cd;
         }
+
+        [BsonRepresentation(BsonType.ObjectId)]
+        public string Id { get; set; }
 
         public string Name { get; set; }
 
