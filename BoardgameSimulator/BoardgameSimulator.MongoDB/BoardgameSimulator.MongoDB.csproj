@@ -52,6 +52,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MongoConnection.cs" />
+    <Compile Include="DataSeeder.cs" />
+    <Compile Include="Data\GenericData.cs" />
+    <Compile Include="Data\IGenericData.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
