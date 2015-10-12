@@ -143,7 +143,7 @@ namespace BoardgameSimulator.DummyModels.Heroes
         #endregion
 
         private const int maxId = 220;
-        private const int maxSId = 107;
+        private const int maxSId = 108;
 
         public static List<DummyHero> GenerateHeroesList(int amount = 120, ushort seed = 62523)
         {
@@ -168,7 +168,7 @@ namespace BoardgameSimulator.DummyModels.Heroes
                 if (!dictionary.Contains(currentHeroName))
                 {
                     dictionary.Add(currentHeroName);
-                    heroesList.Add(new DummyHero(currentHeroName, unitPfRng.Next(1, maxId), unitSfRng.Next(1, unitSfRng.Next()) % maxSId));
+                    heroesList.Add(new DummyHero(currentHeroName, unitPfRng.Next(1, maxId), (unitSfRng.Next(1, unitSfRng.Next()) % maxSId)+1));
                 }
             }
 

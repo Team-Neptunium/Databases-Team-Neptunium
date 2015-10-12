@@ -44,15 +44,15 @@
             //one-to-many 
 
             modelBuilder.Entity<Hero>()
-                .HasRequired(h => h.Unit)
+                .HasOptional(h => h.Unit)
                 .WithMany()
                 .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<Hero>()
-                .HasRequired(h => h.Skill)
+                .HasOptional(h => h.Skill)
                 .WithMany()
                 .WillCascadeOnDelete(false);
-
+            
             modelBuilder.Entity<BattleLog>()
                 .HasRequired(bl => bl.Army1)
                 .WithMany()

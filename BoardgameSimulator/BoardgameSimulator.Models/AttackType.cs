@@ -2,6 +2,7 @@
 {
     public enum AttackType
     {
+        Versatile = 0,
         LightMelee = 1,
         HeavyMelee = 2,
         Defensive = 3,

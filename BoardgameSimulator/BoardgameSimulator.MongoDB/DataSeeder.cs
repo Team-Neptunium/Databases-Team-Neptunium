@@ -9,7 +9,7 @@ namespace BoardgameSimulator.MongoDB
 {
     public static class DataSeeder
     {
-        private static void DropTablesThenCreateThenSeed(MongoDatabase database)
+        public static void DropTablesThenCreateThenSeed(MongoDatabase database)
         {
             Console.WriteLine("Are you SURE you wish to DROP the 'skills', 'units', 'perks', and 'heroes' collections?");
             Console.Write("y/n: ");

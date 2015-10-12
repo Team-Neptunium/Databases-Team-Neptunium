@@ -20,12 +20,12 @@
         [MaxLength(75)]
         public string Name { get; set; }
 
-        public int UnitId { get; set; }
+        public int? UnitId { get; set; }
 
         [ForeignKey("UnitId")]
         public virtual Unit Unit { get; set; }
 
-        public int SkillId { get; set; }
+        public int? SkillId { get; set; }
 
         [ForeignKey("SkillId")]
         public virtual Skill Skill { get; set; }
