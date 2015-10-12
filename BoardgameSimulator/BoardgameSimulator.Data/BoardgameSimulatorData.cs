@@ -27,6 +27,12 @@
             { return this.GetRepository<Army>(); }
         }
 
+        public IGenericRepository<Skill> Skills
+        {
+            get
+            { return this.GetRepository<Skill>(); }
+        }
+
         public IGenericRepository<Unit> Units
         {
             get

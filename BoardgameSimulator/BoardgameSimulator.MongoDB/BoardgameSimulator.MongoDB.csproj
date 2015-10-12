@@ -66,9 +66,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\BoardgameSimulator.DummyInfo\BoardgameSimulator.DummyInfo.csproj">
-      <Project>{2e21e61c-c85d-4298-90c1-d9df99899b45}</Project>
-      <Name>BoardgameSimulator.DummyInfo</Name>
+    <ProjectReference Include="..\BoardgameSimulator.DummyModels\BoardgameSimulator.DummyModels.csproj">
+      <Project>{f6046643-40cb-49dc-8acb-58a8d4ce6bca}</Project>
+      <Name>BoardgameSimulator.DummyModels</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

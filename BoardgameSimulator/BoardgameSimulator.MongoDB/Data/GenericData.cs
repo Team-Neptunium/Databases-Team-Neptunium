@@ -1,12 +1,14 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
 using System.Linq;
+using MongoDB.Bson;
 using MongoDB.Driver;
 
 namespace BoardgameSimulator.MongoDB.Data
 {
     public class GenericData<T> : IGenericData<T>
     {
-        private MongoDatabase database;
+        private readonly MongoDatabase database;
 
         public GenericData(MongoDatabase database, string collectionName)
         {
@@ -20,6 +22,11 @@ namespace BoardgameSimulator.MongoDB.Data
         public IEnumerable<T> GetAllDataFromCollection()
         {
             return this.Collection.FindAllAs<T>().ToList();
+        }
+
+        public IEnumerable GetAllDataFromCollectionAsJson()
+        {
+            return this.Collection.FindAll().Select(x => x.ToJson());
         }
     }
 }

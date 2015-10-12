@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace BoardgameSimulator.DummyInfo.Units
+namespace BoardgameSimulator.DummyModels.Units
 {
-    public static class DummyUnits
+    public static class Units
     {
         #region unit prefixes
         private static readonly IList<string> prefixes = new List<string> { 

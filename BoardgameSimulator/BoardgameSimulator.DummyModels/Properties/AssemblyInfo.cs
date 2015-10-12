@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("BoardgameSimulator.DummyInfo")]
+[assembly: AssemblyTitle("BoardgameSimulator.DummyModels")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("BoardgameSimulator.DummyInfo")]
+[assembly: AssemblyProduct("BoardgameSimulator.DummyModels")]
 [assembly: AssemblyCopyright("Copyright ©  2015")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("58d2cb96-dfb9-40ff-bfa9-69ed6c67186c")]
+[assembly: Guid("63936828-8cf4-417a-82e1-06552c483532")]
 
 // Version information for an assembly consists of the following four values:
 //

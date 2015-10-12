@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using BoardgameSimulator.DummyInfo.Skills;
 
-namespace BoardgameSimulator.DummyInfo.AlignmentPerks
+namespace BoardgameSimulator.DummyModels.AlignmentPerks
 {
     public class DummyAlignmentPerks
     {

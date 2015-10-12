@@ -1,8 +1,8 @@
 ﻿using System;
-using BoardgameSimulator.DummyInfo.AlignmentPerks;
-using BoardgameSimulator.DummyInfo.Heroes;
-using BoardgameSimulator.DummyInfo.Skills;
-using BoardgameSimulator.DummyInfo.Units;
+using BoardgameSimulator.DummyModels.AlignmentPerks;
+using BoardgameSimulator.DummyModels.Heroes;
+using BoardgameSimulator.DummyModels.Skills;
+using BoardgameSimulator.DummyModels.Units;
 using MongoDB.Driver;
 
 namespace BoardgameSimulator.MongoDB
@@ -35,7 +35,7 @@ namespace BoardgameSimulator.MongoDB
             MongoCollection<DummyHero> heroes = database.GetCollection<DummyHero>("heroes");
 
             var skillsSeed = DummySkills.GenerateSkillsList();
-            var unitsSeed = DummyUnits.GenerateUnitsList(200, 1234, 5, 20);
+            var unitsSeed = Units.GenerateUnitsList(200, 1234, 5, 20);
             var perksSeed = DummyAlignmentPerks.GenerateAlignmentsList(200);
             var heroesSeed = DummyHeroes.GenerateHeroesList(200);
 

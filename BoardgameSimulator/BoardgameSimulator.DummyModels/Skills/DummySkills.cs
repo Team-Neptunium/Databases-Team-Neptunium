@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using BoardgameSimulator.DummyInfo.Units;
 
-namespace BoardgameSimulator.DummyInfo.Skills
+namespace BoardgameSimulator.DummyModels.Skills
 {
     public class DummySkills
     {

@@ -1,9 +1,9 @@
 ﻿using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
 
-namespace BoardgameSimulator.DummyInfo.Units
+namespace BoardgameSimulator.DummyModels.Units
 {
-    public class DummyUnit
+    public class DummyUnit : IDummyEntry
     {
         public DummyUnit(string name, int type, int damage, double rate, int hp)
         {
