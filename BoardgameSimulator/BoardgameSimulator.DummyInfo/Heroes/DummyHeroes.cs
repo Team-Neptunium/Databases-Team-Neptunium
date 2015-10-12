@@ -4,7 +4,7 @@ using BoardgameSimulator.DummyInfo.Units;
 
 namespace BoardgameSimulator.DummyInfo.Heroes
 {
-    public class Heroes
+    public class DummyHeroes
     {
         #region prefixes
 
@@ -146,11 +146,11 @@ namespace BoardgameSimulator.DummyInfo.Heroes
         private const int maxId = 220;
         private const int maxSId = 107;
 
-        public static List<Hero> GenerateHeroesList(int amount = 120, ushort seed = 62523)
+        public static List<DummyHero> GenerateHeroesList(int amount = 120, ushort seed = 62523)
         {
             var dictionary = new List<string>();
 
-            var heroesList = new List<Hero>();
+            var heroesList = new List<DummyHero>();
 
             var unitPfRng = new Random();
             var unitNRng = new Random();
@@ -169,7 +169,7 @@ namespace BoardgameSimulator.DummyInfo.Heroes
                 if (!dictionary.Contains(currentHeroName))
                 {
                     dictionary.Add(currentHeroName);
-                    heroesList.Add(new Hero(currentHeroName, unitPfRng.Next(1, maxId), unitSfRng.Next(1, unitSfRng.Next()) % maxSId));
+                    heroesList.Add(new DummyHero(currentHeroName, unitPfRng.Next(1, maxId), unitSfRng.Next(1, unitSfRng.Next()) % maxSId));
                 }
             }
 

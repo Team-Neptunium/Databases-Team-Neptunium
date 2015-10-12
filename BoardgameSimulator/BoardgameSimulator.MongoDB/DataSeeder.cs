@@ -29,15 +29,15 @@ namespace BoardgameSimulator.MongoDB
             database.DropCollection("heroes");
             Console.WriteLine("Heroes collection dropped.");
 
-            MongoCollection<Skill> skills = database.GetCollection<Skill>("skills");
-            MongoCollection<Unit> units = database.GetCollection<Unit>("units");
-            MongoCollection<AlignmentPerk> perks = database.GetCollection<AlignmentPerk>("perks");
-            MongoCollection<Hero> heroes = database.GetCollection<Hero>("heroes");
+            MongoCollection<DummySkill> skills = database.GetCollection<DummySkill>("skills");
+            MongoCollection<DummyUnit> units = database.GetCollection<DummyUnit>("units");
+            MongoCollection<DummyAlignmentPerk> perks = database.GetCollection<DummyAlignmentPerk>("perks");
+            MongoCollection<DummyHero> heroes = database.GetCollection<DummyHero>("heroes");
 
-            var skillsSeed = Skills.GenerateSkillsList();
-            var unitsSeed = Units.GenerateUnitsList(200, 1234, 5, 20);
-            var perksSeed = AlignmentPerks.GenerateAlignmentsList(200);
-            var heroesSeed = Heroes.GenerateHeroesList(200);
+            var skillsSeed = DummySkills.GenerateSkillsList();
+            var unitsSeed = DummyUnits.GenerateUnitsList(200, 1234, 5, 20);
+            var perksSeed = DummyAlignmentPerks.GenerateAlignmentsList(200);
+            var heroesSeed = DummyHeroes.GenerateHeroesList(200);
 
             var d = skillsSeed.Count;
 

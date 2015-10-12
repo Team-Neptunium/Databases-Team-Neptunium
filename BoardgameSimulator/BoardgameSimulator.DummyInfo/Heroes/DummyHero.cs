@@ -3,9 +3,9 @@ using MongoDB.Bson.Serialization.Attributes;
 
 namespace BoardgameSimulator.DummyInfo.Heroes
 {
-    public class Hero
+    public class DummyHero
     {
-        public Hero(string name, int uid, int sid)
+        public DummyHero(string name, int uid, int sid)
         {
             this.Name = name;
             this.UnitId = uid;

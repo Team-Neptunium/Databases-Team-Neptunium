@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace BoardgameSimulator.DummyInfo.Units
 {
-    public static class Units
+    public static class DummyUnits
     {
         #region unit prefixes
         private static readonly IList<string> prefixes = new List<string> { 
@@ -168,11 +168,11 @@ namespace BoardgameSimulator.DummyInfo.Units
 
         private const int maxId = aerialId - 1;
 
-        public static List<Unit> GenerateUnitsList(int amount = 50, ushort seed = 1234, int navalAmount = 5, int aerialAmount = 15)
+        public static List<DummyUnit> GenerateUnitsList(int amount = 50, ushort seed = 1234, int navalAmount = 5, int aerialAmount = 15)
         {
             var dictionary = new List<string>();
 
-            var unitsList = new List<Unit>();
+            var unitsList = new List<DummyUnit>();
 
             var idRng = new Random(seed / 2);
             var unitPfRng = new Random();
@@ -194,7 +194,7 @@ namespace BoardgameSimulator.DummyInfo.Units
                 if (!dictionary.Contains(currentUnitName))
                 {
                     dictionary.Add(currentUnitName);
-                    unitsList.Add(new Unit(currentUnitName, idRng.Next(maxId), dmgAndHealth[unitSfRng.Next(seed * 3) % dmgLen], rate[unitPfRng.Next(seed) % rateLen], dmgAndHealth[unitTRng.Next(seed * 2) % dmgLen]));
+                    unitsList.Add(new DummyUnit(currentUnitName, idRng.Next(maxId), dmgAndHealth[unitSfRng.Next(seed * 3) % dmgLen], rate[unitPfRng.Next(seed) % rateLen], dmgAndHealth[unitTRng.Next(seed * 2) % dmgLen]));
                 }
             }
 
@@ -206,7 +206,7 @@ namespace BoardgameSimulator.DummyInfo.Units
                 if (!dictionary.Contains(currentUnitName))
                 {
                     dictionary.Add(currentUnitName);
-                    unitsList.Add(new Unit(currentUnitName, idRng.Next(maxId), dmgAndHealth[unitSfRng.Next(seed * 3) % dmgLen], rate[unitPfRng.Next(seed) % rateLen], dmgAndHealth[unitTRng.Next(seed * 2) % dmgLen]));
+                    unitsList.Add(new DummyUnit(currentUnitName, idRng.Next(maxId), dmgAndHealth[unitSfRng.Next(seed * 3) % dmgLen], rate[unitPfRng.Next(seed) % rateLen], dmgAndHealth[unitTRng.Next(seed * 2) % dmgLen]));
                 }
             }
 
@@ -218,7 +218,7 @@ namespace BoardgameSimulator.DummyInfo.Units
                 if (!dictionary.Contains(currentUnitName))
                 {
                     dictionary.Add(currentUnitName);
-                    unitsList.Add(new Unit(currentUnitName, idRng.Next(maxId), dmgAndHealth[unitSfRng.Next(seed * 3) % dmgLen], rate[unitPfRng.Next(seed) % rateLen], dmgAndHealth[unitTRng.Next(seed * 2) % dmgLen]));
+                    unitsList.Add(new DummyUnit(currentUnitName, idRng.Next(maxId), dmgAndHealth[unitSfRng.Next(seed * 3) % dmgLen], rate[unitPfRng.Next(seed) % rateLen], dmgAndHealth[unitTRng.Next(seed * 2) % dmgLen]));
                 }
             }
 

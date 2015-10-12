@@ -3,9 +3,9 @@ using MongoDB.Bson.Serialization.Attributes;
 
 namespace BoardgameSimulator.DummyInfo.AlignmentPerks
 {
-    public class AlignmentPerk
+    public class DummyAlignmentPerk
     {
-        public AlignmentPerk(string name, string type, double dmg, double hp)
+        public DummyAlignmentPerk(string name, string type, double dmg, double hp)
         {
             this.Name = name;
             this.Type = type;

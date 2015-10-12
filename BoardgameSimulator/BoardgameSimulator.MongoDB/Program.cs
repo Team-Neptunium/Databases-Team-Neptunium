@@ -20,10 +20,10 @@ namespace BoardgameSimulator.MongoDB
 
             try
             {
-                var skills = new GenericData<Skill>(connection.Database, "skills");
-                var units = new GenericData<Unit>(connection.Database, "units");
-                var perks = new GenericData<AlignmentPerk>(connection.Database, "perks");
-                var heroes = new GenericData<Heroes>(connection.Database, "heroes");
+                var skills = new GenericData<DummySkill>(connection.Database, "skills");
+                var units = new GenericData<DummyUnit>(connection.Database, "units");
+                var perks = new GenericData<DummyAlignmentPerk>(connection.Database, "perks");
+                var heroes = new GenericData<DummyHeroes>(connection.Database, "heroes");
 
                 var skillsFromDb = skills.GetAllDataFromCollection();
 

@@ -4,7 +4,7 @@ using BoardgameSimulator.DummyInfo.Skills;
 
 namespace BoardgameSimulator.DummyInfo.AlignmentPerks
 {
-    public class AlignmentPerks
+    public class DummyAlignmentPerks
     {
         #region types
         private static readonly List<string> types = new List<string>
@@ -101,11 +101,11 @@ namespace BoardgameSimulator.DummyInfo.AlignmentPerks
             1.1, 1.15, 1.2, 1.25, 1.3, 1.5
         };
 
-        public static List<AlignmentPerk> GenerateAlignmentsList(int amount = 120)
+        public static List<DummyAlignmentPerk> GenerateAlignmentsList(int amount = 120)
         {
             var dictionary = new List<string>();
 
-            var alignmentsList = new List<AlignmentPerk>();
+            var alignmentsList = new List<DummyAlignmentPerk>();
 
             var rng = new Random();
             var modifLen = modifiers.Length;
@@ -121,7 +121,7 @@ namespace BoardgameSimulator.DummyInfo.AlignmentPerks
 
                 if (!dictionary.Contains(currentAlignmentName))
                 {
-                    alignmentsList.Add(new AlignmentPerk(currentAlignmentName, types[rng.Next(i * 300) % tLen], modifiers[rng.Next(i * 262) % modifLen], modifiers[rng.Next(rng.Next()) % modifLen]));  
+                    alignmentsList.Add(new DummyAlignmentPerk(currentAlignmentName, types[rng.Next(i * 300) % tLen], modifiers[rng.Next(i * 262) % modifLen], modifiers[rng.Next(rng.Next()) % modifLen]));  
                 }
             }
 

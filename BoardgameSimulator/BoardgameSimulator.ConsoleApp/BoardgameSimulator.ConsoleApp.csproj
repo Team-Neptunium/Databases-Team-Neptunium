@@ -68,6 +68,10 @@
       <Project>{a17d402a-284a-4204-9eb3-f5be3de08389}</Project>
       <Name>BoardgameSimulator.Models</Name>
     </ProjectReference>
+    <ProjectReference Include="..\BoardgameSimulator.MongoDB\BoardgameSimulator.MongoDB.csproj">
+      <Project>{b9033af9-aaa7-4f52-b11a-ac254d42f99e}</Project>
+      <Name>BoardgameSimulator.MongoDB</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -46,15 +46,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AlignmentPerks\AlignmentPerk.cs" />
-    <Compile Include="AlignmentPerks\AlignmentPerks.cs" />
-    <Compile Include="Heroes\Hero.cs" />
-    <Compile Include="Heroes\Heroes.cs" />
+    <Compile Include="AlignmentPerks\DummyAlignmentPerk.cs" />
+    <Compile Include="AlignmentPerks\DummyAlignmentPerks.cs" />
+    <Compile Include="Heroes\DummyHero.cs" />
+    <Compile Include="Heroes\DummyHeroes.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Skills\Skill.cs" />
-    <Compile Include="Skills\Skills.cs" />
-    <Compile Include="Units\Unit.cs" />
-    <Compile Include="Units\Units.cs" />
+    <Compile Include="Skills\DummySkill.cs" />
+    <Compile Include="Skills\DummySkills.cs" />
+    <Compile Include="Units\DummyUnit.cs" />
+    <Compile Include="Units\DummyUnits.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

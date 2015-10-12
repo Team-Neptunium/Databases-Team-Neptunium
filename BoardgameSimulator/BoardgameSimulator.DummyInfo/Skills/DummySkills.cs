@@ -4,7 +4,7 @@ using BoardgameSimulator.DummyInfo.Units;
 
 namespace BoardgameSimulator.DummyInfo.Skills
 {
-    public class Skills
+    public class DummySkills
     {
         #region skill names
         private static readonly List<string> skills = new List<string>
@@ -125,9 +125,9 @@ namespace BoardgameSimulator.DummyInfo.Skills
             70, 150, 80, 230, 250, 220, 450, 25, 50, 60, 320, 350, 45, 300, 275
         };
 
-        public static List<Skill> GenerateSkillsList()
+        public static List<DummySkill> GenerateSkillsList()
         {
-            var skillsList = new List<Skill>();
+            var skillsList = new List<DummySkill>();
 
             var rng = new Random();
             var dcdLen = damageAndCd.Length;
@@ -137,7 +137,7 @@ namespace BoardgameSimulator.DummyInfo.Skills
             {
                 var currentSkillName = skills[i];
 
-                skillsList.Add(new Skill(currentSkillName, damageAndCd[rng.Next(i * 300) % dcdLen], damageAndCd[rng.Next(i * 262) % dcdLen]));
+                skillsList.Add(new DummySkill(currentSkillName, damageAndCd[rng.Next(i * 300) % dcdLen], damageAndCd[rng.Next(i * 262) % dcdLen]));
             }
 
             return skillsList;
