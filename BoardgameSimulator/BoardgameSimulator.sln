@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.31101.0
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BoardgameSimulator.Models", "BoardgameSimulator.Models\BoardgameSimulator.Models.csproj", "{A17D402A-284A-4204-9EB3-F5BE3DE08389}"
 EndProject
@@ -16,6 +16,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BoardgameSimulator.MongoDB", "BoardgameSimulator.MongoDB\BoardgameSimulator.MongoDB.csproj", "{B9033AF9-AAA7-4F52-B11A-AC254D42F99E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BoardgameSimulator.DummyModels", "BoardgameSimulator.DummyModels\BoardgameSimulator.DummyModels.csproj", "{F6046643-40CB-49DC-8ACB-58A8D4CE6BCA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BoardgameSimulator.Reports", "BoardgameSimulator.Reports\BoardgameSimulator.Reports.csproj", "{A8744E1A-2551-4CD4-A6FF-B96C9D193C1D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -47,6 +49,10 @@ Global
 		{F6046643-40CB-49DC-8ACB-58A8D4CE6BCA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F6046643-40CB-49DC-8ACB-58A8D4CE6BCA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F6046643-40CB-49DC-8ACB-58A8D4CE6BCA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A8744E1A-2551-4CD4-A6FF-B96C9D193C1D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A8744E1A-2551-4CD4-A6FF-B96C9D193C1D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A8744E1A-2551-4CD4-A6FF-B96C9D193C1D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A8744E1A-2551-4CD4-A6FF-B96C9D193C1D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

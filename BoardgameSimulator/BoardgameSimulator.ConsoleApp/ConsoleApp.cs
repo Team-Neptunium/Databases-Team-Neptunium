@@ -10,6 +10,7 @@ using BoardgameSimulator.DummyModels.Units;
 using BoardgameSimulator.Models;
 using BoardgameSimulator.MongoDB;
 using BoardgameSimulator.MongoDB.Data;
+using BoardgameSimulator.Reports;
 
 namespace BoardgameSimulator.ConsoleApp
 {
@@ -64,7 +65,7 @@ namespace BoardgameSimulator.ConsoleApp
             if (unitsFromMongo != null)
             {
                 SeedUnits(data, unitsFromMongo);
-                data.SaveChanges(); 
+                data.SaveChanges();
                 Console.WriteLine("Unit entries successfully seeded into SQL");
             }
 
