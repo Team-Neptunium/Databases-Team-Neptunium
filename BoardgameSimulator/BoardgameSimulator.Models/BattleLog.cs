@@ -1,8 +1,8 @@
-﻿using System;
-using System.ComponentModel.DataAnnotations.Schema;
-
-namespace BoardgameSimulator.Models
+﻿namespace BoardgameSimulator.Models
 {
+    using System;
+    using System.ComponentModel.DataAnnotations.Schema;
+
     public class BattleLog
     {
         public int Id { get; set; }

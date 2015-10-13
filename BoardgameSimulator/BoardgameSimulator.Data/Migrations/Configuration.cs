@@ -1,11 +1,6 @@
-using BoardgameSimulator.Models;
-
 namespace BoardgameSimulator.Data.Migrations
 {
-    using System;
-    using System.Data.Entity;
     using System.Data.Entity.Migrations;
-    using System.Linq;
 
     internal sealed class Configuration : DbMigrationsConfiguration<BoardgameSimulatorDbContext>
     {
@@ -18,8 +13,6 @@ namespace BoardgameSimulator.Data.Migrations
 
         protected override void Seed(BoardgameSimulatorDbContext context)
         {
-            
         }
-
     }
 }

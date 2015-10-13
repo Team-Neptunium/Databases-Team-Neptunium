@@ -23,20 +23,17 @@
 
         public IGenericRepository<Army> Armies
         {
-            get
-            { return this.GetRepository<Army>(); }
+            get { return this.GetRepository<Army>(); }
         }
 
         public IGenericRepository<Skill> Skills
         {
-            get
-            { return this.GetRepository<Skill>(); }
+            get { return this.GetRepository<Skill>(); }
         }
 
         public IGenericRepository<Unit> Units
         {
-            get
-            { return this.GetRepository<Unit>(); }
+            get { return this.GetRepository<Unit>(); }
         }
 
         public IGenericRepository<Hero> Heroes
@@ -66,11 +63,11 @@
 
         private IGenericRepository<T> GetRepository<T>() where T : class
         {
-            var typeOfModel = typeof(T);
+            Type typeOfModel = typeof(T);
 
             if (!this.repositories.ContainsKey(typeOfModel))
             {
-                var type = typeof(GenericRepository<T>);
+                Type type = typeof(GenericRepository<T>);
 
                 this.repositories.Add(typeOfModel, Activator.CreateInstance(type, this.context));
             }

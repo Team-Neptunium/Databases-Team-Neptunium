@@ -1,8 +1,9 @@
-﻿using System;
-using MongoDB.Driver;
+﻿using MongoDB.Driver;
 
 namespace BoardgameSimulator.MongoDB
 {
+    using System;
+
     public class MongoConnection
     {
         private const string ConnString = "mongodb://{0}:{1}@ds033734.mongolab.com:33734/{2}";

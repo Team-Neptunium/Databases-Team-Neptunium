@@ -1,18 +1,16 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using BoardgameSimulator.Data;
-using BoardgameSimulator.DummyModels.AlignmentPerks;
-using BoardgameSimulator.DummyModels.Heroes;
-using BoardgameSimulator.DummyModels.Skills;
-using BoardgameSimulator.DummyModels.Units;
-using BoardgameSimulator.Models;
-using BoardgameSimulator.MongoDB;
-using BoardgameSimulator.MongoDB.Data;
-
-namespace BoardgameSimulator.ConsoleApp
+﻿namespace BoardgameSimulator.ConsoleApp
 {
+    using System;
+    using System.Collections.Generic;
+    using Data;
+    using DummyModels.AlignmentPerks;
+    using DummyModels.Heroes;
+    using DummyModels.Skills;
+    using DummyModels.Units;
+    using Models;
+    using MongoDB;
+    using MongoDB.Data;
+    
     public class ConsoleApp
     {
         public static void Main()
@@ -35,10 +33,10 @@ namespace BoardgameSimulator.ConsoleApp
             var perks = new GenericData<DummyAlignmentPerk>(mongoConnection.Database, "perks");
             var heroes = new GenericData<DummyHero>(mongoConnection.Database, "heroes");
 
-            var skillsFromMongo = skills.GetAllDataFromCollection();
-            var unitsFromMongo = units.GetAllDataFromCollection();
-            var perksFromMongo = perks.GetAllDataFromCollection();
-            var heroesFromMongo = heroes.GetAllDataFromCollection();
+            IEnumerable<DummySkill> skillsFromMongo = skills.GetAllDataFromCollection();
+            IEnumerable<DummyUnit> unitsFromMongo = units.GetAllDataFromCollection();
+            IEnumerable<DummyAlignmentPerk> perksFromMongo = perks.GetAllDataFromCollection();
+            IEnumerable<DummyHero> heroesFromMongo = heroes.GetAllDataFromCollection();
 
             //SeedDataFromMongoDb(data, skillsFromMongo, unitsFromMongo, perksFromMongo, heroesFromMongo);
         }
