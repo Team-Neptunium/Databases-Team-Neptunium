@@ -16,7 +16,7 @@ namespace BoardgameSimulator.ConsoleApp
 {
     public class ConsoleApp
     {
-        public static void Main()
+        public static void Main()   
         {
             const string mongoDbName = "boardgamesimulatormongodb";
 
