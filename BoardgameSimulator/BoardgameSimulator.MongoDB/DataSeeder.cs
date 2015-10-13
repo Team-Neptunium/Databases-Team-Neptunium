@@ -1,13 +1,12 @@
-﻿using MongoDB.Driver;
+﻿using System;
+using BoardgameSimulator.DummyModels.AlignmentPerks;
+using BoardgameSimulator.DummyModels.Heroes;
+using BoardgameSimulator.DummyModels.Skills;
+using BoardgameSimulator.DummyModels.Units;
+using MongoDB.Driver;
 
 namespace BoardgameSimulator.MongoDB
 {
-    using System;
-    using DummyModels.AlignmentPerks;
-    using DummyModels.Heroes;
-    using DummyModels.Skills;
-    using DummyModels.Units;
-
     public static class DataSeeder
     {
         public static void DropTablesThenCreateThenSeed(MongoDatabase database)
@@ -40,7 +39,7 @@ namespace BoardgameSimulator.MongoDB
             var perksSeed = DummyAlignmentPerks.GenerateAlignmentsList(200);
             var heroesSeed = DummyHeroes.GenerateHeroesList(200);
 
-            int d = skillsSeed.Count;
+            var d = skillsSeed.Count;
 
             skills.InsertBatch(skillsSeed);
             Console.WriteLine("{0} Skill entries seeded successfully!", d);

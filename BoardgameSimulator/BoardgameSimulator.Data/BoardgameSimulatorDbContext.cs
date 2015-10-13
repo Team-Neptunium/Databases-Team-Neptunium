@@ -1,6 +1,7 @@
 ﻿namespace BoardgameSimulator.Data
 {
     using System.Data.Entity;
+
     using Migrations;
     using Models;
 
@@ -14,21 +15,21 @@
             //Database.SetInitializer(new DropCreateDatabaseAlways<BoardgameSimulatorDbContext>());
         }
 
-        public virtual IDbSet<AlignmentPerk> AlignmentPerks { get; set; }
-               
-        public virtual IDbSet<Unit> Units { get; set; }
-               
-        public virtual IDbSet<Skill> Skills { get; set; }
-              
-        public virtual IDbSet<Item> Items { get; set; }
-              
-        public virtual IDbSet<Hero> Heroes { get; set; }
-              
-        public virtual IDbSet<Army> Armies { get; set; }
-              
-        public virtual IDbSet<BattleLog> BattleLogs { get; set; }
-              
-        public virtual new IDbSet<T> Set<T>() where T : class
+        public IDbSet<AlignmentPerk> AlignmentPerks { get; set; }
+
+        public IDbSet<Unit> Units { get; set; }
+
+        public IDbSet<Skill> Skills { get; set; }
+
+        public IDbSet<Item> Items { get; set; }
+
+        public IDbSet<Hero> Heroes { get; set; }
+
+        public IDbSet<Army> Armies { get; set; }
+
+        public IDbSet<BattleLog> BattleLogs { get; set; }
+
+        public new IDbSet<T> Set<T>() where T : class
         {
             return base.Set<T>();
         }

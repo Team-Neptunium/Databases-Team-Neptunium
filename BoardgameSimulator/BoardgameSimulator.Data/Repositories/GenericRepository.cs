@@ -1,8 +1,9 @@
-﻿namespace BoardgameSimulator.Data.Repositories
+﻿using System.Data.Entity;
+using System.Data.Entity.Infrastructure;
+
+namespace BoardgameSimulator.Data.Repositories
 {
     using System;
-    using System.Data.Entity;
-    using System.Data.Entity.Infrastructure;
     using System.Linq;
     using System.Linq.Expressions;
 
@@ -37,7 +38,7 @@
 
         public void Update(T entity)
         {
-            DbEntityEntry entry = AttachIfDetached(entity);
+            var entry = AttachIfDetached(entity);
             entry.State = EntityState.Modified;
         }
 
@@ -51,13 +52,13 @@
 
         public void Detach(T entity)
         {
-            DbEntityEntry<T> entry = this.context.Entry(entity);
+            var entry = this.context.Entry(entity);
             entry.State = EntityState.Detached;
         }
 
         private DbEntityEntry AttachIfDetached(T entity)
         {
-            DbEntityEntry<T> entry = this.context.Entry(entity);
+            var entry = this.context.Entry(entity);
             if (entry.State == EntityState.Detached)
             {
                 this.set.Attach(entity);

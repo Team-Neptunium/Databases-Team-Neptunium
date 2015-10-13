@@ -1,7 +1,7 @@
-﻿namespace BoardgameSimulator.Models
-{
-    using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 
+namespace BoardgameSimulator.Models
+{
     public class AlignmentPerk
     {
         public int Id { get; set; }
