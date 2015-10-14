@@ -11,9 +11,11 @@
             const string ZipFilename = "AlignmentsReports.zip";
             string workingDirectory = Path.Combine(RootDirectory, "Working");
 
-            var generator = new XlsReportGenerator();
-            generator.GenerateXlsAlignmentsReports(200, 1, 3, 1, 3, workingDirectory);
-
+            using (var generator = new XlsReportGenerator())
+            {
+            generator.GenerateXlsAlignmentsReports(10, 1, 3, 1, 3, workingDirectory);
+            }
+            
             ZipFile.CreateFromDirectory(workingDirectory, Path.Combine(RootDirectory, ZipFilename));
 
             Directory.Delete(workingDirectory, true);

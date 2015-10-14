@@ -6,7 +6,7 @@
     using System.Runtime.InteropServices;
     using Microsoft.Office.Interop.Excel;
 
-    public class XlsReportGenerator
+    public class XlsReportGenerator : IDisposable
     {
         private const string HeroId = "HeroID";
         private const string UnitsId = "UnitsID";
@@ -15,7 +15,39 @@
         private const string AlignmentFolderName = "AlignmentID-";
         private const string ReportFileName = "Report-";
 
-        private readonly Random rnd = new Random();
+        private readonly Application app;
+        private readonly Workbooks workbooks;
+        private readonly Workbook workbook;
+        private readonly Worksheet worksheet;
+
+        private readonly Random rnd;
+
+        public XlsReportGenerator()
+        {
+            this.app = new Application { Visible = false };
+            this.workbooks = this.app.Workbooks;
+            this.workbook = this.workbooks.Add(Missing.Value);
+            this.worksheet = this.workbook.ActiveSheet;
+
+            this.rnd = new Random();
+        }
+
+        ~XlsReportGenerator()
+        {
+            this.Dispose();
+        }
+
+        public void Dispose()
+        {
+            Marshal.ReleaseComObject(this.worksheet);
+            this.workbook.Close(true);
+            Marshal.ReleaseComObject(this.workbook);
+            Marshal.ReleaseComObject(this.workbooks);
+            this.app.Quit();
+            Marshal.ReleaseComObject(this.app);
+
+            GC.SuppressFinalize(this);
+        }
 
         /// <summary>
         /// Generates Excel reports for the armies of the alignments.
@@ -37,69 +69,63 @@
             int maxArmiesPerAlignmentCount,
             string rootDirectory)
         {
-            var app = new Application { Visible = false };
-            var workbooks = app.Workbooks;
-            var workbook = workbooks.Add(Missing.Value);
-            Worksheet worksheet = workbook.ActiveSheet;
-
-            // Populate first row
-            worksheet.Cells[1, 1] = HeroId;
-            worksheet.Cells[1, 2] = UnitsId;
-            worksheet.Cells[1, 3] = UnitsQuantity;
+            this.FillFirtsRowWithTitles(HeroId, UnitsId, UnitsQuantity);
 
             for (int currentAlignment = 1; currentAlignment <= alignmentCount; currentAlignment++)
             {
                 string currentFolder = Path.Combine(rootDirectory, AlignmentFolderName + currentAlignment);
                 Directory.CreateDirectory(currentFolder);
 
-                this.SaveReports(
-                    minReportsCountPerAlignment,
-                    maxReportsCountPerAlignment,
-                    minArmiesPerAlignmentCount,
-                    maxArmiesPerAlignmentCount,
-                    worksheet,
-                    workbook,
-                    currentFolder);
+                int reportsCount = this.rnd.Next(minReportsCountPerAlignment, maxReportsCountPerAlignment + 1);
+                this.SaveReports(reportsCount, currentFolder, minArmiesPerAlignmentCount, maxArmiesPerAlignmentCount);
             }
-
-            // Save and Release COM objects
-            Marshal.ReleaseComObject(worksheet);
-            workbook.Close(true);
-            Marshal.ReleaseComObject(workbook);
-            Marshal.ReleaseComObject(workbooks);
-            app.Quit();
-            Marshal.ReleaseComObject(app);
         }
 
-        private void SaveReports(
-            int minReportsCountPerAlignment,
-            int maxReportsCountPerAlignment,
-            int minArmiesPerAlignmentCount,
-            int maxArmiesPerAlignmentCount,
-            Worksheet worksheet,
-            Workbook workbook,
-            string currentFolder)
+        private void FillFirtsRowWithTitles(params string[] titles)
         {
-            int reportsCount = this.rnd.Next(minReportsCountPerAlignment, maxReportsCountPerAlignment + 1);
+            for (int i = 0; i < titles.Length; i++)
+            {
+                this.worksheet.Cells[1, i + 1] = titles[i];
+            }
+        }
+
+        private void SaveReports(int reportsCount, string currentFolder, int minArmiesPerAlignmentCount, int maxArmiesPerAlignmentCount)
+        {
             for (int currentReport = 1; currentReport <= reportsCount; currentReport++)
             {
-                int armiesCount = this.rnd.Next(minArmiesPerAlignmentCount, maxArmiesPerAlignmentCount + 1);
-                for (int currentArmy = 2; currentArmy < armiesCount + 2; currentArmy++)
-                {
-                    // TODO: Get this hardcoded values from some Constants class when available.
-                    worksheet.Cells[currentArmy, 1] = this.rnd.Next(1, 201);
-                    worksheet.Cells[currentArmy, 2] = this.rnd.Next(1, 201);
-                    worksheet.Cells[currentArmy, 3] = this.rnd.Next(1, 1001) * 10;
-                }
+                int rowsCount = this.rnd.Next(minArmiesPerAlignmentCount, maxArmiesPerAlignmentCount + 1);
 
-                workbook.SaveAs(Path.Combine(currentFolder, ReportFileName + currentReport));
+                this.WriteDataInWorksheet(2, rowsCount);
 
-                for (int currentArmy = 2; currentArmy < armiesCount + 2; currentArmy++)
-                {
-                    worksheet.Cells[currentArmy, 1] = null;
-                    worksheet.Cells[currentArmy, 2] = null;
-                    worksheet.Cells[currentArmy, 3] = null;
-                }
+                this.workbook.SaveAs(Path.Combine(currentFolder, ReportFileName + currentReport));
+
+                this.CleanUpDataFromWorksheet(2, rowsCount);
+            }
+        }
+
+        private void WriteDataInWorksheet(int startingRow, int rowsCount)
+        {
+            for (int currentRow = startingRow; currentRow < startingRow + rowsCount; currentRow++)
+            {
+                // TODO: Get this hardcoded values from some Constants class when available.
+                // Write Hero ID
+                this.worksheet.Cells[currentRow, 1] = this.rnd.Next(1, 201);
+
+                // Write Units ID
+                this.worksheet.Cells[currentRow, 2] = this.rnd.Next(1, 201);
+
+                // Write Units Quantity
+                this.worksheet.Cells[currentRow, 3] = this.rnd.Next(1, 1001) * 10;
+            }
+        }
+
+        private void CleanUpDataFromWorksheet(int startingRow, int rowsCount)
+        {
+            for (int currentRow = startingRow; currentRow < startingRow + rowsCount; currentRow++)
+            {
+                this.worksheet.Cells[currentRow, 1] = null;
+                this.worksheet.Cells[currentRow, 2] = null;
+                this.worksheet.Cells[currentRow, 3] = null;
             }
         }
     }
