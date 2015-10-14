@@ -22,7 +22,7 @@ namespace BoardgameSimulator.ConsoleApp
 
             var data = new BoardgameSimulatorData(new BoardgameSimulatorDbContext());
 
-            ConnectToMongoAndSeedToMSSQL(mongoDbName, data);
+            //ConnectToMongoAndSeedToMSSQL(mongoDbName, data);
         }
 
         private static void ConnectToMongoAndSeedToMSSQL(string mongoDbName, BoardgameSimulatorData data)
