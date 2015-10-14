@@ -1,66 +1,106 @@
 ﻿namespace BoardgameSimulator.ZippedReports
 {
     using System;
-    using System.Collections.Generic;
+    using System.IO;
     using System.Reflection;
     using System.Runtime.InteropServices;
-
-    using Excel = Microsoft.Office.Interop.Excel;
+    using Microsoft.Office.Interop.Excel;
 
     public class XlsReportGenerator
     {
+        private const string HeroId = "HeroID";
+        private const string UnitsId = "UnitsID";
+        private const string UnitsQuantity = "Units Quantity";
+
+        private const string AlignmentFolderName = "AlignmentID-";
+        private const string ReportFileName = "Report-";
+
         private readonly Random rnd = new Random();
 
-        private readonly List<string> alignments = new List<string>() { "Evil", "Good", "Neutral", "Demigod", "Mythical" };
-        private readonly List<string> heroes = new List<string>() { "Bron", "Tor", "Batman", "Dr. Doom", "Grodd", "Hellboy", "Gordon", "Bizzaro", "Sabertooth", "Maxx" };
-        private readonly List<string> units = new List<string>() { "Elven Archer", "Shieldmaiden", "Pegasus", "Pixie", "Swordsman" };
-
-        public void GenerateXls(string fileName)
+        /// <summary>
+        /// Generates Excel reports for the armies of the alignments.
+        /// Each alignment has a separate folder named AlignmentID-X where X is the alignment id.
+        /// In each folder there are random number of reports.
+        /// Each report has a random number of lines giving information for each army of the alignment.
+        /// </summary>
+        /// <param name="alignmentCount">The count of alignments</param>
+        /// <param name="minReportsCountPerAlignment">The minimum number of filereports you want per alignment</param>
+        /// <param name="maxReportsCountPerAlignment">The maximum number of filereports you want per alignment</param>
+        /// <param name="minArmiesPerAlignmentCount">The minimum number of lines (armies) in a single filereport</param>
+        /// <param name="maxArmiesPerAlignmentCount">The maximum number of lines (armies) in a single filereport</param>
+        /// <param name="rootDirectory">The directory into which all AlignmentID-X directories will be created.</param>
+        public void GenerateXlsAlignmentsReports(
+            int alignmentCount,
+            int minReportsCountPerAlignment,
+            int maxReportsCountPerAlignment,
+            int minArmiesPerAlignmentCount,
+            int maxArmiesPerAlignmentCount,
+            string rootDirectory)
         {
-            var excelApp = new Excel.Application { Visible = false };
-            var excelWorkbooks = excelApp.Workbooks;
-            var excelWorkbook = excelWorkbooks.Add(Missing.Value);
-            Excel.Worksheet excelWorksheet = excelWorkbook.ActiveSheet;
+            var app = new Application { Visible = false };
+            var workbooks = app.Workbooks;
+            var workbook = workbooks.Add(Missing.Value);
+            Worksheet worksheet = workbook.ActiveSheet;
 
             // Populate first row
-            excelWorksheet.Cells[1, 2] = "Alignment";
-            excelWorksheet.Cells[1, 3] = "Hero";
-            excelWorksheet.Cells[1, 4] = "Unit";
-            excelWorksheet.Cells[1, 5] = "Unit Quantity";
+            worksheet.Cells[1, 1] = HeroId;
+            worksheet.Cells[1, 2] = UnitsId;
+            worksheet.Cells[1, 3] = UnitsQuantity;
 
-            excelWorksheet.Cells[1, 7] = "Duration (seconds)";
+            for (int currentAlignment = 1; currentAlignment <= alignmentCount; currentAlignment++)
+            {
+                string currentFolder = Path.Combine(rootDirectory, AlignmentFolderName + currentAlignment);
+                Directory.CreateDirectory(currentFolder);
 
-            // Populate first column
-            excelWorksheet.Cells[2, 1] = "First Army";
-            excelWorksheet.Cells[3, 1] = "Second Army";
-
-            // Populate alignments
-            excelWorksheet.Cells[2, 2] = this.alignments[this.rnd.Next(this.alignments.Count)];
-            excelWorksheet.Cells[3, 2] = this.alignments[this.rnd.Next(this.alignments.Count)];
-
-            // Populate heroes
-            excelWorksheet.Cells[2, 3] = this.heroes[this.rnd.Next(this.heroes.Count)];
-            excelWorksheet.Cells[3, 3] = this.heroes[this.rnd.Next(this.heroes.Count)];
-
-            // Populate units
-            excelWorksheet.Cells[2, 4] = this.units[this.rnd.Next(this.units.Count)];
-            excelWorksheet.Cells[3, 4] = this.units[this.rnd.Next(this.units.Count)];
-
-            // Populate unit quantities
-            excelWorksheet.Cells[2, 5] = this.rnd.Next(1, 201) * 5;
-            excelWorksheet.Cells[3, 5] = this.rnd.Next(1, 201) * 5;
-
-            // Duration
-            excelWorksheet.Cells[2, 7] = this.rnd.Next(10, 1001);
+                this.SaveReports(
+                    minReportsCountPerAlignment,
+                    maxReportsCountPerAlignment,
+                    minArmiesPerAlignmentCount,
+                    maxArmiesPerAlignmentCount,
+                    worksheet,
+                    workbook,
+                    currentFolder);
+            }
 
             // Save and Release COM objects
-            Marshal.ReleaseComObject(excelWorksheet);
-            excelWorkbook.SaveAs(fileName);
-            excelWorkbook.Close(true);
-            Marshal.ReleaseComObject(excelWorkbook);
-            Marshal.ReleaseComObject(excelWorkbooks);
-            excelApp.Quit();
-            Marshal.ReleaseComObject(excelApp);
+            Marshal.ReleaseComObject(worksheet);
+            workbook.Close(true);
+            Marshal.ReleaseComObject(workbook);
+            Marshal.ReleaseComObject(workbooks);
+            app.Quit();
+            Marshal.ReleaseComObject(app);
+        }
+
+        private void SaveReports(
+            int minReportsCountPerAlignment,
+            int maxReportsCountPerAlignment,
+            int minArmiesPerAlignmentCount,
+            int maxArmiesPerAlignmentCount,
+            Worksheet worksheet,
+            Workbook workbook,
+            string currentFolder)
+        {
+            int reportsCount = this.rnd.Next(minReportsCountPerAlignment, maxReportsCountPerAlignment + 1);
+            for (int currentReport = 1; currentReport <= reportsCount; currentReport++)
+            {
+                int armiesCount = this.rnd.Next(minArmiesPerAlignmentCount, maxArmiesPerAlignmentCount + 1);
+                for (int currentArmy = 2; currentArmy < armiesCount + 2; currentArmy++)
+                {
+                    // TODO: Get this hardcoded values from some Constants class when available.
+                    worksheet.Cells[currentArmy, 1] = this.rnd.Next(1, 201);
+                    worksheet.Cells[currentArmy, 2] = this.rnd.Next(1, 201);
+                    worksheet.Cells[currentArmy, 3] = this.rnd.Next(1, 1001) * 10;
+                }
+
+                workbook.SaveAs(Path.Combine(currentFolder, ReportFileName + currentReport));
+
+                for (int currentArmy = 2; currentArmy < armiesCount + 2; currentArmy++)
+                {
+                    worksheet.Cells[currentArmy, 1] = null;
+                    worksheet.Cells[currentArmy, 2] = null;
+                    worksheet.Cells[currentArmy, 3] = null;
+                }
+            }
         }
     }
 }

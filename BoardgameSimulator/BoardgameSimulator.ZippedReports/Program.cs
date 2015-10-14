@@ -1,6 +1,5 @@
 ﻿namespace BoardgameSimulator.ZippedReports
 {
-    using System;
     using System.IO;
     using System.IO.Compression;
 
@@ -8,35 +7,16 @@
     {
         public static void Main()
         {
-            var rnd = new Random();
+            const string RootDirectory = @"C:\Temp\DatabasesTeamworkReports";
+            const string ZipFilename = "AlignmentsReports.zip";
+            string workingDirectory = Path.Combine(RootDirectory, "Working");
+
             var generator = new XlsReportGenerator();
+            generator.GenerateXlsAlignmentsReports(200, 1, 3, 1, 3, workingDirectory);
 
-            const string RootFolder = @"C:\Temp\DatabasesTeamworkBattlesReport";
-            var workingDirectory = Path.Combine(RootFolder, "Working");
-
-            var greatestWarStartDate = new DateTime(121, 3, 31);
-            var currentDate = greatestWarStartDate;
-
-            int daysWithBattlesCount = rnd.Next(1, 10);
-            for (int i = 0; i < daysWithBattlesCount; i++)
-            {
-                currentDate = currentDate.AddDays(1 + rnd.NextDouble() * 3);
-                string parsedDate = currentDate.ToString("dd-MMM-yyyy");
-                string currentFolder = Path.Combine(workingDirectory, parsedDate);
-                Directory.CreateDirectory(currentFolder);
-
-                int battlesCount = rnd.Next(5, 10);
-                for (int j = 1; j <= battlesCount; j++)
-                {
-                    generator.GenerateXls(currentFolder + "\\Battle-" + j);
-                }
-            }
-
-            ZipFile.CreateFromDirectory(workingDirectory, RootFolder + "\\Battles.zip");
+            ZipFile.CreateFromDirectory(workingDirectory, Path.Combine(RootDirectory, ZipFilename));
 
             Directory.Delete(workingDirectory, true);
-
-            Console.WriteLine("Generating of battle reports completed!");
         }
     }
 }
