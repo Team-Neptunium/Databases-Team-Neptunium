@@ -1,8 +1,6 @@
-﻿using System.ComponentModel.DataAnnotations;
-
-namespace BoardgameSimulator.Models
+﻿namespace BoardgameSimulator.Models
 {
-    using Newtonsoft.Json;
+    using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
 
     public class Army
@@ -10,8 +8,6 @@ namespace BoardgameSimulator.Models
         [Key]
         public int Id { get; set; }
 
-        [JsonIgnore] // else -> Newtonsoft.Json.JsonSerializationException
-        public string Name { get { return this.AlignmentPerk.Name + " of " + this.Unit.Name; } }
 
         public int AlignmentPerkId { get; set; }
 
