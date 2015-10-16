@@ -24,39 +24,57 @@
         public IGenericRepository<Army> Armies
         {
             get
-            { return this.GetRepository<Army>(); }
+            {
+                return this.GetRepository<Army>();
+            }
         }
 
         public IGenericRepository<Skill> Skills
         {
             get
-            { return this.GetRepository<Skill>(); }
+            {
+                return this.GetRepository<Skill>();
+            }
         }
 
         public IGenericRepository<Unit> Units
         {
             get
-            { return this.GetRepository<Unit>(); }
+            {
+                return this.GetRepository<Unit>();
+            }
         }
 
         public IGenericRepository<Hero> Heroes
         {
-            get { return this.GetRepository<Hero>(); }
+            get
+            {
+                return this.GetRepository<Hero>();
+            }
         }
 
         public IGenericRepository<Item> Items
         {
-            get { return this.GetRepository<Item>(); }
+            get
+            {
+                return this.GetRepository<Item>();
+            }
         }
 
         public IGenericRepository<AlignmentPerk> AlignmentPerks
         {
-            get { return this.GetRepository<AlignmentPerk>(); }
+            get
+            {
+                return this.GetRepository<AlignmentPerk>();
+            }
         }
 
         public IGenericRepository<BattleLog> BattleLogs
         {
-            get { return this.GetRepository<BattleLog>(); }
+            get
+            {
+                return this.GetRepository<BattleLog>();
+            }
         }
 
         public void SaveChanges()
