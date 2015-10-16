@@ -70,12 +70,17 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\BoardgameSimulatorSqLiteUnirsCostsRepository.cs" />
     <Compile Include="Repositories\IBoardgameSimulatorSqLiteUnitsCostsRepository.cs" />
+    <Compile Include="SqLiteDataSeeder.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\BoardgameSimulator.Data\BoardgameSimulator.Data.csproj">
+      <Project>{038ed1b6-76b4-44e5-bdb1-8e1e58f87757}</Project>
+      <Name>BoardgameSimulator.Data</Name>
+    </ProjectReference>
     <ProjectReference Include="..\BoardgameSimulator.Models\BoardgameSimulator.Models.csproj">
       <Project>{a17d402a-284a-4204-9eb3-f5be3de08389}</Project>
       <Name>BoardgameSimulator.Models</Name>

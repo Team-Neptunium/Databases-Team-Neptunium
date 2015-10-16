@@ -6,7 +6,7 @@
     public class BoardgameSimulatorSqLiteDbContext : DbContext, IBoardgameSimulatorSqLiteDbContext
     {
         public BoardgameSimulatorSqLiteDbContext()
-            : base("SqLiteConnection")
+            : base("BoardgameSimSqLiteConnection")
         {
             this.Database.CreateIfNotExists();
         }

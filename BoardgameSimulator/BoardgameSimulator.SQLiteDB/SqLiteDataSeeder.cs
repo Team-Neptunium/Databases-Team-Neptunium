@@ -7,11 +7,11 @@
 
     public class SqLiteDataSeeder
     {
-        public static void Seed(int entries = 100)
+        public static void Seed()
         {
             var data = new BoardgameSimulatorSqLiteData();
 
-            var oldEntries = data.UnitsCosts.All();
+            var oldEntries = data.UnitsCosts.All().ToList();
 
             foreach (var entry in oldEntries)
             {
@@ -36,6 +36,8 @@
             }
 
             data.UnitsCosts.SaveChanges();
+
+            Console.WriteLine("Seeding of SqLite completed!");
         }
     }
 }

@@ -10,6 +10,7 @@
     using Models;
     using MongoDB;
     using MongoDB.Data;
+    using SQLiteDB;
 
     public class ConsoleApp
     {
@@ -17,9 +18,11 @@
         {
             const string mongoDbName = "boardgamesimulatormongodb";
 
-            var data = new BoardgameSimulatorData(new BoardgameSimulatorDbContext());
+            //var data = new BoardgameSimulatorData(new BoardgameSimulatorDbContext());
 
             //ConnectToMongoAndSeedToMSSQL(mongoDbName, data);
+
+            //SqLiteDataSeeder.Seed();
         }
 
         private static void ConnectToMongoAndSeedToMSSQL(string mongoDbName, BoardgameSimulatorData data)

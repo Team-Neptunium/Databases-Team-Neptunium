@@ -1,11 +1,12 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using MongoDB.Bson;
+﻿using MongoDB.Bson;
 using MongoDB.Driver;
 
 namespace BoardgameSimulator.MongoDB.Data
 {
+    using System.Collections;
+    using System.Collections.Generic;
+    using System.Linq;
+
     public class GenericData<T> : IGenericData<T>
     {
         private readonly MongoDatabase database;
