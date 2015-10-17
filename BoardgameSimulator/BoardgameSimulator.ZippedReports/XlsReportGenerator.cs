@@ -113,7 +113,7 @@
                     this.FillRow(currentRowNumber, heroId, unitsId, unitsQuantity);
                 }
 
-                this.workbook.SaveAs(Path.Combine(currentFolder, ReportFileName + currentReport));
+                this.workbook.SaveAs(Path.Combine(currentFolder, ReportFileName + currentReport), XlFileFormat.xlWorkbookNormal);
 
                 // Clean up the worksheet for the next iteration.
                 for (int currentRowNumber = StartRow; currentRowNumber < StartRow + rowsCount; currentRowNumber++)
