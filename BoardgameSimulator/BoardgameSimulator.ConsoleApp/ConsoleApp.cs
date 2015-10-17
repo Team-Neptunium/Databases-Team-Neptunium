@@ -1,28 +1,28 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using BoardgameSimulator.Data;
-using BoardgameSimulator.DummyModels.AlignmentPerks;
-using BoardgameSimulator.DummyModels.Heroes;
-using BoardgameSimulator.DummyModels.Skills;
-using BoardgameSimulator.DummyModels.Units;
-using BoardgameSimulator.Models;
-using BoardgameSimulator.MongoDB;
-using BoardgameSimulator.MongoDB.Data;
-using BoardgameSimulator.Reports;
-
-namespace BoardgameSimulator.ConsoleApp
+﻿namespace BoardgameSimulator.ConsoleApp
 {
+    using System;
+    using System.Collections.Generic;
+    using Data;
+    using DummyModels.AlignmentPerks;
+    using DummyModels.Heroes;
+    using DummyModels.Skills;
+    using DummyModels.Units;
+    using Models;
+    using MongoDB;
+    using MongoDB.Data;
+    using SQLiteDB;
+
     public class ConsoleApp
     {
         public static void Main()   
         {
             const string mongoDbName = "boardgamesimulatormongodb";
 
-            var data = new BoardgameSimulatorData(new BoardgameSimulatorDbContext());
+            //var data = new BoardgameSimulatorData(new BoardgameSimulatorDbContext());
 
             //ConnectToMongoAndSeedToMSSQL(mongoDbName, data);
+
+            //SqLiteDataSeeder.Seed();
         }
 
         private static void ConnectToMongoAndSeedToMSSQL(string mongoDbName, BoardgameSimulatorData data)
