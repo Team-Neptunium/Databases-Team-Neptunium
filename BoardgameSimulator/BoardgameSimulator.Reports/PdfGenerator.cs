@@ -20,7 +20,7 @@
             }
         }
 
-        public void CreatePerksGroupArmyReport(IEnumerable<Army> armies)
+        public void CreatePerksGroupArmyReport(IQueryable<Army> armydata)
         {
             using (var fs = new FileStream(Path.Combine(workingDir, "ArmiesAndPerksReport.pdf"), FileMode.Create, FileAccess.Write))
             {
@@ -28,9 +28,17 @@
                 PdfWriter.GetInstance(document, fs);
                 document.Open();
 
-                var armydata = armies.ToList();
+                var groups = armydata.Select(a => new
+                {
+                    AlignmentPerk = a.AlignmentPerk.Name,
+                    Hero = a.Hero.Name,
+                    UnitName = a.Unit.Name,
+                    UnitDamage = a.Unit.Damage,
+                    UnitAttackRate = a.Unit.AttackRate,
+                    Quantity = a.UnitQuantity
+                }).GroupBy(x => x.AlignmentPerk).ToList();
 
-                var armiesgroupedByPerk = armydata.GroupBy(x => x.AlignmentPerk.Name).ToList();
+                var armiesgroupedByPerk = groups;
 
                 BigInteger totalDamage = 0;
 
@@ -40,7 +48,6 @@
 
                     var table = new PdfPTable(6);
 
-                    // Header
                     var headerCell = new PdfPCell(new Phrase("Army perk: " + perk.Key));
                     headerCell.Colspan = 6;
                     headerCell.BackgroundColor = new BaseColor(232, 232, 232);
@@ -56,13 +63,13 @@
 
                     foreach (var army in perk)
                     {
-                        table.AddCell(army.Hero.Name);
-                        table.AddCell(army.Unit.Name);
-                        table.AddCell(army.Unit.Damage.ToString());
-                        table.AddCell(army.Unit.AttackRate.ToString());
-                        table.AddCell(army.UnitQuantity.ToString());
+                        table.AddCell(army.Hero);
+                        table.AddCell(army.UnitName);
+                        table.AddCell(army.UnitDamage.ToString());
+                        table.AddCell(army.UnitAttackRate.ToString());
+                        table.AddCell(army.Quantity.ToString());
 
-                        var dps = CalculateDmgPotential(army.UnitQuantity, army.Unit.Damage, army.Unit.AttackRate);
+                        var dps = CalculateDmgPotential(army.Quantity, army.UnitDamage, army.UnitAttackRate);
                         totalDamage += dps;
 
                         table.AddCell(((double)dps/1000) + "k");
@@ -94,11 +101,10 @@
 
                 var table = new PdfPTable(4);
 
-                // Header
                 var headerCell = new PdfPCell(new Phrase("Skills"));
                 headerCell.Colspan = 4;
                 headerCell.BackgroundColor = new BaseColor(232, 232, 232);
-                headerCell.HorizontalAlignment = 1; // Centered
+                headerCell.HorizontalAlignment = 1;
                 table.AddCell(headerCell);
 
                 table.AddCell("Skill");

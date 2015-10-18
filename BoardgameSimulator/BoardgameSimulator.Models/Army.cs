@@ -7,8 +7,7 @@
     {
         [Key]
         public int Id { get; set; }
-
-
+        
         public int AlignmentPerkId { get; set; }
 
         [ForeignKey("AlignmentPerkId")]

@@ -31,13 +31,6 @@
 
             SqLiteDataSeeder.Seed();
             */
-
-            var armies = data.Armies.All();
-            var skills = data.Skills.All();
-
-            var pdfGen = new PdfGenerator();
-            pdfGen.CreatePerksGroupArmyReport(armies);
-            pdfGen.CreatePdfSkillsPotentialReport(skills);
         }
     }
 }
