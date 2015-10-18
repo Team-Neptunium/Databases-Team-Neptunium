@@ -13,7 +13,7 @@
 
             using (var generator = new XlsReportGenerator())
             {
-                generator.GenerateXlsAlignmentsReports(10, 1, 3, 1, 3, workingDirectory);
+                generator.GenerateXlsAlignmentsReports(100, 1, 2, 1, 2, workingDirectory);
             }
 
             ZipFile.CreateFromDirectory(workingDirectory, Path.Combine(RootDirectory, ZipFilename));

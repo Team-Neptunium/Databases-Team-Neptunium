@@ -1,6 +1,7 @@
 ﻿namespace BoardgameSimulator.ZippedReports
 {
     using System;
+    using System.Collections.Generic;
     using System.IO;
     using System.Reflection;
     using System.Runtime.InteropServices;
@@ -83,14 +84,42 @@
         {
             this.FillRow(1, FirstRowInSheet);
 
-            for (int currentAlignment = 1; currentAlignment <= alignmentCount; currentAlignment++)
+            if (Directory.Exists(rootDirectory))
             {
-                string currentFolder = Path.Combine(rootDirectory, AlignmentFolderName + currentAlignment);
+                Directory.Delete(rootDirectory, true);
+            }
+
+            var usedAlignments = new List<int>();
+
+            Console.WriteLine("Generating of Xls reports into " + rootDirectory + " initiated.");
+
+            for (int i = 1; i <= alignmentCount; i++)
+            {
+                var id = this.rnd.Next(1, 201);
+
+                if (!usedAlignments.Contains(id))
+                {
+                    usedAlignments.Add(id);
+                }
+                else
+                {
+                    i--;
+                    continue;
+                }
+
+                string currentFolder = Path.Combine(rootDirectory, AlignmentFolderName + id);
                 Directory.CreateDirectory(currentFolder);
 
                 int reportsCount = this.rnd.Next(minReportsCountPerAlignment, maxReportsCountPerAlignment + 1);
                 this.SaveReports(reportsCount, currentFolder, minArmiesPerAlignmentCount, maxArmiesPerAlignmentCount);
+
+                if (i%10 == 0)
+                {
+                    Console.WriteLine("Generating Xls reports" + new string('.', i/10));
+                }
             }
+
+            Console.WriteLine("Generated reports for " + alignmentCount + " alignments.");
         }
 
         private void SaveReports(
