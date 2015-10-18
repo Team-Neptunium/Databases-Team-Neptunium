@@ -8,8 +8,7 @@
     {
         protected override IList<MappingConfiguration> PrepareMapping()
         {
-            List<MappingConfiguration> configurations =
-    new List<MappingConfiguration>();
+            List<MappingConfiguration> configurations = new List<MappingConfiguration>();
 
             var armyvsarmyMapping = new MappingConfiguration<ArmyVsArmyReport>();
 

@@ -5,19 +5,15 @@
 
     public class BoardgameSimulatorMySqlDbContext : OpenAccessContext
     {
-        private static string ConnectionString = "BoardgameSimMySqlConnection";
+        // Don't touch it!
+        private static string ConnectionName = "BoardgameSimMySqlConnection";
 
         private static readonly BackendConfiguration BackendConfig = GetBackEndConfig();
 
         private static readonly MetadataSource MetaDataConfig = new ModelConfiguration();
 
-        public BoardgameSimulatorMySqlDbContext(string connectionString, BackendConfiguration backendConfiguration, MetadataSource metadataSource)
-            : base(connectionString, backendConfiguration, metadataSource)
-        {
-        }
-
-        public BoardgameSimulatorMySqlDbContext()
-            : this(ConnectionString, BackendConfig, MetaDataConfig)
+        public BoardgameSimulatorMySqlDbContext(string connectionString)
+            : base(connectionString, BackendConfig, MetaDataConfig)
         {
         }
 

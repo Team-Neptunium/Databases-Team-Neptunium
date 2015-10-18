@@ -64,6 +64,18 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
+    <Reference Include="Telerik.OpenAccess">
+      <HintPath>..\packages\Telerik.DataAccess.Core.2015.3.926.1\lib\net40\Telerik.OpenAccess.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.OpenAccess.35.Extensions">
+      <HintPath>..\packages\Telerik.DataAccess.Core.2015.3.926.1\lib\net40\Telerik.OpenAccess.35.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.OpenAccess.40.Extensions">
+      <HintPath>..\packages\Telerik.DataAccess.Core.2015.3.926.1\lib\net40\Telerik.OpenAccess.40.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.OpenAccess.Runtime">
+      <HintPath>..\packages\Telerik.DataAccess.Core.2015.3.926.1\lib\net40\Telerik.OpenAccess.Runtime.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ConsoleApp.cs" />
@@ -89,6 +101,10 @@
     <ProjectReference Include="..\BoardgameSimulator.MongoDB\BoardgameSimulator.MongoDB.csproj">
       <Project>{b9033af9-aaa7-4f52-b11a-ac254d42f99e}</Project>
       <Name>BoardgameSimulator.MongoDB</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BoardgameSimulator.MySqlDb\BoardgameSimulator.MySqlDB.csproj">
+      <Project>{659145d8-2b20-4f27-aabd-04e8b3ef49c7}</Project>
+      <Name>BoardgameSimulator.MySqlDB</Name>
     </ProjectReference>
     <ProjectReference Include="..\BoardgameSimulator.Reports\BoardgameSimulator.Reports.csproj">
       <Project>{a8744e1a-2551-4cd4-a6ff-b96c9d193c1d}</Project>

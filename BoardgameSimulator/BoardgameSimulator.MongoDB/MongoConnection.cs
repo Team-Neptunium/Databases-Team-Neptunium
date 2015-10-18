@@ -15,8 +15,11 @@ namespace BoardgameSimulator.MongoDB
         {
             Console.Write("Enter your {0} username: ", dbName);
             var uname = Console.ReadLine().Trim();
+
             Console.Write("Enter your {0} password: ", dbName);
+            Console.ForegroundColor = Console.BackgroundColor;
             var pw = Console.ReadLine().Trim();
+            Console.ResetColor();
 
             var client = new MongoClient(string.Format(ConnString, uname, pw, dbName));
             var server = client.GetServer();
