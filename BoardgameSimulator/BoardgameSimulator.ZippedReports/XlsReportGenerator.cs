@@ -9,11 +9,11 @@
 
     public class XlsReportGenerator : IDisposable
     {
-        private const string AlignmentFolderName = "AlignmentID-";
+        private const string AlignmentFolderName = "AlignmentPerkId-";
         private const string ReportFileName = "Report-";
 
         private const int StartRow = 2;
-        private static readonly string[] FirstRowInSheet = { "HeroID", "UnitsID", "Units Quantity" };
+        private static readonly string[] FirstRowInSheet = { "HeroId", "UnitId", "UnitQuantity" };
 
         private readonly Random rnd;
 
