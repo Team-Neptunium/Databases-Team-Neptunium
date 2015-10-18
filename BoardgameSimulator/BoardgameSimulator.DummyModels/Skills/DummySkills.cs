@@ -136,7 +136,7 @@ namespace BoardgameSimulator.DummyModels.Skills
             {
                 var currentSkillName = skills[i];
 
-                skillsList.Add(new DummySkill(currentSkillName, damageAndCd[rng.Next(i * 300) % dcdLen], damageAndCd[rng.Next(i * 262) % dcdLen]));
+                skillsList.Add(new DummySkill(currentSkillName, damageAndCd[rng.Next(i * 300) % dcdLen] * 100, damageAndCd[rng.Next(i * 262) % dcdLen]));
             }
 
             return skillsList;

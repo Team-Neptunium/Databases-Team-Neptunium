@@ -1,7 +1,10 @@
 ﻿namespace BoardgameSimulator.ConsoleApp
 {
+    using System.Linq;
     using Data;
+    using Models;
     using MongoDB;
+    using Reports;
     using SQLiteDB;
     using XlsReader;
     using ZippedReports;
@@ -12,6 +15,7 @@
         {
             var data = new BoardgameSimulatorData(new BoardgameSimulatorDbContext());
 
+            /*
             var mongoConnection = new MongoConnection();
             mongoConnection.Connect();
 
@@ -26,6 +30,14 @@
             ArmiesReportsSeeder.SeedArmies();
 
             SqLiteDataSeeder.Seed();
+            */
+
+            var armies = data.Armies.All();
+            var skills = data.Skills.All();
+
+            var pdfGen = new PdfGenerator();
+            pdfGen.CreatePerksGroupArmyReport(armies);
+            pdfGen.CreatePdfSkillsPotentialReport(skills);
         }
     }
 }
