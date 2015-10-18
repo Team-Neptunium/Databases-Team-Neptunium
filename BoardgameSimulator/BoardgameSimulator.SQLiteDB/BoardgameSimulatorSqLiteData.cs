@@ -10,7 +10,7 @@
         {
             this.context = context;
 
-            this.UnitsCosts = new BoardgameSimulatorSqLiteUnirsCostsRepository(this.context);
+            this.UnitsCosts = new BoardgameSimulatorSqLiteUnitsCostsRepository(this.context);
         }
 
         public BoardgameSimulatorSqLiteData()

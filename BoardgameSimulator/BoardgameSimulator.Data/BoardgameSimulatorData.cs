@@ -7,8 +7,8 @@
 
     public class BoardgameSimulatorData : IBoardgameSimulatorData
     {
-        private IBoardgameSimulatorDbContext context;
-        private IDictionary<Type, object> repositories;
+        private readonly IBoardgameSimulatorDbContext context;
+        private readonly IDictionary<Type, object> repositories;
 
         public BoardgameSimulatorData(IBoardgameSimulatorDbContext context)
         {

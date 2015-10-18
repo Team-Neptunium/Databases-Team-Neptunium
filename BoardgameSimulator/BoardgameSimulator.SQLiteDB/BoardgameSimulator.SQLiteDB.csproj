@@ -68,7 +68,7 @@
     <Compile Include="IBoardgameSimulatorSqLiteData.cs" />
     <Compile Include="IBoardgameSimulatorSqLiteDbContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Repositories\BoardgameSimulatorSqLiteUnirsCostsRepository.cs" />
+    <Compile Include="Repositories\BoardgameSimulatorSqLiteUnitsCostsRepository.cs" />
     <Compile Include="Repositories\IBoardgameSimulatorSqLiteUnitsCostsRepository.cs" />
     <Compile Include="SqLiteDataSeeder.cs" />
   </ItemGroup>

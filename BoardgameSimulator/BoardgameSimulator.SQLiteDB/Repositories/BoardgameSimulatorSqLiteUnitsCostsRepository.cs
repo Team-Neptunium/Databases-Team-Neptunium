@@ -5,11 +5,11 @@
     using System.Linq.Expressions;
     using Models;
 
-    public class BoardgameSimulatorSqLiteUnirsCostsRepository : IBoardgameSimulatorSqLiteUnitsCostsRepository
+    public class BoardgameSimulatorSqLiteUnitsCostsRepository : IBoardgameSimulatorSqLiteUnitsCostsRepository
     {
         private readonly IBoardgameSimulatorSqLiteDbContext context;
 
-        public BoardgameSimulatorSqLiteUnirsCostsRepository(IBoardgameSimulatorSqLiteDbContext context)
+        public BoardgameSimulatorSqLiteUnitsCostsRepository(IBoardgameSimulatorSqLiteDbContext context)
         {
             this.context = context;
         }

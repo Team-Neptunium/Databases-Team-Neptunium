@@ -18,11 +18,11 @@
         {
             const string mongoDbName = "boardgamesimulatormongodb";
 
-            var data = new BoardgameSimulatorData(new BoardgameSimulatorDbContext());
+            // var data = new BoardgameSimulatorData(new BoardgameSimulatorDbContext());
 
-            ConnectToMongoAndSeedToMSSQL(mongoDbName, data);
+            // ConnectToMongoAndSeedToMSSQL(mongoDbName, data);
 
-            SqLiteDataSeeder.Seed();
+            // SqLiteDataSeeder.Seed();
         }
 
         private static void ConnectToMongoAndSeedToMSSQL(string mongoDbName, BoardgameSimulatorData data)
