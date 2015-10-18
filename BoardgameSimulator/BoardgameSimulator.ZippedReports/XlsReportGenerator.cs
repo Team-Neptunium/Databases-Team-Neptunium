@@ -3,6 +3,7 @@
     using System;
     using System.Collections.Generic;
     using System.IO;
+    using System.IO.Compression;
     using System.Reflection;
     using System.Runtime.InteropServices;
 
@@ -29,6 +30,7 @@
             this.workbooks = this.app.Workbooks;
             this.workbook = this.workbooks.Add(Missing.Value);
             this.worksheet = this.workbook.ActiveSheet;
+            this.worksheet.Name = "Sheet1";
 
             this.rnd = new Random();
         }
@@ -48,6 +50,28 @@
             Marshal.ReleaseComObject(this.app);
 
             GC.SuppressFinalize(this);
+        }
+
+
+        public static void GenerateArmiesInExcel2003(ushort uniqueAlignments = 50, string rootDirectory = @"C:\Temp\DatabasesTeamworkReports")
+        {
+            const string zipFilename = "ArmiesReports.zip";
+            string workingDirectory = Path.Combine(rootDirectory, "Working");
+            string zipFile = Path.Combine(rootDirectory, zipFilename);
+
+            using (var generator = new XlsReportGenerator())
+            {
+                generator.GenerateXlsAlignmentsReports(uniqueAlignments, 1, 2, 1, 2, workingDirectory);
+            }
+
+            if (File.Exists(zipFile))
+            {
+                File.Delete(zipFile);
+            }
+
+            ZipFile.CreateFromDirectory(workingDirectory, zipFile);
+
+            Directory.Delete(workingDirectory, true);
         }
 
         /// <summary>
@@ -74,7 +98,7 @@
         /// <param name="rootDirectory">
         /// The directory into which all AlignmentID-X directories will be created.
         /// </param>
-        public void GenerateXlsAlignmentsReports(
+        private void GenerateXlsAlignmentsReports(
             int alignmentCount, 
             int minReportsCountPerAlignment, 
             int maxReportsCountPerAlignment, 
@@ -91,7 +115,7 @@
 
             var usedAlignments = new List<int>();
 
-            Console.WriteLine("Generating of Xls reports into " + rootDirectory + " initiated.");
+            Console.WriteLine("Generating of Xls reports into " + rootDirectory + " initialized.");
 
             for (int i = 1; i <= alignmentCount; i++)
             {
