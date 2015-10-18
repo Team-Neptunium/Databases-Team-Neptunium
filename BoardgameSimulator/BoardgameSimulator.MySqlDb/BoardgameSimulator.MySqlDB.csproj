@@ -55,10 +55,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IBoardgameSimulatorMySqlDbContext.cs" />
+    <Compile Include="Models\ArmyVsArmyReport.cs" />
+    <Compile Include="BoardgameSimulatorMySqlDbContext.cs" />
     <Compile Include="ModelConfiguration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\BoardgameSimulatorMySqlArmyVsArmyRepository.cs" />
+    <Compile Include="Repositories\IBoardgameSimulatorMySqlArmyVsArmyRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

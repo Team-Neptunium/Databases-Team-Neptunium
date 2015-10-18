@@ -1,15 +1,41 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace BoardgameSimulator.MySqlDB
+﻿namespace BoardgameSimulator.MySqlDB
 {
+    using System;
+    using Telerik.OpenAccess;
+
     class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
+            UpdateDatabase();
+        }
+
+        private static void UpdateDatabase()
+        {
+            var context = new BoardgameSimulatorMySqlDbContext();
+
+            var schemaHandler = context.GetSchemaHandler();
+            EnsureDB(schemaHandler);
+        }
+
+        private static void EnsureDB(ISchemaHandler schemaHandler)
+        {
+            string script = null;
+
+            if (schemaHandler.DatabaseExists())
+            {
+                script = schemaHandler.CreateUpdateDDLScript(null);
+            }
+            else
+            {
+                schemaHandler.CreateDatabase();
+                script = schemaHandler.CreateDDLScript();
+            }
+
+            if (!string.IsNullOrEmpty(script))
+            {
+                schemaHandler.ExecuteDDLScript(script);
+            }
         }
     }
 }

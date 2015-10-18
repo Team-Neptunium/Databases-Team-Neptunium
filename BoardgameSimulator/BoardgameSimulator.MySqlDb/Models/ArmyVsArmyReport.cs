@@ -1,7 +1,5 @@
-﻿namespace BoardgameSimulator.Models
+﻿namespace BoardgameSimulator.MySqlDB.Models
 {
-    using System;
-
     public class ArmyVsArmyReport
     {
         public int Id { get; set; }
