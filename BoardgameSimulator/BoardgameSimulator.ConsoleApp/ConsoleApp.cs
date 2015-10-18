@@ -25,7 +25,7 @@
 
             MongoDbDataSeeder.SeedToSql(mongoConnection, data);
 
-            XlsReportGenerator.GenerateArmiesInExcel2003(20);
+            XlsReportGenerator.GenerateArmiesInExcel2003();
 
             ArmiesReportsSeeder.SeedArmies();
 

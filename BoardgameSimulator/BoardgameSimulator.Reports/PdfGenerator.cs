@@ -1,5 +1,6 @@
 ﻿namespace BoardgameSimulator.Reports
 {
+    using System;
     using System.Collections.Generic;
     using System.IO;
     using System.Linq;
@@ -24,6 +25,8 @@
         {
             using (var fs = new FileStream(Path.Combine(workingDir, "ArmiesAndPerksReport.pdf"), FileMode.Create, FileAccess.Write))
             {
+                Console.WriteLine("Generating of ArmiesAndPerksReport.pdf initialized.");
+
                 var document = new Document(PageSize.A4, 2, 2, 30, 30);
                 PdfWriter.GetInstance(document, fs);
                 document.Open();
@@ -84,6 +87,8 @@
 
                 document.Add(footer);
                 document.Close();
+
+                Console.WriteLine("Generating of pdf report completed!");
             }
         }
 
@@ -91,6 +96,8 @@
         {
             using (var fs = new FileStream(Path.Combine(workingDir, "SkillsPotentialReport.pdf"), FileMode.Create, FileAccess.Write))
             {
+                Console.WriteLine("Generating of SkillsPotentialReport.pdf initialized.");
+
                 var document = new Document(PageSize.A4, 2, 2, 30, 30);
                 PdfWriter.GetInstance(document, fs);
                 document.Open();
@@ -131,6 +138,8 @@
 
                 document.Add(footer);
                 document.Close();
+
+                Console.WriteLine("Generating of pdf report completed!");
             }
         }
         
