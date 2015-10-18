@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.31101.0
+VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BoardgameSimulator.Models", "BoardgameSimulator.Models\BoardgameSimulator.Models.csproj", "{A17D402A-284A-4204-9EB3-F5BE3DE08389}"
 EndProject
@@ -22,6 +22,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BoardgameSimulator.SQLiteDB", "BoardgameSimulator.SQLiteDB\BoardgameSimulator.SQLiteDB.csproj", "{22CD2BC6-66F9-4165-B21C-1ABFB6E09F08}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BoardgameSimulator.MySqlDB", "BoardgameSimulator.MySqlDb\BoardgameSimulator.MySqlDB.csproj", "{659145D8-2B20-4F27-AABD-04E8B3EF49C7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BoardgameSimulator.AdoNet", "BoardgameSimulator.AdoNet\BoardgameSimulator.AdoNet.csproj", "{CB754212-59C0-444C-8C4E-DB51485A4FA1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -65,6 +67,10 @@ Global
 		{659145D8-2B20-4F27-AABD-04E8B3EF49C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{659145D8-2B20-4F27-AABD-04E8B3EF49C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{659145D8-2B20-4F27-AABD-04E8B3EF49C7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CB754212-59C0-444C-8C4E-DB51485A4FA1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CB754212-59C0-444C-8C4E-DB51485A4FA1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CB754212-59C0-444C-8C4E-DB51485A4FA1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CB754212-59C0-444C-8C4E-DB51485A4FA1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
