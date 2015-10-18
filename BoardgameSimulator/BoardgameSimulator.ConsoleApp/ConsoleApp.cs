@@ -4,6 +4,7 @@
     using Data;
     using Models;
     using MongoDB;
+    using MySqlDB;
     using Reports;
     using SQLiteDB;
     using XlsReader;
@@ -13,9 +14,10 @@
     {
         public static void Main()
         {
-            /*
             var data = new BoardgameSimulatorData(new BoardgameSimulatorDbContext());
             
+            /* 
+            var mysql = new BoardgameSimulatorMySqlData();           
             var mongoConnection = new MongoConnection();
             mongoConnection.Connect();
 
@@ -32,6 +34,8 @@
             MongoDbDataSeeder.SeedBattleLogsToSql(mongoConnection, data);
 
             SqLiteDataSeeder.Seed();
+            
+            JsonAndMySqlSeeder.Seed(mysql, data);
             */
         }
     }

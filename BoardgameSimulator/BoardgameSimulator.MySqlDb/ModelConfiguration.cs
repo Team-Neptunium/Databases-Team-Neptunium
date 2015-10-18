@@ -2,6 +2,7 @@
 {
     using System.Collections.Generic;
     using Models;
+    using Telerik.OpenAccess.Metadata;
     using Telerik.OpenAccess.Metadata.Fluent;
 
     public class ModelConfiguration : FluentMetadataSource
@@ -20,10 +21,11 @@
                 UnitQuantity1 = report.UnitQuantity1,
                 Army2Id = report.Army2Id,
                 UnitName2 = report.UnitName2,
-                UnitQuantity2 = report.UnitQuantity2
+                UnitQuantity2 = report.UnitQuantity2,
+                Date = report.Date
             }).ToTable("ArmyVsArmyReport");
 
-            armyvsarmyMapping.HasProperty(c => c.Id).IsIdentity();
+            armyvsarmyMapping.HasProperty(c => c.Id).IsIdentity(KeyGenerator.Autoinc);
 
             configurations.Add(armyvsarmyMapping);
 
