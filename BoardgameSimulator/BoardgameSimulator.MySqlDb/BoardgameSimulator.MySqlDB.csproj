@@ -55,6 +55,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BoardgameSimulatorMySqlData.cs" />
+    <Compile Include="IBoardgameSimulatorMySqlData.cs" />
     <Compile Include="Models\ArmyVsArmyReport.cs" />
     <Compile Include="BoardgameSimulatorMySqlDbContext.cs" />
     <Compile Include="ModelConfiguration.cs" />
