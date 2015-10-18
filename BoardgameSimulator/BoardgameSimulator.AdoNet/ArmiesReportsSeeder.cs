@@ -1,4 +1,4 @@
-﻿namespace BoardgameSimulator.AdoNet
+﻿namespace BoardgameSimulator.XlsReader
 {
     using System;
     using System.Data;
@@ -32,14 +32,25 @@
 
         public string TableName { get; set; }
 
-        public void SeedFromZip(string zipFilepath)
+        public static void SeedArmies(string zipFilepath = @"C:\Temp\DatabasesTeamworkReports\ArmiesReports.zip")
         {
+            var seeder = new ArmiesReportsSeeder();
+
+            Console.WriteLine("Seeding armies from zip initialized.");
+
+            if (Directory.Exists(ArmiesReportsPath))
+            {
+                Directory.Delete(ArmiesReportsPath, true);
+            }
+
             ZipFile.ExtractToDirectory(zipFilepath, ArmiesReportsPath);
+            Console.WriteLine("Extracting from zip completed!");
 
             string armiesReportsFullPath = Path.GetFullPath(ArmiesReportsPath);
             foreach (var dir in Directory.GetDirectories(armiesReportsFullPath))
             {
-                this.SeedReportsFromDirectory(dir);
+                seeder.SeedReportsFromDirectory(dir);
+                Console.WriteLine("Army information seeded into SQL...");
             }
 
             Directory.Delete(armiesReportsFullPath, true);
