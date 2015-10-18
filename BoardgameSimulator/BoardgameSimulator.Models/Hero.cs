@@ -21,5 +21,5 @@
 
         [ForeignKey("SkillId")]
         public virtual Skill Skill { get; set; }
-        }
+    }
 }

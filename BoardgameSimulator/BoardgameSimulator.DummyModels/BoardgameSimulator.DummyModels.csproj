@@ -50,6 +50,8 @@
     <Compile Include="Heroes\DummyHero.cs" />
     <Compile Include="Heroes\DummyHeroes.cs" />
     <Compile Include="IDummyEntry.cs" />
+    <Compile Include="Items\DummyItem.cs" />
+    <Compile Include="Items\DummyItems.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Skills\DummySkill.cs" />
     <Compile Include="Skills\DummySkills.cs" />
