@@ -7,6 +7,7 @@ namespace BoardgameSimulator.MongoDB
     using BoardgameSimulator.Data;
     using Data;
     using DummyModels.AlignmentPerks;
+    using DummyModels.BattleLogs;
     using DummyModels.Heroes;
     using DummyModels.Skills;
     using DummyModels.Units;
@@ -36,16 +37,20 @@ namespace BoardgameSimulator.MongoDB
             Console.WriteLine(DropCollectionMessage, "perks");
             database.DropCollection("heroes");
             Console.WriteLine(DropCollectionMessage, "heroes");
+            database.DropCollection("battlelogs");
+            Console.WriteLine(DropCollectionMessage, "battlelogs");
 
             MongoCollection<DummySkill> skills = database.GetCollection<DummySkill>("skills");
             MongoCollection<DummyUnit> units = database.GetCollection<DummyUnit>("units");
             MongoCollection<DummyAlignmentPerk> perks = database.GetCollection<DummyAlignmentPerk>("perks");
             MongoCollection<DummyHero> heroes = database.GetCollection<DummyHero>("heroes");
+            MongoCollection<DummyBattleLog> battleLogs = database.GetCollection<DummyBattleLog>("battlelogs");
 
             var skillsSeed = DummySkills.GenerateSkillsList();
-            var unitsSeed = Units.GenerateUnitsList(200, 1234, 5, 20);
+            var unitsSeed = DummyUnits.GenerateUnitsList(200, 1234, 5, 20);
             var perksSeed = DummyAlignmentPerks.GenerateAlignmentsList(200);
             var heroesSeed = DummyHeroes.GenerateHeroesList(200);
+            var battleLogsSeed = DummyBattleLogs.GenerateBattleLogsList(120);
 
             var d = skillsSeed.Count;
 
@@ -60,6 +65,9 @@ namespace BoardgameSimulator.MongoDB
             d = heroesSeed.Count;
             heroes.InsertBatch(heroesSeed);
             Console.WriteLine(SeedMessage, d, "Hero");
+            d = battleLogsSeed.Count;
+            battleLogs.InsertBatch(battleLogsSeed);
+            Console.WriteLine(SeedMessage, d, "BattleLog");
 
             Console.WriteLine("Seeding of MongoDb completed!");
         }
@@ -86,14 +94,34 @@ namespace BoardgameSimulator.MongoDB
             var perksFromMongo = perks.GetAllDataFromCollection();
             var heroesFromMongo = heroes.GetAllDataFromCollection();
 
-            SeedDataFromMongoDb(data, skillsFromMongo, unitsFromMongo, perksFromMongo, heroesFromMongo);
+            SeedDataFromMongoDb(data, skillsFromMongo, unitsFromMongo, perksFromMongo, heroesFromMongo, null);
+        }
+
+        public static void SeedBattleLogsToSql(MongoConnection mongoConnection, BoardgameSimulatorData data)
+        {
+            if (mongoConnection.Database == null)
+            {
+                mongoConnection.Connect();
+            }
+
+            if (data == null)
+            {
+                return;
+            }
+
+            var logs = new GenericData<DummyBattleLog>(mongoConnection.Database, "battlelogs");
+
+            var logsFromMongo = logs.GetAllDataFromCollection();
+
+            SeedDataFromMongoDb(data, null, null, null, null, logsFromMongo);
         }
 
         private static void SeedDataFromMongoDb(BoardgameSimulatorData data,
             IEnumerable<DummySkill> skillsFromMongo,
             IEnumerable<DummyUnit> unitsFromMongo,
             IEnumerable<DummyAlignmentPerk> perksFromMongo,
-            IEnumerable<DummyHero> heroesFromMongo)
+            IEnumerable<DummyHero> heroesFromMongo,
+            IEnumerable<DummyBattleLog> battleLogsFromMongo)
         {
             Console.WriteLine("Seeeding data from MongoDb into SQL initialized.");
 
@@ -123,6 +151,13 @@ namespace BoardgameSimulator.MongoDB
                 SeedHeroes(data, heroesFromMongo);
                 data.SaveChanges();
                 Console.WriteLine("Hero entries successfully seeded into SQL");
+            }
+
+            if (battleLogsFromMongo != null)
+            {
+                SeedBattleLogs(data, battleLogsFromMongo);
+                data.SaveChanges();
+                Console.WriteLine("BattleLog entries successfully seeded into SQL");
             }
 
             Console.WriteLine("Seeeding data from MongoDb into SQL completed.");
@@ -179,6 +214,20 @@ namespace BoardgameSimulator.MongoDB
                     Name = hero.Name,
                     UnitId = hero.UnitId,
                     SkillId = hero.SkillId,
+                });
+            }
+        }
+
+        private static void SeedBattleLogs(BoardgameSimulatorData data,
+            IEnumerable<DummyBattleLog> logs)
+        {
+            foreach (var log in logs)
+            {
+                data.BattleLogs.Add(new BattleLog
+                {
+                    Army1Id = log.Army1Id,
+                    Army2Id = log.Army2Id,
+                    Date = log.Date
                 });
             }
         }

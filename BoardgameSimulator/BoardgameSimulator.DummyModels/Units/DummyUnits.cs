@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace BoardgameSimulator.DummyModels.Units
 {
-    public static class Units
+    public static class DummyUnits
     {
         #region unit prefixes
         private static readonly IList<string> prefixes = new List<string> { 

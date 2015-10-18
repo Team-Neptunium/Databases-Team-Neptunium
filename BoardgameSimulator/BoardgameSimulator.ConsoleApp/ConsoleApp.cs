@@ -11,11 +11,11 @@
 
     public class ConsoleApp
     {
-        public static void Main()   
+        public static void Main()
         {
-            var data = new BoardgameSimulatorData(new BoardgameSimulatorDbContext());
-
             /*
+            var data = new BoardgameSimulatorData(new BoardgameSimulatorDbContext());
+            
             var mongoConnection = new MongoConnection();
             mongoConnection.Connect();
 
@@ -28,6 +28,8 @@
             XlsReportGenerator.GenerateArmiesInExcel2003();
 
             ArmiesReportsSeeder.SeedArmies();
+
+            MongoDbDataSeeder.SeedBattleLogsToSql(mongoConnection, data);
 
             SqLiteDataSeeder.Seed();
             */

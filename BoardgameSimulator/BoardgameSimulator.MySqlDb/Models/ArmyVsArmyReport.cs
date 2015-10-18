@@ -1,5 +1,7 @@
 ﻿namespace BoardgameSimulator.MySqlDB.Models
 {
+    using System;
+
     public class ArmyVsArmyReport
     {
         public int Id { get; set; }
@@ -15,5 +17,7 @@
         public string UnitName2 { get; set; }
 
         public int UnitQuantity2 { get; set; }
+
+        public DateTime Date { get; set; }
     }
 }

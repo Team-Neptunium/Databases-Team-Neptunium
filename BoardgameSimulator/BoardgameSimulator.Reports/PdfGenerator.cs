@@ -39,7 +39,9 @@
                     UnitDamage = a.Unit.Damage,
                     UnitAttackRate = a.Unit.AttackRate,
                     Quantity = a.UnitQuantity
-                }).GroupBy(x => x.AlignmentPerk).ToList();
+                })
+                .GroupBy(x => x.AlignmentPerk)
+                .ToList();
 
                 var armiesgroupedByPerk = groups;
 

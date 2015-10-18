@@ -47,6 +47,8 @@
   <ItemGroup>
     <Compile Include="AlignmentPerks\DummyAlignmentPerk.cs" />
     <Compile Include="AlignmentPerks\DummyAlignmentPerks.cs" />
+    <Compile Include="BattleLogs\DummyBattleLog.cs" />
+    <Compile Include="BattleLogs\DummyBattleLogs.cs" />
     <Compile Include="Heroes\DummyHero.cs" />
     <Compile Include="Heroes\DummyHeroes.cs" />
     <Compile Include="IDummyEntry.cs" />
