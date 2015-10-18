@@ -1,142 +1,31 @@
 ﻿namespace BoardgameSimulator.ConsoleApp
 {
-    using System;
-    using System.Collections.Generic;
     using Data;
-    using DummyModels.AlignmentPerks;
-    using DummyModels.Heroes;
-    using DummyModels.Skills;
-    using DummyModels.Units;
-    using Models;
     using MongoDB;
-    using MongoDB.Data;
     using SQLiteDB;
+    using XlsReader;
+    using ZippedReports;
 
     public class ConsoleApp
     {
         public static void Main()   
         {
-            const string mongoDbName = "boardgamesimulatormongodb";
+            var data = new BoardgameSimulatorData(new BoardgameSimulatorDbContext());
 
-            // var data = new BoardgameSimulatorData(new BoardgameSimulatorDbContext());
-
-            // ConnectToMongoAndSeedToMSSQL(mongoDbName, data);
-
-            // SqLiteDataSeeder.Seed();
-        }
-
-        private static void ConnectToMongoAndSeedToMSSQL(string mongoDbName, BoardgameSimulatorData data)
-        {
             var mongoConnection = new MongoConnection();
+            mongoConnection.Connect();
 
-            mongoConnection.Connect(mongoDbName);
+            // Comment this line before starting the app, otherwise it will crash,
+            // telling you that you have no rights to write into the MongoLab Db
+            MongoDbDataSeeder.SeedToMongoDb(mongoConnection);
 
-            var skills = new GenericData<DummySkill>(mongoConnection.Database, "skills");
-            var units = new GenericData<DummyUnit>(mongoConnection.Database, "units");
-            var perks = new GenericData<DummyAlignmentPerk>(mongoConnection.Database, "perks");
-            var heroes = new GenericData<DummyHero>(mongoConnection.Database, "heroes");
+            MongoDbDataSeeder.SeedToSql(mongoConnection, data);
 
-            var skillsFromMongo = skills.GetAllDataFromCollection();
-            var unitsFromMongo = units.GetAllDataFromCollection();
-            var perksFromMongo = perks.GetAllDataFromCollection();
-            var heroesFromMongo = heroes.GetAllDataFromCollection();
+            XlsReportGenerator.GenerateArmiesInExcel2003(20);
 
-            SeedDataFromMongoDb(data, skillsFromMongo, unitsFromMongo, perksFromMongo, heroesFromMongo);
-        }
+            ArmiesReportsSeeder.SeedArmies();
 
-        private static void SeedDataFromMongoDb(BoardgameSimulatorData data,
-            IEnumerable<DummySkill> skillsFromMongo,
-            IEnumerable<DummyUnit> unitsFromMongo,
-            IEnumerable<DummyAlignmentPerk> perksFromMongo,
-            IEnumerable<DummyHero> heroesFromMongo)
-        {
-            if (data == null)
-            {
-                return;
-            }
-
-            if (skillsFromMongo != null)
-            {
-                SeedSkills(data, skillsFromMongo);
-                data.SaveChanges();
-                Console.WriteLine("Skill entries successfully seeded into SQL");
-            }
-
-            if (unitsFromMongo != null)
-            {
-                SeedUnits(data, unitsFromMongo);
-                data.SaveChanges();
-                Console.WriteLine("Unit entries successfully seeded into SQL");
-            }
-
-            if (perksFromMongo != null)
-            {
-                SeedPerks(data, perksFromMongo);
-                data.SaveChanges();
-                Console.WriteLine("Perk entries successfully seeded into SQL");
-            }
-
-            if (heroesFromMongo != null)
-            {
-                SeedHeroes(data, heroesFromMongo);
-                data.SaveChanges();
-                Console.WriteLine("Hero entries successfully seeded into SQL");
-            }
-        }
-
-        private static void SeedSkills(BoardgameSimulatorData data, IEnumerable<DummySkill> skills)
-        {
-            foreach (var skill in skills)
-            {
-                data.Skills.Add(new Skill
-                {
-                    Name = skill.Name,
-                    Cooldown = skill.Cooldown,
-                    Damage = skill.Damage
-                });
-            }
-        }
-
-        private static void SeedUnits(BoardgameSimulatorData data, IEnumerable<DummyUnit> units)
-        {
-            foreach (var unit in units)
-            {
-                data.Units.Add(new Unit
-                {
-                    Name = unit.Name,
-                    AttackType = (AttackType)unit.AttackType,
-                    Damage = unit.Damage,
-                    AttackRate = unit.AttackRate,
-                    Health = unit.Health
-                });
-            }
-        }
-
-        private static void SeedPerks(BoardgameSimulatorData data, IEnumerable<DummyAlignmentPerk> perks)
-        {
-            foreach (var perk in perks)
-            {
-                data.AlignmentPerks.Add(new AlignmentPerk
-                {
-                    Name = perk.Name,
-                    Type = perk.Type,
-                    DamageMultiplier = perk.DamageModifier,
-                    HealthMultiplier = perk.HealthModifier
-                });
-            }
-        }
-
-        private static void SeedHeroes(BoardgameSimulatorData data, IEnumerable<DummyHero> heroes)
-        {
-            foreach (var hero in heroes)
-            {
-                data.Heroes.Add(new Hero
-                {
-                    Name = hero.Name,
-                    UnitId = hero.UnitId,
-                    SkillId = hero.SkillId,
-                });
-            }
+            SqLiteDataSeeder.Seed();
         }
     }
 }

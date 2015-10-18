@@ -11,8 +11,10 @@ namespace BoardgameSimulator.MongoDB
 
         public MongoDatabase Database { get; private set; }
 
-        public void Connect(string dbName)
+        public void Connect(string dbName = "boardgamesimulatormongodb")
         {
+            Console.WriteLine("Attempting to connect to MongoDb.");
+
             Console.Write("Enter your {0} username: ", dbName);
             var uname = Console.ReadLine().Trim();
 

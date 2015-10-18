@@ -69,14 +69,6 @@
             }
         }
 
-        public IGenericRepository<BattleLog> BattleLogs
-        {
-            get
-            {
-                return this.GetRepository<BattleLog>();
-            }
-        }
-
         public void SaveChanges()
         {
             this.context.SaveChanges();

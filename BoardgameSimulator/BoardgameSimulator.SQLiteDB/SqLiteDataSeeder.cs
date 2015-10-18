@@ -24,9 +24,11 @@
 
             var unitNames = sqldata.Units.All().Select(u => u.Name).ToList();
 
+            Console.WriteLine("Seeding data into SqLite initialized.");
+
             foreach (var unit in unitNames)
             {
-                var randomNumber = random.Next(150, 3500);
+                var randomNumber = random.Next(150, 3501);
 
                 data.UnitsCosts.Add(new UnitCost
                 {

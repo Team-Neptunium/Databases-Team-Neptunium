@@ -86,6 +86,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\BoardgameSimulator.AdoNet\BoardgameSimulator.XlsReader.csproj">
+      <Project>{cb754212-59c0-444c-8c4e-db51485a4fa1}</Project>
+      <Name>BoardgameSimulator.XlsReader</Name>
+    </ProjectReference>
     <ProjectReference Include="..\BoardgameSimulator.Data\BoardgameSimulator.Data.csproj">
       <Project>{038ed1b6-76b4-44e5-bdb1-8e1e58f87757}</Project>
       <Name>BoardgameSimulator.Data</Name>
@@ -113,6 +117,10 @@
     <ProjectReference Include="..\BoardgameSimulator.SQLiteDB\BoardgameSimulator.SQLiteDB.csproj">
       <Project>{22cd2bc6-66f9-4165-b21c-1abfb6e09f08}</Project>
       <Name>BoardgameSimulator.SQLiteDB</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BoardgameSimulator.ZippedReports\BoardgameSimulator.ZippedReports.csproj">
+      <Project>{461b063f-342c-42dd-835b-b55d4d9985b4}</Project>
+      <Name>BoardgameSimulator.ZippedReports</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
