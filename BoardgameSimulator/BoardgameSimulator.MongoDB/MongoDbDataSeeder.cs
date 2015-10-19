@@ -50,7 +50,7 @@ namespace BoardgameSimulator.MongoDB
             var unitsSeed = DummyUnits.GenerateUnitsList(200, 1234, 5, 20);
             var perksSeed = DummyAlignmentPerks.GenerateAlignmentsList(200);
             var heroesSeed = DummyHeroes.GenerateHeroesList(200);
-            var battleLogsSeed = DummyBattleLogs.GenerateBattleLogsList(120);
+            var battleLogsSeed = DummyBattleLogs.GenerateBattleLogsList();
 
             var d = skillsSeed.Count;
 

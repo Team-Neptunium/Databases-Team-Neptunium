@@ -13,8 +13,8 @@
 
             for (int i = 0; i < amount; i++)
             {
-                var army1 = rng.Next(1, amount);
-                var army2 = rng.Next(1, amount * 123) % amount;
+                var army1 = rng.Next(11231, int.MaxValue) % (amount-15) + 1;
+                var army2 = rng.Next(15236, amount * 12321) % (amount-15) + 1;
 
                 if (army1 == army2)
                 {
