@@ -4,10 +4,10 @@
     using System.Collections.Generic;
     using System.Xml;
 
-    using DummyModels.Items;
     using Data;
-    using Models;
+    using DummyModels.Items;
     using DummyModels.Heroes;
+    using Models;
 
     #region Xml example
     //<?xml version="1.0" encoding="utf-8" ?>
@@ -90,6 +90,7 @@
     {
         private BoardgameSimulatorData data;
 
+        // TODO: import to MongoDb too
         public XmlImporter(string filePath, BoardgameSimulatorData data)
         {
             this.FilePath = filePath;

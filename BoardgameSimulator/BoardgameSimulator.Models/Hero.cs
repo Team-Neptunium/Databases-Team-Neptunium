@@ -1,10 +1,18 @@
 ﻿namespace BoardgameSimulator.Models
 {
+    using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
 
     public class Hero
     {
+        private ICollection<Item> items;
+
+        public Hero()
+        {
+            items = new HashSet<Item>();
+        }
+
         [Key]
         public int Id { get; set; }
 
@@ -21,5 +29,11 @@
 
         [ForeignKey("SkillId")]
         public virtual Skill Skill { get; set; }
+
+        public virtual ICollection<Item> Items
+        {
+            get { return this.items; }
+            set { this.items = value; }
+        }
     }
 }
