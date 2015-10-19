@@ -7,10 +7,11 @@
     using System.Xml;
 
     using Models;
+    using Telerik.OpenAccess;
 
     public class XmlGenerator
     {
-        private const string workingDir = ".../.../.../Reports/Xml";
+        private string workingDir = ".../.../.../Reports/Xml";
 
         public XmlGenerator()
         {
@@ -23,8 +24,11 @@
         public void CreateHeroesReport(IQueryable<Hero> heroesData)
         {
             Encoding encoding = Encoding.GetEncoding("windows-1251");
+
             using (XmlTextWriter writer = new XmlTextWriter(workingDir + "/Heroes.xml", encoding))
             {
+                Console.WriteLine("Writing of Heroes.xml initialized.");
+
                 writer.Formatting = Formatting.Indented;
                 writer.IndentChar = ' ';
                 writer.Indentation = 2;
@@ -32,7 +36,7 @@
                 writer.WriteStartDocument();
                 writer.WriteStartElement("heroes");
 
-                var heroes = heroesData.ToList();
+                var heroes = heroesData.Include(x => x.Items).ToList();
                 foreach (var hero in heroes)
                 {
                     this.WriteHero(writer, hero);
@@ -49,8 +53,8 @@
 
             writer.WriteAttributeString("id", hero.Id.ToString());
             writer.WriteElementString("name", hero.Name);
-            writer.WriteElementString("unitId", hero.UnitId.ToString());
-            writer.WriteElementString("skillId", hero.SkillId.ToString());
+            writer.WriteElementString("unitType", hero.Unit.ToString());
+            writer.WriteElementString("skill", hero.Skill.ToString());
             writer.WriteStartElement("items");
 
             foreach (var item in hero.Items)

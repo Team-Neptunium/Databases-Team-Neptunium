@@ -7,8 +7,8 @@
     <ProjectGuid>{EE026F93-ABC8-40EF-A864-1E4858F77DB3}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>BoardgameSimulator.Importer</RootNamespace>
-    <AssemblyName>BoardgameSimulator.Importer</AssemblyName>
+    <RootNamespace>BoardgameSimulator.XmlImporter</RootNamespace>
+    <AssemblyName>BoardgameSimulator.XmlImporter</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />

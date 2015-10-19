@@ -25,7 +25,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BoardgameSimulator.MySqlDB"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BoardgameSimulator.XlsReader", "BoardgameSimulator.AdoNet\BoardgameSimulator.XlsReader.csproj", "{CB754212-59C0-444C-8C4E-DB51485A4FA1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BoardgameSimulator.Importer", "BoardgameSimulator.Importer\BoardgameSimulator.Importer.csproj", "{EE026F93-ABC8-40EF-A864-1E4858F77DB3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BoardgameSimulator.XmlImporter", "BoardgameSimulator.Importer\BoardgameSimulator.XmlImporter.csproj", "{EE026F93-ABC8-40EF-A864-1E4858F77DB3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

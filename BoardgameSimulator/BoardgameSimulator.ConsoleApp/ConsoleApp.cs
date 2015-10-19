@@ -10,7 +10,7 @@
     using SQLiteDB;
     using XlsReader;
     using ZippedReports;
-    using Importer;
+    using XmlImporter;
 
     public class ConsoleApp
     {
@@ -53,8 +53,8 @@
             */
 
             XmlImporter.ImportToSqlAndMongo(data, mongoConnection);
-             
-            //new XmlGenerator.CreateHeroesReport(data.Heroes.All());
+
+            new XmlGenerator().CreateHeroesReport(data.Heroes.All());
         }
     }
 }

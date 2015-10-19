@@ -98,9 +98,9 @@
       <Project>{f6046643-40cb-49dc-8acb-58a8d4ce6bca}</Project>
       <Name>BoardgameSimulator.DummyModels</Name>
     </ProjectReference>
-    <ProjectReference Include="..\BoardgameSimulator.Importer\BoardgameSimulator.Importer.csproj">
+    <ProjectReference Include="..\BoardgameSimulator.Importer\BoardgameSimulator.XmlImporter.csproj">
       <Project>{ee026f93-abc8-40ef-a864-1e4858f77db3}</Project>
-      <Name>BoardgameSimulator.Importer</Name>
+      <Name>BoardgameSimulator.XmlImporter</Name>
     </ProjectReference>
     <ProjectReference Include="..\BoardgameSimulator.Models\BoardgameSimulator.Models.csproj">
       <Project>{a17d402a-284a-4204-9eb3-f5be3de08389}</Project>

@@ -1,4 +1,4 @@
-﻿namespace BoardgameSimulator.Importer
+﻿namespace BoardgameSimulator.XmlImporter
 {
     using System;
     using System.Collections.Generic;
