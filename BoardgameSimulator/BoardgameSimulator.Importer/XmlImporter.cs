@@ -11,6 +11,7 @@
     using DummyModels.Heroes;
     using Models;
     using MongoDB;
+    using MongoDB.Data;
 
     public class XmlImporter
     {
@@ -47,23 +48,23 @@
         {
             mongoData.Database.DropCollection("items");
 
-            var itemsCollection = mongoData.Database.GetCollection<DummyItem>("items");
+            var itemsCollection = new GenericData<DummyItem>(mongoData.Database, "items");
 
-            itemsCollection.InsertBatch(items);
+            itemsCollection.Collection.InsertBatch(items);
         }
 
         private static void AddHeroesToMongo(IEnumerable<DummyHero> heroes, MongoConnection mongoData)
         {
-            var heroesCollection = mongoData.Database.GetCollection<DummyHero>("heroes");
+            var heroesCollection = new GenericData<DummyHero>(mongoData.Database, "heroes");
 
-            heroesCollection.InsertBatch(heroes);
+            heroesCollection.Collection.InsertBatch(heroes);
         }
 
         private static void AddHeroesToSql(IEnumerable<DummyHero> heroes, BoardgameSimulatorData data)
         {
             foreach (var hero in heroes)
             {
-                data.Heroes.Add(new Hero()
+                data.Heroes.Add(new Hero
                 {
                     Name = hero.Name,
                     UnitId = hero.UnitId,
@@ -78,7 +79,7 @@
         {
             foreach (var item in items)
             {
-                data.Items.Add(new Item()
+                data.Items.Add(new Item
                 {
                     Name = item.Name,
                     DamageBonus = item.DamageBonus,

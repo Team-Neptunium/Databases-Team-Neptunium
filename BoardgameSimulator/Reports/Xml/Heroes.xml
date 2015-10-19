@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="windows-1251"?>
 <heroes>
   <hero id="1">
-    <name>Magister Xiar The Twisted</name>
-    <unitId>137</unitId>
-    <skillId>45</skillId>
+    <name>Justiciar Grule The Vile</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
     <items>
       <item name="Pile of Soiled Essence">
         <dmgBonus>40</dmgBonus>
@@ -16,9 +16,9 @@
     </items>
   </hero>
   <hero id="2">
-    <name>Crusader Gwen The Maligned</name>
-    <unitId>133</unitId>
-    <skillId>66</skillId>
+    <name>Demolitionist Mallyx Bloodburner</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
     <items>
       <item name="Large Fang">
         <dmgBonus>100</dmgBonus>
@@ -27,9 +27,9 @@
     </items>
   </hero>
   <hero id="3">
-    <name>Overseer Sierra Willcrusher</name>
-    <unitId>77</unitId>
-    <skillId>66</skillId>
+    <name>Exemplar Tybalt The Violent</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
     <items>
       <item name="Smooth Scale">
         <dmgBonus>75</dmgBonus>
@@ -46,9 +46,9 @@
     </items>
   </hero>
   <hero id="4">
-    <name>Ambassador Bane The Violent</name>
-    <unitId>175</unitId>
-    <skillId>107</skillId>
+    <name>Justiciar Saevio The Maligned</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
     <items>
       <item name="Tiny Venom Sac">
         <dmgBonus>199</dmgBonus>
@@ -69,1197 +69,1335 @@
     </items>
   </hero>
   <hero id="5">
-    <name>Ambassador Lady The Swift</name>
-    <unitId>144</unitId>
-    <skillId>76</skillId>
+    <name>Justiciar Apatia Filthpit</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
     <items />
   </hero>
   <hero id="6">
-    <name>Captain Gwen Proelium</name>
-    <unitId>86</unitId>
-    <skillId>68</skillId>
-    <items />
+    <name>Drinkmaster Ghost Stormcaller</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
+    <items>
+      <item name="Mystic Coin">
+        <dmgBonus>75</dmgBonus>
+        <hpBonus>422</hpBonus>
+      </item>
+      <item name="Armored Scale">
+        <dmgBonus>175</dmgBonus>
+        <hpBonus>412</hpBonus>
+      </item>
+      <item name="Glob of Ectoplasm">
+        <dmgBonus>115</dmgBonus>
+        <hpBonus>75</hpBonus>
+      </item>
+    </items>
   </hero>
   <hero id="7">
-    <name>Champion Lady Fierceshot</name>
-    <unitId>76</unitId>
-    <skillId>95</skillId>
+    <name>Siegemaster Sierra The Violent</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
     <items />
   </hero>
   <hero id="8">
-    <name>Demolitionist Scythe Fierceshot</name>
-    <unitId>194</unitId>
-    <skillId>43</skillId>
+    <name>Minister Zhed Shadowhoof The Noble</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
     <items />
   </hero>
   <hero id="9">
-    <name>Drinkmaster Apocrypha The Sly</name>
-    <unitId>214</unitId>
-    <skillId>61</skillId>
-    <items />
+    <name>Deadly Ghost Filthpit</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
+    <items>
+      <item name="Intricate Warhorn">
+        <dmgBonus>99</dmgBonus>
+        <hpBonus>150</hpBonus>
+      </item>
+      <item name="Double-barrelled Shotgun">
+        <dmgBonus>200</dmgBonus>
+        <hpBonus>15</hpBonus>
+      </item>
+      <item name="Gwen's Flute">
+        <dmgBonus>750</dmgBonus>
+        <hpBonus>111</hpBonus>
+      </item>
+      <item name="Sharp Trident">
+        <dmgBonus>220</dmgBonus>
+        <hpBonus>20</hpBonus>
+      </item>
+    </items>
   </hero>
   <hero id="10">
-    <name>Lieutenant Apatia Filthpit</name>
-    <unitId>201</unitId>
-    <skillId>29</skillId>
+    <name>Captain Margrid The Savage</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
     <items />
   </hero>
   <hero id="11">
-    <name>Admiral Sansha The Cursed</name>
-    <unitId>213</unitId>
-    <skillId>87</skillId>
+    <name>Fragile Scylla Willcrusher</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
     <items />
   </hero>
   <hero id="12">
-    <name>Siegemaster Grule The Twisted</name>
-    <unitId>156</unitId>
-    <skillId>51</skillId>
-    <items />
+    <name>Dangerous Abaddon The Cursed</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
+    <items>
+      <item name="Tiny Venom Sac">
+        <dmgBonus>199</dmgBonus>
+        <hpBonus>51</hpBonus>
+      </item>
+      <item name="Powerful Axe">
+        <dmgBonus>120</dmgBonus>
+        <hpBonus>120</hpBonus>
+      </item>
+      <item name="Golem Skull">
+        <dmgBonus>99</dmgBonus>
+        <hpBonus>55</hpBonus>
+      </item>
+    </items>
   </hero>
   <hero id="13">
-    <name>Exemplar Sansha Bloodburner</name>
-    <unitId>153</unitId>
-    <skillId>107</skillId>
+    <name>Confessor Sacrio Filthpit</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
     <items />
   </hero>
   <hero id="14">
-    <name>Champion Wynne Bloodburner</name>
-    <unitId>173</unitId>
-    <skillId>58</skillId>
+    <name>Tiny Ventari The Gifted</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
     <items />
   </hero>
   <hero id="15">
-    <name>Champion Ghost The Savage</name>
-    <unitId>207</unitId>
-    <skillId>97</skillId>
+    <name>Admiral Sacrio The Cursed</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
     <items />
   </hero>
   <hero id="16">
-    <name>Exemplar Rhendak The Gifted</name>
-    <unitId>97</unitId>
-    <skillId>104</skillId>
+    <name>Demolitionist Tahlkora The Damned</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
     <items />
   </hero>
   <hero id="17">
-    <name>Confessor Nizoon Filthpit</name>
-    <unitId>156</unitId>
-    <skillId>97</skillId>
-    <items />
+    <name>Ambassador Tybalt The Unforgiving</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
+    <items>
+      <item name="Amethyst Lump">
+        <dmgBonus>15</dmgBonus>
+        <hpBonus>107</hpBonus>
+      </item>
+      <item name="Onyx Sliver">
+        <dmgBonus>42</dmgBonus>
+        <hpBonus>91</hpBonus>
+      </item>
+    </items>
   </hero>
   <hero id="18">
-    <name>Scholar Gwen Stormcaller</name>
-    <unitId>162</unitId>
-    <skillId>59</skillId>
+    <name>Veteran Inquisitor Faustus The Unforgiving</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
     <items />
   </hero>
   <hero id="19">
-    <name>Exemplar Ventari Stormcaller</name>
-    <unitId>187</unitId>
-    <skillId>33</skillId>
+    <name>Resistant Nicci The Traveler</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
     <items />
   </hero>
   <hero id="20">
-    <name>Crusader Apocrypha The Vile</name>
-    <unitId>2</unitId>
-    <skillId>18</skillId>
+    <name>Heavy Jansen The Quickened</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
     <items />
   </hero>
   <hero id="21">
-    <name>Magister Apocrypha The Fiend</name>
-    <unitId>80</unitId>
-    <skillId>61</skillId>
-    <items />
+    <name>Scholar Jansen The Gifted</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
+    <items>
+      <item name="Spiritwood Plank">
+        <dmgBonus>130</dmgBonus>
+        <hpBonus>130</hpBonus>
+      </item>
+    </items>
   </hero>
   <hero id="22">
-    <name>Wealthy Fade The Savage</name>
-    <unitId>201</unitId>
-    <skillId>32</skillId>
+    <name>Wealthy Ghost The Zealous</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
     <items />
   </hero>
   <hero id="23">
-    <name>Overseer Tahlkora The Vile</name>
-    <unitId>125</unitId>
-    <skillId>89</skillId>
+    <name>Scholar Rhinart Bloodburner</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
     <items />
   </hero>
   <hero id="24">
-    <name>Deadly Gandalf The Lazy</name>
-    <unitId>120</unitId>
-    <skillId>59</skillId>
+    <name>Tiny Timok Filthpit</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
     <items />
   </hero>
   <hero id="25">
-    <name>Deadly Kanaxai Breakneck</name>
-    <unitId>126</unitId>
-    <skillId>70</skillId>
+    <name>General Abaddon Filthpit</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
     <items />
   </hero>
   <hero id="26">
-    <name>Demolitionist Arachni The Noble</name>
-    <unitId>135</unitId>
-    <skillId>18</skillId>
+    <name>Siegemaster Sierra The Fiend</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
     <items />
   </hero>
   <hero id="27">
-    <name>Veteran Inquisitor Kahlan The Lazy</name>
-    <unitId>67</unitId>
-    <skillId>31</skillId>
+    <name>Siegemaster Kahlan The Mangler</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
     <items />
   </hero>
   <hero id="28">
-    <name>Confessor Rhinart The Fiend</name>
-    <unitId>71</unitId>
-    <skillId>23</skillId>
+    <name>Champion Urgoz The Quickened</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
     <items />
   </hero>
   <hero id="29">
-    <name>Champion Rahl The Noble</name>
-    <unitId>97</unitId>
-    <skillId>47</skillId>
+    <name>Initiate Gandalf Bloodburner</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
     <items />
   </hero>
   <hero id="30">
-    <name>Ambassador Sierra The Heroic</name>
-    <unitId>142</unitId>
-    <skillId>68</skillId>
+    <name>Dangerous Wynne The Swift</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
     <items />
   </hero>
   <hero id="31">
-    <name>Scholar Mhenlo The Zealous</name>
-    <unitId>20</unitId>
-    <skillId>42</skillId>
+    <name>Explorer Gwen Bloodburner</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
     <items />
   </hero>
   <hero id="32">
-    <name>Explorer Kahlan The Savage</name>
-    <unitId>189</unitId>
-    <skillId>86</skillId>
+    <name>Wealthy Margrid The Savage</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
     <items />
   </hero>
   <hero id="33">
-    <name>Minister Scythe Fierceshot</name>
-    <unitId>34</unitId>
-    <skillId>23</skillId>
-    <items />
+    <name>Inquisitor Livia The Fiend</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
+    <items>
+      <item name="Obsidian Shard">
+        <dmgBonus>75</dmgBonus>
+        <hpBonus>422</hpBonus>
+      </item>
+      <item name="Plated Mail">
+        <dmgBonus>175</dmgBonus>
+        <hpBonus>412</hpBonus>
+      </item>
+      <item name="Ascended Shard">
+        <dmgBonus>117</dmgBonus>
+        <hpBonus>42</hpBonus>
+      </item>
+    </items>
   </hero>
   <hero id="34">
-    <name>Deadly Pyre The Damned</name>
-    <unitId>6</unitId>
-    <skillId>43</skillId>
+    <name>Confessor Jansen The Fiend</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
     <items />
   </hero>
   <hero id="35">
-    <name>Confessor Sansha Proelium</name>
-    <unitId>123</unitId>
-    <skillId>87</skillId>
+    <name>Veteran Inquisitor Grule The Maligned</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
     <items />
   </hero>
   <hero id="36">
-    <name>Minister Rhendak Filthpit</name>
-    <unitId>2</unitId>
-    <skillId>52</skillId>
+    <name>Champion Kanaxai The Twisted</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
     <items />
   </hero>
   <hero id="37">
-    <name>Veteran Inquisitor Dinky The Cursed</name>
-    <unitId>175</unitId>
-    <skillId>40</skillId>
+    <name>Ambassador Mallyx Proelium</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
     <items />
   </hero>
   <hero id="38">
-    <name>Wealthy Ventari The Zealous</name>
-    <unitId>129</unitId>
-    <skillId>9</skillId>
+    <name>Confessor Brann The Savage</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
     <items />
   </hero>
   <hero id="39">
-    <name>Admiral Tyrant The Mangler</name>
-    <unitId>166</unitId>
-    <skillId>20</skillId>
+    <name>Siegemaster Syrine Bloodburner</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
     <items />
   </hero>
   <hero id="40">
-    <name>Deadly Syrine The Fiend</name>
-    <unitId>81</unitId>
-    <skillId>70</skillId>
+    <name>Veteran Inquisitor Ventari The Savage</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
     <items />
   </hero>
   <hero id="41">
-    <name>Inquisitor Sierra Fleshweaver</name>
-    <unitId>161</unitId>
-    <skillId>29</skillId>
+    <name>Veteran Inquisitor Jansen The Violent</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
     <items />
   </hero>
   <hero id="42">
-    <name>Exemplar Zhed Shadowhoof The Cursed</name>
-    <unitId>125</unitId>
-    <skillId>42</skillId>
+    <name>Siegemaster Gwen The Fiend</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
     <items />
   </hero>
   <hero id="43">
-    <name>Heavy Saevio The Traveler</name>
-    <unitId>40</unitId>
-    <skillId>32</skillId>
+    <name>High Priest Gandalf The Wise</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
     <items />
   </hero>
   <hero id="44">
-    <name>General Nizoon The Zealous</name>
-    <unitId>93</unitId>
-    <skillId>22</skillId>
-    <items />
+    <name>Siegemaster Grule Bloodburner</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
+    <items>
+      <item name="Glacial Sliver">
+        <dmgBonus>100</dmgBonus>
+        <hpBonus>157</hpBonus>
+      </item>
+      <item name="Charged Quartz Crystal">
+        <dmgBonus>17</dmgBonus>
+        <hpBonus>173</hpBonus>
+      </item>
+    </items>
   </hero>
   <hero id="45">
-    <name>Deadly Sacrio The Wise</name>
-    <unitId>187</unitId>
-    <skillId>15</skillId>
+    <name>Scholar Stravig The Quickened</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
     <items />
   </hero>
   <hero id="46">
-    <name>Initiate Rhinart The Quickened</name>
-    <unitId>96</unitId>
-    <skillId>54</skillId>
+    <name>Cultist Mallyx Bloodburner</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
     <items />
   </hero>
   <hero id="47">
-    <name>Explorer Rayne The Maligned</name>
-    <unitId>16</unitId>
-    <skillId>53</skillId>
+    <name>Minister Livia The Maligned</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
     <items />
   </hero>
   <hero id="48">
-    <name>Agent Scythe The Quickened</name>
-    <unitId>32</unitId>
-    <skillId>54</skillId>
+    <name>Captain Urgoz Bloodburner</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
     <items />
   </hero>
   <hero id="49">
-    <name>Overseer Rhendak Swiftspite</name>
-    <unitId>49</unitId>
-    <skillId>17</skillId>
+    <name>Drinkmaster Zhellix The Cursed</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
     <items />
   </hero>
   <hero id="50">
-    <name>Explorer Sacrio Breakneck</name>
-    <unitId>125</unitId>
-    <skillId>20</skillId>
+    <name>Scholar Jansen The Twisted</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
     <items />
   </hero>
   <hero id="51">
-    <name>Cultist Syrine The Swift</name>
-    <unitId>6</unitId>
-    <skillId>77</skillId>
+    <name>Captain Lady Fierceshot</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
     <items />
   </hero>
   <hero id="52">
-    <name>Tiny Livia The Wise</name>
-    <unitId>118</unitId>
-    <skillId>57</skillId>
+    <name>Drinkmaster Rahl Breakneck</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
     <items />
   </hero>
   <hero id="53">
-    <name>Lieutenant Dinky The Maligned</name>
-    <unitId>182</unitId>
-    <skillId>69</skillId>
+    <name>Champion Sierra The Damned</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
     <items />
   </hero>
   <hero id="54">
-    <name>Inquisitor Timok Fleshweaver</name>
-    <unitId>120</unitId>
-    <skillId>44</skillId>
+    <name>Deadly Lucard Willcrusher</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
     <items />
   </hero>
   <hero id="55">
-    <name>Captain Gandalf The Zealous</name>
-    <unitId>144</unitId>
-    <skillId>59</skillId>
+    <name>Deadly Tyrant The Sly</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
     <items />
   </hero>
   <hero id="56">
-    <name>Captain Zuul The Cursed</name>
-    <unitId>43</unitId>
-    <skillId>89</skillId>
-    <items />
+    <name>Initiate Pyre The Fiend</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
+    <items>
+      <item name="Tiny Venom Sac">
+        <dmgBonus>815</dmgBonus>
+        <hpBonus>295</hpBonus>
+      </item>
+    </items>
   </hero>
   <hero id="57">
-    <name>Demolitionist Kerrigan The Unforgiving</name>
-    <unitId>67</unitId>
-    <skillId>11</skillId>
+    <name>Admiral Tyrant The Fiend</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
     <items />
   </hero>
   <hero id="58">
-    <name>Resistant Nizoon Fierceshot</name>
-    <unitId>74</unitId>
-    <skillId>98</skillId>
+    <name>Ambassador Margrid The Violent</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
     <items />
   </hero>
   <hero id="59">
-    <name>Deadly Lyssa The Mangler</name>
-    <unitId>20</unitId>
-    <skillId>68</skillId>
+    <name>Wealthy Apatia The Zealous</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
     <items />
   </hero>
   <hero id="60">
-    <name>Captain Jansen The Traveler</name>
-    <unitId>150</unitId>
-    <skillId>73</skillId>
+    <name>High Priest Kanaxai The Heroic</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
     <items />
   </hero>
   <hero id="61">
-    <name>Exemplar Rhendak The Sly</name>
-    <unitId>53</unitId>
-    <skillId>100</skillId>
+    <name>Dangerous Sierra The Quickened</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
     <items />
   </hero>
   <hero id="62">
-    <name>Dangerous Brann The Quickened</name>
-    <unitId>70</unitId>
-    <skillId>52</skillId>
+    <name>Dangerous Bane Filthpit</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
     <items />
   </hero>
   <hero id="63">
-    <name>Overseer Ventari The Gifted</name>
-    <unitId>126</unitId>
-    <skillId>14</skillId>
+    <name>Explorer Apatia The Savage</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
     <items />
   </hero>
   <hero id="64">
-    <name>Ambassador Tybalt Willcrusher</name>
-    <unitId>41</unitId>
-    <skillId>96</skillId>
+    <name>Resistant Sansha The Cursed</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
     <items />
   </hero>
   <hero id="65">
-    <name>Deadly Fade The Sly</name>
-    <unitId>119</unitId>
-    <skillId>48</skillId>
+    <name>Agent Livia Swiftspite</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
     <items />
   </hero>
   <hero id="66">
-    <name>Captain Wynne The Zealous</name>
-    <unitId>147</unitId>
-    <skillId>31</skillId>
+    <name>Initiate Nicci The Noble</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
     <items />
   </hero>
   <hero id="67">
-    <name>Justiciar Scylla The Damned</name>
-    <unitId>93</unitId>
-    <skillId>74</skillId>
+    <name>Wealthy Dinky The Violent</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
     <items />
   </hero>
   <hero id="68">
-    <name>Scholar Brann Swiftspite</name>
-    <unitId>136</unitId>
-    <skillId>73</skillId>
+    <name>Initiate Fahralon Fleshweaver</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
     <items />
   </hero>
   <hero id="69">
-    <name>Veteran Inquisitor Jansen The Savage</name>
-    <unitId>34</unitId>
-    <skillId>84</skillId>
+    <name>Fragile Rhinart The Twisted</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
     <items />
   </hero>
   <hero id="70">
-    <name>Exemplar Zhellix The Vile</name>
-    <unitId>62</unitId>
-    <skillId>93</skillId>
+    <name>Champion Kerrigan Stormcaller</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
     <items />
   </hero>
   <hero id="71">
-    <name>Drinkmaster Zhed Shadowhoof The Cursed</name>
-    <unitId>121</unitId>
-    <skillId>64</skillId>
+    <name>Champion Zhellix The Unforgiving</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
     <items />
   </hero>
   <hero id="72">
-    <name>Explorer Bane Willcrusher</name>
-    <unitId>178</unitId>
-    <skillId>27</skillId>
+    <name>Drinkmaster Nicci The Violent</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
     <items />
   </hero>
   <hero id="73">
-    <name>Deadly Arachni The Mangler</name>
-    <unitId>131</unitId>
-    <skillId>5</skillId>
+    <name>Drinkmaster Arachni The Gifted</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
     <items />
   </hero>
   <hero id="74">
-    <name>Tiny Levona The Heroic</name>
-    <unitId>193</unitId>
-    <skillId>55</skillId>
+    <name>Tiny Zhed Shadowhoof The Wise</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
     <items />
   </hero>
   <hero id="75">
-    <name>Explorer Ventari The Mangler</name>
-    <unitId>132</unitId>
-    <skillId>57</skillId>
+    <name>Deadeye Tybalt The Maligned</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
     <items />
   </hero>
   <hero id="76">
-    <name>Deadeye Livia Willcrusher</name>
-    <unitId>136</unitId>
-    <skillId>89</skillId>
+    <name>Exemplar Margrid Filthpit</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
     <items />
   </hero>
   <hero id="77">
-    <name>Agent Gandalf The Damned</name>
-    <unitId>81</unitId>
-    <skillId>6</skillId>
+    <name>Confessor Ghost Fleshweaver</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
     <items />
   </hero>
   <hero id="78">
-    <name>Agent Pyre The Unforgiving</name>
-    <unitId>147</unitId>
-    <skillId>29</skillId>
+    <name>Demolitionist Rayne The Lazy</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
     <items />
   </hero>
   <hero id="79">
-    <name>Admiral Levona The Mangler</name>
-    <unitId>14</unitId>
-    <skillId>102</skillId>
+    <name>Cultist Sierra The Heroic</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
     <items />
   </hero>
   <hero id="80">
-    <name>Crusader Lady Stormcaller</name>
-    <unitId>218</unitId>
-    <skillId>17</skillId>
+    <name>Deadeye Arachni Swiftspite</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
     <items />
   </hero>
   <hero id="81">
-    <name>Justiciar Timok The Damned</name>
-    <unitId>38</unitId>
-    <skillId>14</skillId>
+    <name>Admiral Grule The Violent</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
     <items />
   </hero>
   <hero id="82">
-    <name>Wealthy Nicholas Breakneck</name>
-    <unitId>17</unitId>
-    <skillId>39</skillId>
+    <name>Dangerous Rhinart Filthpit</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
     <items />
   </hero>
   <hero id="83">
-    <name>Captain Tyrant The Zealous</name>
-    <unitId>168</unitId>
-    <skillId>74</skillId>
+    <name>Siegemaster Scylla Fierceshot</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
     <items />
   </hero>
   <hero id="84">
-    <name>Confessor Kahlan Fleshweaver</name>
-    <unitId>7</unitId>
-    <skillId>14</skillId>
+    <name>High Priest Pyre The Lazy</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
     <items />
   </hero>
   <hero id="85">
-    <name>Heavy Sansha The Gifted</name>
-    <unitId>85</unitId>
-    <skillId>30</skillId>
+    <name>Deadly Arachni Breakneck</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
     <items />
   </hero>
   <hero id="86">
-    <name>Demolitionist Shiro The Fiend</name>
-    <unitId>53</unitId>
-    <skillId>98</skillId>
+    <name>Champion Mhenlo The Unforgiving</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
     <items />
   </hero>
   <hero id="87">
-    <name>Deadly Urgoz The Twisted</name>
-    <unitId>104</unitId>
-    <skillId>108</skillId>
+    <name>Captain Kanaxai The Unforgiving</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
     <items />
   </hero>
   <hero id="88">
-    <name>Explorer Gwen The Unforgiving</name>
-    <unitId>112</unitId>
-    <skillId>52</skillId>
+    <name>Initiate Rhendak The Heroic</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
     <items />
   </hero>
   <hero id="89">
-    <name>Resistant Apatia The Sly</name>
-    <unitId>164</unitId>
-    <skillId>6</skillId>
+    <name>Exemplar Mallyx The Lazy</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
     <items />
   </hero>
   <hero id="90">
-    <name>Warmaster Brann The Wise</name>
-    <unitId>40</unitId>
-    <skillId>29</skillId>
+    <name>Warmaster Rahl The Wise</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
     <items />
   </hero>
   <hero id="91">
-    <name>Dangerous Bane The Traveler</name>
-    <unitId>207</unitId>
-    <skillId>32</skillId>
+    <name>Demolitionist Zhellix The Maligned</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
     <items />
   </hero>
   <hero id="92">
-    <name>Justiciar Syrine The Savage</name>
-    <unitId>57</unitId>
-    <skillId>26</skillId>
+    <name>Agent Tyrant The Mangler</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
     <items />
   </hero>
   <hero id="93">
-    <name>General Scylla The Zealous</name>
-    <unitId>57</unitId>
-    <skillId>20</skillId>
+    <name>Inquisitor Grule The Maligned</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
     <items />
   </hero>
   <hero id="94">
-    <name>Lieutenant Rhendak The Lazy</name>
-    <unitId>75</unitId>
-    <skillId>6</skillId>
+    <name>Veteran Inquisitor Ventari The Unforgiving</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
     <items />
   </hero>
   <hero id="95">
-    <name>Crusader Sacrio Proelium</name>
-    <unitId>173</unitId>
-    <skillId>55</skillId>
+    <name>Drinkmaster Gwen The Violent</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
     <items />
   </hero>
   <hero id="96">
-    <name>Overseer Kerrigan Fleshweaver</name>
-    <unitId>65</unitId>
-    <skillId>97</skillId>
+    <name>Tiny Sacrio Filthpit</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
     <items />
   </hero>
   <hero id="97">
-    <name>Admiral Timok The Savage</name>
-    <unitId>3</unitId>
-    <skillId>34</skillId>
+    <name>Fragile Scythe Fierceshot</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
     <items />
   </hero>
   <hero id="98">
-    <name>Overseer Fade Bloodburner</name>
-    <unitId>143</unitId>
-    <skillId>106</skillId>
+    <name>Scholar Tybalt Stormcaller</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
     <items />
   </hero>
   <hero id="99">
-    <name>Heavy Apocrypha Filthpit</name>
-    <unitId>161</unitId>
-    <skillId>82</skillId>
+    <name>Heavy Rayne Fierceshot</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
     <items />
   </hero>
   <hero id="100">
-    <name>Demolitionist Scythe The Vile</name>
-    <unitId>145</unitId>
-    <skillId>44</skillId>
+    <name>Dangerous Tyrant Filthpit</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
     <items />
   </hero>
   <hero id="101">
-    <name>Scholar Glint Swiftspite</name>
-    <unitId>210</unitId>
-    <skillId>20</skillId>
+    <name>Crusader Scylla Fierceshot</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
     <items />
   </hero>
   <hero id="102">
-    <name>High Priest Zhed Shadowhoof The Gifted</name>
-    <unitId>151</unitId>
-    <skillId>39</skillId>
+    <name>Justiciar Levona The Vile</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
     <items />
   </hero>
   <hero id="103">
-    <name>Champion Lyssa Bloodburner</name>
-    <unitId>111</unitId>
-    <skillId>101</skillId>
+    <name>Agent Levona The Unforgiving</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
     <items />
   </hero>
   <hero id="104">
-    <name>Captain Kanaxai Stormcaller</name>
-    <unitId>218</unitId>
-    <skillId>102</skillId>
+    <name>Confessor Tahlkora The Quickened</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
     <items />
   </hero>
   <hero id="105">
-    <name>General Kahlan The Quickened</name>
-    <unitId>1</unitId>
-    <skillId>67</skillId>
+    <name>Inquisitor Dinky The Zealous</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
     <items />
   </hero>
   <hero id="106">
-    <name>Cultist Abaddon The Fiend</name>
-    <unitId>159</unitId>
-    <skillId>1</skillId>
+    <name>Initiate Fahralon Stormcaller</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
     <items />
   </hero>
   <hero id="107">
-    <name>Veteran Inquisitor Scylla Fierceshot</name>
-    <unitId>128</unitId>
-    <skillId>54</skillId>
+    <name>Tiny Apatia Fierceshot</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
     <items />
   </hero>
   <hero id="108">
-    <name>Minister Tahlkora The Maligned</name>
-    <unitId>14</unitId>
-    <skillId>65</skillId>
+    <name>Explorer Richard Fleshweaver</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
     <items />
   </hero>
   <hero id="109">
-    <name>General Apocrypha The Savage</name>
-    <unitId>95</unitId>
-    <skillId>36</skillId>
+    <name>General Lucard The Lazy</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
     <items />
   </hero>
   <hero id="110">
-    <name>Wealthy Stravig The Gifted</name>
-    <unitId>115</unitId>
-    <skillId>100</skillId>
+    <name>Drinkmaster Fade The Quickened</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
     <items />
   </hero>
   <hero id="111">
-    <name>Explorer Xiar Filthpit</name>
-    <unitId>32</unitId>
-    <skillId>72</skillId>
+    <name>Minister Dinky The Fiend</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
     <items />
   </hero>
   <hero id="112">
-    <name>Champion Syrine The Heroic</name>
-    <unitId>13</unitId>
-    <skillId>10</skillId>
+    <name>Heavy Rhinart The Fiend</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
     <items />
   </hero>
   <hero id="113">
-    <name>Warmaster Xiar The Unforgiving</name>
-    <unitId>152</unitId>
-    <skillId>79</skillId>
+    <name>Dangerous Kanaxai Stormcaller</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
     <items />
   </hero>
   <hero id="114">
-    <name>High Priest Rahl Willcrusher</name>
-    <unitId>17</unitId>
-    <skillId>77</skillId>
+    <name>Magister Nizoon The Gifted</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
     <items />
   </hero>
   <hero id="115">
-    <name>Warmaster Faustus The Vile</name>
-    <unitId>46</unitId>
-    <skillId>91</skillId>
+    <name>Lieutenant Apatia The Sly</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
     <items />
   </hero>
   <hero id="116">
-    <name>Warmaster Lucard The Wise</name>
-    <unitId>154</unitId>
-    <skillId>78</skillId>
+    <name>Minister Sansha The Unforgiving</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
     <items />
   </hero>
   <hero id="117">
-    <name>Scholar Lyssa Willcrusher</name>
-    <unitId>52</unitId>
-    <skillId>24</skillId>
+    <name>Drinkmaster Nicci The Vile</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
     <items />
   </hero>
   <hero id="118">
-    <name>Exemplar Nicholas The Gifted</name>
-    <unitId>138</unitId>
-    <skillId>87</skillId>
+    <name>Lieutenant Saevio The Swift</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
     <items />
   </hero>
   <hero id="119">
-    <name>High Priest Stravig The Twisted</name>
-    <unitId>94</unitId>
-    <skillId>104</skillId>
+    <name>High Priest Rhinart The Quickened</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
     <items />
   </hero>
   <hero id="120">
-    <name>Tiny Rayne Fleshweaver</name>
-    <unitId>64</unitId>
-    <skillId>54</skillId>
+    <name>Crusader Rayne The Gifted</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
     <items />
   </hero>
   <hero id="121">
-    <name>Admiral Fade The Maligned</name>
-    <unitId>46</unitId>
-    <skillId>48</skillId>
+    <name>Agent Margrid The Vile</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
     <items />
   </hero>
   <hero id="122">
-    <name>Agent Grule The Twisted</name>
-    <unitId>199</unitId>
-    <skillId>79</skillId>
+    <name>Wealthy Xiar Stormcaller</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
     <items />
   </hero>
   <hero id="123">
-    <name>Captain Grule Willcrusher</name>
-    <unitId>93</unitId>
-    <skillId>44</skillId>
+    <name>Ambassador Ghost Stormcaller</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
     <items />
   </hero>
   <hero id="124">
-    <name>Resistant Ghost The Quickened</name>
-    <unitId>177</unitId>
-    <skillId>92</skillId>
+    <name>Warmaster Nicholas Proelium</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
     <items />
   </hero>
   <hero id="125">
-    <name>Exemplar Zhed Shadowhoof The Mangler</name>
-    <unitId>47</unitId>
-    <skillId>25</skillId>
+    <name>Ambassador Rhendak The Lazy</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
     <items />
   </hero>
   <hero id="126">
-    <name>Drinkmaster Stravig The Swift</name>
-    <unitId>94</unitId>
-    <skillId>73</skillId>
+    <name>Wealthy Tyrant The Cursed</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
     <items />
   </hero>
   <hero id="127">
-    <name>Ambassador Nicci The Violent</name>
-    <unitId>112</unitId>
-    <skillId>45</skillId>
+    <name>Deadly Rhendak Fleshweaver</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
     <items />
   </hero>
   <hero id="128">
-    <name>Crusader Sacrio The Gifted</name>
-    <unitId>212</unitId>
-    <skillId>107</skillId>
+    <name>Agent Sierra The Damned</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
     <items />
   </hero>
   <hero id="129">
-    <name>General Tyrant The Zealous</name>
-    <unitId>214</unitId>
-    <skillId>81</skillId>
+    <name>Overseer Fahralon The Quickened</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
     <items />
   </hero>
   <hero id="130">
-    <name>Inquisitor Bane Swiftspite</name>
-    <unitId>204</unitId>
-    <skillId>89</skillId>
+    <name>Wealthy Livia The Damned</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
     <items />
   </hero>
   <hero id="131">
-    <name>Admiral Urgoz The Zealous</name>
-    <unitId>100</unitId>
-    <skillId>98</skillId>
+    <name>Heavy Jansen The Fiend</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
     <items />
   </hero>
   <hero id="132">
-    <name>Inquisitor Wynne Willcrusher</name>
-    <unitId>66</unitId>
-    <skillId>81</skillId>
+    <name>Veteran Inquisitor Gandalf The Vile</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
     <items />
   </hero>
   <hero id="133">
-    <name>Dangerous Sierra The Wise</name>
-    <unitId>118</unitId>
-    <skillId>4</skillId>
+    <name>Champion Gandalf The Vile</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
     <items />
   </hero>
   <hero id="134">
-    <name>Resistant Margrid Breakneck</name>
-    <unitId>205</unitId>
-    <skillId>19</skillId>
+    <name>Tiny Zhellix The Damned</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
     <items />
   </hero>
   <hero id="135">
-    <name>Warmaster Mhenlo The Gifted</name>
-    <unitId>171</unitId>
-    <skillId>33</skillId>
+    <name>Crusader Ventari Bloodburner</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
     <items />
   </hero>
   <hero id="136">
-    <name>Captain Sansha Swiftspite</name>
-    <unitId>139</unitId>
-    <skillId>50</skillId>
+    <name>Resistant Faustus The Gifted</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
     <items />
   </hero>
   <hero id="137">
-    <name>Magister Apatia The Quickened</name>
-    <unitId>217</unitId>
-    <skillId>58</skillId>
+    <name>High Priest Mhenlo Swiftspite</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
     <items />
   </hero>
   <hero id="138">
-    <name>Veteran Inquisitor Scythe Swiftspite</name>
-    <unitId>78</unitId>
-    <skillId>101</skillId>
+    <name>Confessor Rhinart Breakneck</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
     <items />
   </hero>
   <hero id="139">
-    <name>Inquisitor Tybalt Breakneck</name>
-    <unitId>47</unitId>
-    <skillId>97</skillId>
+    <name>Confessor Ghost The Savage</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
     <items />
   </hero>
   <hero id="140">
-    <name>Heavy Timok The Traveler</name>
-    <unitId>179</unitId>
-    <skillId>50</skillId>
+    <name>Wealthy Tyrant The Lazy</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
     <items />
   </hero>
   <hero id="141">
-    <name>Crusader Zhed Shadowhoof The Sly</name>
-    <unitId>10</unitId>
-    <skillId>58</skillId>
+    <name>Resistant Wynne The Gifted</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
     <items />
   </hero>
   <hero id="142">
-    <name>Drinkmaster Abaddon The Cursed</name>
-    <unitId>216</unitId>
-    <skillId>91</skillId>
+    <name>Crusader Kahlan Willcrusher</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
     <items />
   </hero>
   <hero id="143">
-    <name>Siegemaster Abaddon Stormcaller</name>
-    <unitId>49</unitId>
-    <skillId>41</skillId>
+    <name>Warmaster Timok Breakneck</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
     <items />
   </hero>
   <hero id="144">
-    <name>Confessor Abaddon The Zealous</name>
-    <unitId>45</unitId>
-    <skillId>73</skillId>
+    <name>Dangerous Mallyx The Gifted</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
     <items />
   </hero>
   <hero id="145">
-    <name>Warmaster Nicci The Maligned</name>
-    <unitId>24</unitId>
-    <skillId>51</skillId>
+    <name>Exemplar Pyre The Vile</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
     <items />
   </hero>
   <hero id="146">
-    <name>Scholar Tahlkora Proelium</name>
-    <unitId>205</unitId>
-    <skillId>24</skillId>
+    <name>Confessor Abaddon The Savage</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
     <items />
   </hero>
   <hero id="147">
-    <name>Dangerous Mallyx Stormcaller</name>
-    <unitId>156</unitId>
-    <skillId>106</skillId>
+    <name>Heavy Rahl The Savage</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
     <items />
   </hero>
   <hero id="148">
-    <name>Warmaster Urgoz Bloodburner</name>
-    <unitId>59</unitId>
-    <skillId>50</skillId>
+    <name>Demolitionist Xiar The Wise</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
     <items />
   </hero>
   <hero id="149">
-    <name>Magister Sacrio The Lazy</name>
-    <unitId>118</unitId>
-    <skillId>21</skillId>
+    <name>Minister Timok Willcrusher</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
     <items />
   </hero>
   <hero id="150">
-    <name>Tiny Livia The Swift</name>
-    <unitId>3</unitId>
-    <skillId>103</skillId>
+    <name>General Rayne The Twisted</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
     <items />
   </hero>
   <hero id="151">
-    <name>High Priest Wynne The Savage</name>
-    <unitId>43</unitId>
-    <skillId>63</skillId>
+    <name>Cultist Pyre The Traveler</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
     <items />
   </hero>
   <hero id="152">
-    <name>Initiate Wynne The Quickened</name>
-    <unitId>181</unitId>
-    <skillId>96</skillId>
+    <name>Ambassador Rhendak Willcrusher</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
     <items />
   </hero>
   <hero id="153">
-    <name>Admiral Zhed Shadowhoof The Lazy</name>
-    <unitId>210</unitId>
-    <skillId>3</skillId>
+    <name>Drinkmaster Lucard The Savage</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
     <items />
   </hero>
   <hero id="154">
-    <name>Deadly Syrine Breakneck</name>
-    <unitId>103</unitId>
-    <skillId>53</skillId>
+    <name>Captain Saevio The Violent</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
     <items />
   </hero>
   <hero id="155">
-    <name>Heavy Rhinart The Heroic</name>
-    <unitId>144</unitId>
-    <skillId>22</skillId>
+    <name>Heavy Rayne Willcrusher</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
     <items />
   </hero>
   <hero id="156">
-    <name>Minister Saevio Proelium</name>
-    <unitId>104</unitId>
-    <skillId>107</skillId>
+    <name>Overseer Lady The Maligned</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
     <items />
   </hero>
   <hero id="157">
-    <name>High Priest Sansha The Sly</name>
-    <unitId>79</unitId>
-    <skillId>55</skillId>
+    <name>General Livia The Cursed</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
     <items />
   </hero>
   <hero id="158">
-    <name>Ambassador Zuul The Wise</name>
-    <unitId>215</unitId>
-    <skillId>31</skillId>
+    <name>Overseer Sierra Willcrusher</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
     <items />
   </hero>
   <hero id="159">
-    <name>Champion Xiar The Quickened</name>
-    <unitId>149</unitId>
-    <skillId>97</skillId>
+    <name>Wealthy Grule Fleshweaver</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
     <items />
   </hero>
   <hero id="160">
-    <name>Ambassador Zhed Shadowhoof The Traveler</name>
-    <unitId>65</unitId>
-    <skillId>47</skillId>
+    <name>Minister Glint Proelium</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
     <items />
   </hero>
   <hero id="161">
-    <name>Explorer Glint Bloodburner</name>
-    <unitId>174</unitId>
-    <skillId>64</skillId>
+    <name>Scholar Sansha Bloodburner</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
     <items />
   </hero>
   <hero id="162">
-    <name>General Apocrypha Swiftspite</name>
-    <unitId>217</unitId>
-    <skillId>66</skillId>
+    <name>Wealthy Kanaxai The Cursed</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
     <items />
   </hero>
   <hero id="163">
-    <name>Resistant Brann Stormcaller</name>
-    <unitId>144</unitId>
-    <skillId>40</skillId>
+    <name>Overseer Kahlan The Cursed</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
     <items />
   </hero>
   <hero id="164">
-    <name>Minister Saevio Stormcaller</name>
-    <unitId>78</unitId>
-    <skillId>40</skillId>
+    <name>Captain Lyssa The Twisted</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
     <items />
   </hero>
   <hero id="165">
-    <name>Demolitionist Abaddon The Gifted</name>
-    <unitId>207</unitId>
-    <skillId>57</skillId>
+    <name>Overseer Dinky The Gifted</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
     <items />
   </hero>
   <hero id="166">
-    <name>Exemplar Ventari Fleshweaver</name>
-    <unitId>144</unitId>
-    <skillId>10</skillId>
+    <name>Heavy Rhinart The Heroic</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
     <items />
   </hero>
   <hero id="167">
-    <name>Tiny Gandalf Filthpit</name>
-    <unitId>88</unitId>
-    <skillId>83</skillId>
+    <name>Champion Richard Willcrusher</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
     <items />
   </hero>
   <hero id="168">
-    <name>Cultist Sierra The Lazy</name>
-    <unitId>164</unitId>
-    <skillId>105</skillId>
+    <name>Minister Arachni The Cursed</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
     <items />
   </hero>
   <hero id="169">
-    <name>Wealthy Fahralon The Traveler</name>
-    <unitId>203</unitId>
-    <skillId>78</skillId>
+    <name>Deadeye Kerrigan The Quickened</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
     <items />
   </hero>
   <hero id="170">
-    <name>Cultist Saevio The Quickened</name>
-    <unitId>130</unitId>
-    <skillId>49</skillId>
+    <name>Cultist Tahlkora Fleshweaver</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
     <items />
   </hero>
   <hero id="171">
-    <name>Resistant Lucard Breakneck</name>
-    <unitId>107</unitId>
-    <skillId>47</skillId>
+    <name>General Tybalt The Quickened</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
     <items />
   </hero>
   <hero id="172">
-    <name>Admiral Abaddon Swiftspite</name>
-    <unitId>99</unitId>
-    <skillId>75</skillId>
+    <name>Tiny Nizoon The Maligned</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
     <items />
   </hero>
   <hero id="173">
-    <name>Tiny Lady Proelium</name>
-    <unitId>102</unitId>
-    <skillId>103</skillId>
+    <name>Champion Mallyx The Unforgiving</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
     <items />
   </hero>
   <hero id="174">
-    <name>Explorer Urgoz The Damned</name>
-    <unitId>77</unitId>
-    <skillId>44</skillId>
+    <name>Confessor Glint Proelium</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
     <items />
   </hero>
   <hero id="175">
-    <name>Champion Zuul Filthpit</name>
-    <unitId>63</unitId>
-    <skillId>59</skillId>
+    <name>Scholar Tahlkora Filthpit</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
     <items />
   </hero>
   <hero id="176">
-    <name>Veteran Inquisitor Nizoon The Quickened</name>
-    <unitId>188</unitId>
-    <skillId>34</skillId>
+    <name>Deadly Nicci The Gifted</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
     <items />
   </hero>
   <hero id="177">
-    <name>Justiciar Nizoon The Cursed</name>
-    <unitId>158</unitId>
-    <skillId>37</skillId>
+    <name>Captain Saevio Proelium</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
     <items />
   </hero>
   <hero id="178">
-    <name>Warmaster Nizoon The Quickened</name>
-    <unitId>89</unitId>
-    <skillId>78</skillId>
+    <name>Siegemaster Glint Fierceshot</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
     <items />
   </hero>
   <hero id="179">
-    <name>Confessor Fade The Heroic</name>
-    <unitId>184</unitId>
-    <skillId>42</skillId>
+    <name>Veteran Inquisitor Rayne The Lazy</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
     <items />
   </hero>
   <hero id="180">
-    <name>Warmaster Sierra The Lazy</name>
-    <unitId>67</unitId>
-    <skillId>53</skillId>
+    <name>Overseer Lady Willcrusher</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
     <items />
   </hero>
   <hero id="181">
-    <name>Explorer Margrid The Gifted</name>
-    <unitId>25</unitId>
-    <skillId>102</skillId>
+    <name>Overseer Jansen The Twisted</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
     <items />
   </hero>
   <hero id="182">
-    <name>Deadly Tybalt Fleshweaver</name>
-    <unitId>174</unitId>
-    <skillId>47</skillId>
+    <name>Scholar Kahlan The Swift</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
     <items />
   </hero>
   <hero id="183">
-    <name>Captain Lady Filthpit</name>
-    <unitId>214</unitId>
-    <skillId>105</skillId>
+    <name>Tiny Gwen The Damned</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
     <items />
   </hero>
   <hero id="184">
-    <name>Minister Rayne The Cursed</name>
-    <unitId>51</unitId>
-    <skillId>88</skillId>
+    <name>Demolitionist Mallyx The Swift</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
     <items />
   </hero>
   <hero id="185">
-    <name>Tiny Glint The Unforgiving</name>
-    <unitId>190</unitId>
-    <skillId>73</skillId>
+    <name>Heavy Nizoon The Traveler</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
     <items />
   </hero>
   <hero id="186">
-    <name>Captain Xiar The Maligned</name>
-    <unitId>195</unitId>
-    <skillId>36</skillId>
+    <name>Exemplar Scythe The Unforgiving</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
     <items />
   </hero>
   <hero id="187">
-    <name>High Priest Rayne The Maligned</name>
-    <unitId>118</unitId>
-    <skillId>6</skillId>
+    <name>Minister Scylla The Mangler</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
     <items />
   </hero>
   <hero id="188">
-    <name>Overseer Nizoon The Heroic</name>
-    <unitId>71</unitId>
-    <skillId>106</skillId>
+    <name>Demolitionist Gandalf The Unforgiving</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
     <items />
   </hero>
   <hero id="189">
-    <name>Deadeye Bane The Unforgiving</name>
-    <unitId>210</unitId>
-    <skillId>68</skillId>
+    <name>Crusader Kerrigan The Unforgiving</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
     <items />
   </hero>
   <hero id="190">
-    <name>Deadeye Sansha Stormcaller</name>
-    <unitId>166</unitId>
-    <skillId>12</skillId>
+    <name>Tiny Kanaxai Swiftspite</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
     <items />
   </hero>
   <hero id="191">
-    <name>Captain Lady The Sly</name>
-    <unitId>161</unitId>
-    <skillId>69</skillId>
+    <name>Lieutenant Rhendak The Cursed</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
     <items />
   </hero>
   <hero id="192">
-    <name>Tiny Richard The Zealous</name>
-    <unitId>53</unitId>
-    <skillId>81</skillId>
+    <name>Agent Rhinart The Wise</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
     <items />
   </hero>
   <hero id="193">
-    <name>Drinkmaster Zuul The Heroic</name>
-    <unitId>201</unitId>
-    <skillId>90</skillId>
+    <name>Explorer Rayne The Cursed</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
     <items />
   </hero>
   <hero id="194">
-    <name>Minister Rayne The Wise</name>
-    <unitId>170</unitId>
-    <skillId>95</skillId>
+    <name>Cultist Rahl The Noble</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
     <items />
   </hero>
   <hero id="195">
-    <name>Confessor Zuul The Zealous</name>
-    <unitId>213</unitId>
-    <skillId>45</skillId>
+    <name>Heavy Dinky Stormcaller</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
     <items />
   </hero>
   <hero id="196">
-    <name>Crusader Shiro The Damned</name>
-    <unitId>179</unitId>
-    <skillId>13</skillId>
+    <name>Confessor Fade The Maligned</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
     <items />
   </hero>
   <hero id="197">
-    <name>Justiciar Ventari The Lazy</name>
-    <unitId>79</unitId>
-    <skillId>54</skillId>
+    <name>Cultist Tybalt The Wise</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
     <items />
   </hero>
   <hero id="198">
-    <name>Justiciar Nicholas The Violent</name>
-    <unitId>147</unitId>
-    <skillId>53</skillId>
+    <name>Siegemaster Pyre The Unforgiving</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
     <items />
   </hero>
   <hero id="199">
-    <name>Lieutenant Abaddon The Mangler</name>
-    <unitId>134</unitId>
-    <skillId>6</skillId>
+    <name>Inquisitor Tyrant The Cursed</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
     <items />
   </hero>
   <hero id="200">
-    <name>Dangerous Tybalt Filthpit</name>
-    <unitId>127</unitId>
-    <skillId>11</skillId>
+    <name>General Rahl Filthpit</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
     <items />
   </hero>
   <hero id="201">
-    <name>Deadly Wynne The Vile</name>
-    <unitId>21</unitId>
-    <skillId>95</skillId>
+    <name>Dangerous Tybalt Filthpit</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
     <items />
   </hero>
   <hero id="202">
-    <name>Resistant Nizoon The Fiend</name>
-    <unitId>36</unitId>
-    <skillId>63</skillId>
+    <name>Deadly Wynne The Vile</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
     <items />
   </hero>
   <hero id="203">
+    <name>Resistant Nizoon The Fiend</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
+    <items />
+  </hero>
+  <hero id="204">
     <name>Wealthy Sierra The Noble</name>
-    <unitId>78</unitId>
-    <skillId>88</skillId>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
+    <items />
+  </hero>
+  <hero id="205">
+    <name>High Priest Dinky The Unforgiving</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
+    <items />
+  </hero>
+  <hero id="206">
+    <name>General Lady Fierceshot</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
+    <items />
+  </hero>
+  <hero id="207">
+    <name>Exemplar Tybalt Proelium</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
+    <items />
+  </hero>
+  <hero id="208">
+    <name>Wealthy Sierra The Noble</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
+    <items />
+  </hero>
+  <hero id="209">
+    <name>Deadeye Levona The Zealous</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
+    <items />
+  </hero>
+  <hero id="210">
+    <name>Minister Shiro The Noble</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
+    <items />
+  </hero>
+  <hero id="211">
+    <name>Demolitionist Margrid The Gifted</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
+    <items />
+  </hero>
+  <hero id="212">
+    <name>Initiate Jansen The Unforgiving</name>
+    <unitType>BoardgameSimulator.Models.Unit</unitType>
+    <skill>BoardgameSimulator.Models.Skill</skill>
     <items />
   </hero>
 </heroes>

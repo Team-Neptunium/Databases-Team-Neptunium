@@ -36,7 +36,7 @@
                 writer.WriteStartDocument();
                 writer.WriteStartElement("heroes");
 
-                var heroes = heroesData.Include(x => x.Items).ToList();
+                var heroes = heroesData.ToList();
                 foreach (var hero in heroes)
                 {
                     this.WriteHero(writer, hero);

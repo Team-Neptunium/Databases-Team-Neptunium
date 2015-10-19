@@ -8,7 +8,7 @@
         public int Id { get; set; }
 
         [Required]
-        [MaxLength(75)]
+        [MaxLength(100)]
         public string Name { get; set; }
 
         [Required]

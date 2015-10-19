@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <heroes>
-	<hero id="1">
-		<name>Dangerous Tybalt Filthpit</name>  
-		<unitId>127</unitId>
-		<skillId>11</skillId>
+	<hero id="17">
+		<name>High Priest Dinky The Unforgiving</name>  
+		<unitId>84</unitId>
+		<skillId>93</skillId>
 		<items>
-			<item name="Pile of Soiled Essence">
-				<dmgBonus>40</dmgBonus>
-				<hpBonus>92</hpBonus>
+			<item name="Amethyst Lump">
+				<dmgBonus>15</dmgBonus>
+				<hpBonus>107</hpBonus>
 			</item>
 			<item name="Onyx Sliver">
 				<dmgBonus>42</dmgBonus>
@@ -16,24 +16,24 @@
 		</items>
 	</hero>
 
-	<hero id="2">
-		<name>Deadly Wynne The Vile</name>  
-		<unitId>21</unitId>
-		<skillId>95</skillId>
+	<hero id="56">
+		<name>General Lady Fierceshot</name>  
+		<unitId>209</unitId>
+		<skillId>2</skillId>
 		<items>
-			<item name="Large Fang">
-				<dmgBonus>100</dmgBonus>
-				<hpBonus>1020</hpBonus>
+			<item name="Tiny Venom Sac">
+				<dmgBonus>815</dmgBonus>
+				<hpBonus>295</hpBonus>
 			</item>
 		</items>
 	</hero>
 
-	<hero id="3">
-		<name>Resistant Nizoon The Fiend</name>  
+	<hero id="6">
+		<name>Exemplar Tybalt Proelium</name>  
 		<unitId>36</unitId>
 		<skillId>63</skillId>
 		<items>
-			<item name="Smooth Scale">
+			<item name="Mystic Coin">
 				<dmgBonus>75</dmgBonus>
 				<hpBonus>422</hpBonus>
 			</item>
@@ -41,14 +41,14 @@
 				<dmgBonus>175</dmgBonus>
 				<hpBonus>412</hpBonus>
 			</item>
-			<item name="Tiny Totem">
-				<dmgBonus>1175</dmgBonus>
-				<hpBonus>642</hpBonus>
+			<item name="Glob of Ectoplasm">
+				<dmgBonus>115</dmgBonus>
+				<hpBonus>75</hpBonus>
 			</item>
 		</items>
 	</hero>
 
-	<hero id="4">
+	<hero id="12">
 		<name>Wealthy Sierra The Noble</name>  
 		<unitId>78</unitId>
 		<skillId>88</skillId>
@@ -57,18 +57,14 @@
 				<dmgBonus>199</dmgBonus>
 				<hpBonus>51</hpBonus>
 			</item>
-			<item name="Powerful Venom Sac">
-				<dmgBonus>909</dmgBonus>
-				<hpBonus>515</hpBonus>
+			<item name="Powerful Axe">
+				<dmgBonus>120</dmgBonus>
+				<hpBonus>120</hpBonus>
 			</item>
-			<item name="Sun Bead">
+			<item name="Golem Skull">
 				<dmgBonus>99</dmgBonus>
-				<hpBonus>5111</hpBonus>
+				<hpBonus>55</hpBonus>
 			</item>
-				<item name="Giant Eye">
-					<dmgBonus>9119</dmgBonus>
-					<hpBonus>51123</hpBonus>
-				</item>
 			</items>
 		</hero>
 	</heroes>

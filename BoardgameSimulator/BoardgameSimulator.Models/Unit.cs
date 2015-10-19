@@ -8,7 +8,7 @@
         public int Id { get; set; }
 
         [Required]
-        [MaxLength(50)]
+        [MaxLength(100)]
         public string Name { get; set; }
 
         public AttackType AttackType { get; set; }

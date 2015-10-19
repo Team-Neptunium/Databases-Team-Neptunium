@@ -34,6 +34,12 @@
 
         public static void SeedArmies(string zipFilepath = @"C:\Temp\DatabasesTeamworkReports\ArmiesReports.zip")
         {
+            if (!File.Exists(zipFilepath))
+            {
+                Console.WriteLine("Zip with armies could not be found @" + zipFilepath);
+                return;
+            }
+
             var seeder = new ArmiesReportsSeeder();
 
             Console.WriteLine("Seeding armies from zip initialized.");
