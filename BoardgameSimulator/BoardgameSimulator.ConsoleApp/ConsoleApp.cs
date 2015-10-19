@@ -1,5 +1,6 @@
 ﻿namespace BoardgameSimulator.ConsoleApp
 {
+    using System;
     using System.Linq;
     using Data;
     using Models;
@@ -17,8 +18,9 @@
         {
             var data = new BoardgameSimulatorData(new BoardgameSimulatorDbContext());
 
-            /* 
-            var mysql = new BoardgameSimulatorMySqlData();           
+            var mysql = new BoardgameSimulatorMySqlData();
+
+            /*
             var mongoConnection = new MongoConnection();
             mongoConnection.Connect();
 
@@ -37,6 +39,17 @@
             SqLiteDataSeeder.Seed();
             
             JsonAndMySqlSeeder.Seed(mysql, data);
+
+            var pdfGen = new PdfGenerator();
+            pdfGen.CreatePerksGroupArmyReport(data.Armies.All());
+            pdfGen.CreatePdfSkillsPotentialReport(data.Skills.All());
+
+            var sqlite = new BoardgameSimulatorSqLiteData();
+
+            var armyVs = mysql.ArmyVsArmyReports.All();
+            var armyE = sqlite.UnitsCosts.All();
+
+            new ExcelGenerator().CreateBattleLogExcelReport(armyVs, armyE);
             */
         }
     }
