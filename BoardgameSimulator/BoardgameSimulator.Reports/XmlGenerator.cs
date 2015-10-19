@@ -53,8 +53,8 @@
 
             writer.WriteAttributeString("id", hero.Id.ToString());
             writer.WriteElementString("name", hero.Name);
-            writer.WriteElementString("unitType", hero.Unit.ToString());
-            writer.WriteElementString("skill", hero.Skill.ToString());
+            writer.WriteElementString("unitType", hero.Unit.Name);
+            writer.WriteElementString("skill", hero.Skill.Name);
             writer.WriteStartElement("items");
 
             foreach (var item in hero.Items)
