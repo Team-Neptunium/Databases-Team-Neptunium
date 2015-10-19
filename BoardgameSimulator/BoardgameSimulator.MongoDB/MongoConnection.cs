@@ -5,13 +5,25 @@ namespace BoardgameSimulator.MongoDB
 {
     public class MongoConnection
     {
+        public MongoConnection(bool local = false)
+        {
+            if (local)
+            {
+                this.ConnectLocal(ConnStringLocal);
+            }
+            else
+            {
+                this.Connect();
+            }
+        }
+
         private const string ConnString = "mongodb://{0}:{1}@ds033734.mongolab.com:33734/{2}";
 
         private const string ConnStringLocal = "mongodb://localhost:27017";
 
         public MongoDatabase Database { get; private set; }
 
-        public void Connect(string dbName = "boardgamesimulatormongodb")
+        private void Connect(string dbName = "boardgamesimulatormongodb")
         {
             Console.WriteLine("Attempting to connect to MongoDb.");
 
@@ -29,7 +41,7 @@ namespace BoardgameSimulator.MongoDB
             this.Database =  server.GetDatabase(dbName);
         }
 
-        public void ConnectLocal(string dbName)
+        private void ConnectLocal(string dbName)
         {
             var client = new MongoClient(ConnStringLocal);
             var server = client.GetServer();

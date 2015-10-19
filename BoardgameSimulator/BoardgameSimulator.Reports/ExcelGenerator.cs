@@ -8,25 +8,6 @@
     using Models;
     using MySqlDB.Models;
 
-    public class A
-    {
-        public int Id { get; set; }
-
-        public int Army1Id { get; set; }
-
-        public string UnitName1 { get; set; }
-
-        public int UnitQuantity1 { get; set; }
-
-        public int Army2Id { get; set; }
-
-        public string UnitName2 { get; set; }
-
-        public int UnitQuantity2 { get; set; }
-
-        public DateTime Date { get; set; }
-    }
-
     public class ExcelGenerator
     {
         private string workingDir = ".../.../.../Reports/Excel2007";
@@ -85,7 +66,7 @@
                 currentCol++;
                 sheet.Cell(currentRow, currentCol).Value = entry.UnitCost1;
                 currentCol++;
-                sheet.Cell(currentRow, currentCol).Value = (entry.UnitCost1 * entry.UnitQuantity1) /1000 + "k"
+                sheet.Cell(currentRow, currentCol).Value = (entry.UnitCost1*entry.UnitQuantity1)/1000 + "k";
                 currentCol++;
                 sheet.Cell(currentRow, currentCol).Value = entry.Date.ToShortDateString();
 

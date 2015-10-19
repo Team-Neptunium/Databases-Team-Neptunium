@@ -20,11 +20,6 @@ namespace BoardgameSimulator.MongoDB
 
         public static void SeedToMongoDb(MongoConnection mongoConnection)
         {
-            if (mongoConnection.Database == null)
-            {
-                mongoConnection.Connect();
-            }
-
             var database = mongoConnection.Database;
 
             Console.WriteLine("Seeding data to MongoDb initialized.");
@@ -74,11 +69,6 @@ namespace BoardgameSimulator.MongoDB
 
         public static void SeedToSql(MongoConnection mongoConnection, BoardgameSimulatorData data)
         {
-            if (mongoConnection.Database == null)
-            {
-                mongoConnection.Connect();
-            }
-
             if (data == null)
             {
                 return;
@@ -99,11 +89,6 @@ namespace BoardgameSimulator.MongoDB
 
         public static void SeedBattleLogsToSql(MongoConnection mongoConnection, BoardgameSimulatorData data)
         {
-            if (mongoConnection.Database == null)
-            {
-                mongoConnection.Connect();
-            }
-
             if (data == null)
             {
                 return;

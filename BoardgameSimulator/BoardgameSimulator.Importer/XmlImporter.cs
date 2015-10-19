@@ -2,115 +2,68 @@
 {
     using System;
     using System.Collections.Generic;
+    using System.IO;
+    using System.Linq;
     using System.Xml;
 
     using Data;
     using DummyModels.Items;
     using DummyModels.Heroes;
     using Models;
-
-    #region Xml example
-    //<?xml version="1.0" encoding="utf-8" ?>
-    //<heroes>
-    //  <hero id="1">
-    //    <name>Dangerous Tybalt Filthpit</name>  
-    //    <unitId>127</unitId>
-    //    <skillId>11</skillId>
-    //    <items>
-    //      <item name="Pile of Soiled Essence">
-    //        <dmgBonus>40</dmgBonus>
-    //        <hpBonus>92</hpBonus>
-    //      </item>
-    //      <item name="Onyx Sliver">
-    //        <dmgBonus>42</dmgBonus>
-    //        <hpBonus>91</hpBonus>
-    //      </item>
-    //    </items>
-    //  </hero>
-    //
-    //  <hero id="2">
-    //    <name>Deadly Wynne The Vile</name>  
-    //    <unitId>21</unitId>
-    //    <skillId>95</skillId>
-    //    <items>
-    //      <item name="Large Fang">
-    //        <dmgBonus>100</dmgBonus>
-    //        <hpBonus>1020</hpBonus>
-    //      </item>
-    //    </items>
-    //  </hero>
-    //
-    //  <hero id="3">
-    //    <name>Resistant Nizoon The Fiend</name>  
-    //    <unitId>36</unitId>
-    //    <skillId>63</skillId>
-    //    <items>
-    //      <item name="Smooth Scale">
-    //        <dmgBonus>75</dmgBonus>
-    //        <hpBonus>422</hpBonus>
-    //      </item>
-    //      <item name="Armored Scale">
-    //        <dmgBonus>175</dmgBonus>
-    //        <hpBonus>412</hpBonus>
-    //      </item>
-    //      <item name="Tiny Totem">
-    //        <dmgBonus>1175</dmgBonus>
-    //        <hpBonus>642</hpBonus>
-    //      </item>
-    //    </items>
-    //  </hero>
-    //
-    //  <hero id="4">
-    //    <name>Wealthy Sierra The Noble</name>  
-    //    <unitId>78</unitId>
-    //    <skillId>88</skillId>
-    //    <items>
-    //      <item name="Tiny Venom Sac">
-    //        <dmgBonus>199</dmgBonus>
-    //        <hpBonus>51</hpBonus>
-    //      </item>
-    //      <item name="Powerful Venom Sac">
-    //        <dmgBonus>909</dmgBonus>
-    //        <hpBonus>515</hpBonus>
-    //      </item>
-    //      <item name="Sun Bead">
-    //        <dmgBonus>99</dmgBonus>
-    //        <hpBonus>5111<hpBonus>
-    //      </item>
-    //      <item name="Giant Eye">
-    //        <dmgBonus>9119</dmgBonus>
-    //        <hpBonus>51123</hpBonus>
-    //      </item>
-    //    </items>
-    //  </hero>
-    //</heroes>
-    #endregion
+    using MongoDB;
 
     public class XmlImporter
     {
-        private BoardgameSimulatorData data;
-
-        // TODO: import to MongoDb too
-        public XmlImporter(string filePath, BoardgameSimulatorData data)
+        public static void ImportToSqlAndMongo(BoardgameSimulatorData data, MongoConnection mongoData, string filePath = "../../../DataSources/xml/")
         {
-            this.FilePath = filePath;
-            this.data = data;
-        }
-
-        public string FilePath { get; private set; }
-
-        public void ImportToSql()
-        {
-            this.AddHeroesToSql();
-            this.AddItemsToSql();
-            Console.WriteLine("Heroes and items added sucessfully from .xml to Sql!");
-        }
-
-        private void AddHeroesToSql()
-        {
-            foreach (var hero in this.GetHeroes())
+            if (!Directory.Exists(filePath))
             {
-                this.data.Heroes.Add(new Hero()
+                Console.WriteLine("There are no xml files present in " + filePath + " suitable for importing!");
+                return;
+            }
+
+            var files = Directory.GetFiles(filePath).Select(x => x).Where(x => Path.GetExtension(x) == ".xml");
+
+            Console.WriteLine("Importing from xml into Sql and MongoDb initialized.");
+
+            foreach (var file in files)
+            {
+                var heroes = GetHeroes(file);
+                var items = GetItems(file);
+
+                Console.WriteLine("importing into sql...");
+                AddHeroesToSql(heroes, data);
+                AddItemsToSql(items, data);
+
+                Console.WriteLine("importing into mongodb...");
+                AddHeroesToMongo(heroes, mongoData);
+                AddItemsToMongo(items, mongoData);
+            }
+
+            Console.WriteLine("Importing from xml into Sql and MongoDb completed!");
+        }
+
+        private static void AddItemsToMongo(List<DummyItem> items, MongoConnection mongoData)
+        {
+            mongoData.Database.DropCollection("items");
+
+            var itemsCollection = mongoData.Database.GetCollection<DummyItem>("items");
+
+            itemsCollection.InsertBatch(items);
+        }
+
+        private static void AddHeroesToMongo(IEnumerable<DummyHero> heroes, MongoConnection mongoData)
+        {
+            var heroesCollection = mongoData.Database.GetCollection<DummyHero>("heroes");
+
+            heroesCollection.InsertBatch(heroes);
+        }
+
+        private static void AddHeroesToSql(IEnumerable<DummyHero> heroes, BoardgameSimulatorData data)
+        {
+            foreach (var hero in heroes)
+            {
+                data.Heroes.Add(new Hero()
                 {
                     Name = hero.Name,
                     UnitId = hero.UnitId,
@@ -118,14 +71,14 @@
                 });
             }
 
-            this.data.SaveChanges();
+            data.SaveChanges();
         }
 
-        private void AddItemsToSql()
+        private static void AddItemsToSql(IEnumerable<DummyItem> items, BoardgameSimulatorData data)
         {
-            foreach (var item in this.GetItems())
+            foreach (var item in items)
             {
-                this.data.Items.Add(new Item()
+                data.Items.Add(new Item()
                 {
                     Name = item.Name,
                     DamageBonus = item.DamageBonus,
@@ -134,15 +87,15 @@
                 });
             }
 
-            this.data.SaveChanges();
+            data.SaveChanges();
         }
 
-        private List<DummyItem> GetItems()
+        private static List<DummyItem> GetItems(string file)
         {
             var listOfItems = new List<DummyItem>();
 
             XmlDocument doc = new XmlDocument();
-            doc.Load(this.FilePath);
+            doc.Load(file);
 
             var rootNode = doc.DocumentElement;
             var heroesList = rootNode.ChildNodes;
@@ -164,12 +117,12 @@
             return listOfItems;
         }
 
-        private List<DummyHero> GetHeroes()
+        private static List<DummyHero> GetHeroes(string file)
         {
             var listOfHeroes = new List<DummyHero>();
 
             XmlDocument doc = new XmlDocument();
-            doc.Load(this.FilePath);
+            doc.Load(file);
 
             var rootNode = doc.DocumentElement;
             var heroes = rootNode.ChildNodes;

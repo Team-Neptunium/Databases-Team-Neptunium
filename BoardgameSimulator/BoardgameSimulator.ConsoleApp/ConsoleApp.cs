@@ -18,11 +18,11 @@
         {
             var data = new BoardgameSimulatorData(new BoardgameSimulatorDbContext());
 
-            var mysql = new BoardgameSimulatorMySqlData();
+            // var mysql = new BoardgameSimulatorMySqlData();
+
+            var mongoConnection = new MongoConnection();
 
             /*
-            var mongoConnection = new MongoConnection();
-            mongoConnection.Connect();
 
             // Comment this line before starting the app, otherwise it will crash,
             // telling you that you have no rights to write into the MongoLab Db
@@ -51,6 +51,10 @@
 
             new ExcelGenerator().CreateBattleLogExcelReport(armyVs, armyE);
             */
+
+            XmlImporter.ImportToSqlAndMongo(data, mongoConnection);
+             
+            //new XmlGenerator.CreateHeroesReport(data.Heroes.All());
         }
     }
 }
