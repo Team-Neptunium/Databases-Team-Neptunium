@@ -1,6 +1,7 @@
 ﻿namespace BoardgameSimulator.Models
 {
     using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations.Schema;
 
     public class Item
     {
@@ -15,5 +16,10 @@
 
         [Required]
         public int HealthBonus { get; set; }
+
+        public int? HeroId { get; set; }
+
+        [ForeignKey("HeroId")]
+        public virtual Hero Hero { get; set; }
     }
 }

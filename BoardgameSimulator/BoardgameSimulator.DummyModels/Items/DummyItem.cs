@@ -10,6 +10,15 @@ namespace BoardgameSimulator.DummyModels.Items
             this.Name = name;
             this.DamageBonus = dmgBonus;
             this.HealthBonus = hpBonus;
+            this.HeroId = null;
+        }
+
+        public DummyItem(string name, int dmgBonus, int hpBonus, int heroId)
+        {
+            this.Name = name;
+            this.DamageBonus = dmgBonus;
+            this.HealthBonus = hpBonus;
+            this.HeroId = heroId;
         }
 
         [BsonRepresentation(BsonType.ObjectId)]
@@ -20,5 +29,7 @@ namespace BoardgameSimulator.DummyModels.Items
         public int DamageBonus { get; set; }
         
         public int HealthBonus { get; set; }
+
+        public int? HeroId { get; set; }
     }
 }
