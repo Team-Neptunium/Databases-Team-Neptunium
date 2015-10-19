@@ -1,8 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace BoardgameSimulator.DummyModels.Skills
+﻿namespace BoardgameSimulator.DummyModels.Skills
 {
+    using System;
+    using System.Collections.Generic;
+
     public class DummySkills
     {
         #region skill names
@@ -131,12 +131,11 @@ namespace BoardgameSimulator.DummyModels.Skills
             var rng = new Random();
             var dcdLen = damageAndCd.Length;
 
-            // Feed for units sans naval and flying
             for (int i = 0; i < skills.Count; i++)
             {
                 var currentSkillName = skills[i];
 
-                skillsList.Add(new DummySkill(currentSkillName, damageAndCd[rng.Next(i * 300) % dcdLen] * 100, damageAndCd[rng.Next(i * 262) % dcdLen]));
+                skillsList.Add(new DummySkill(currentSkillName, damageAndCd[rng.Next(i * 300) % dcdLen] * 1000, damageAndCd[rng.Next(i * 262) % dcdLen]));
             }
 
             return skillsList;

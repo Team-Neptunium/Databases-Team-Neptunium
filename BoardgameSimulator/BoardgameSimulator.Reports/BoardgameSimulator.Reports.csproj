@@ -31,6 +31,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Bytescout.Spreadsheet">
+      <HintPath>..\packages\Bytescout.Spreadsheet.2.4.2.1447\lib\net45\Bytescout.Spreadsheet.dll</HintPath>
+    </Reference>
     <Reference Include="itextsharp, Version=5.5.7.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\iTextSharp.5.5.7\lib\itextsharp.dll</HintPath>
@@ -62,6 +65,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ArmyCostReport.cs" />
+    <Compile Include="ExcelGenerator.cs" />
     <Compile Include="JsonAndMySqlSeeder.cs" />
     <Compile Include="JsonGenerator.cs" />
     <Compile Include="PdfGenerator.cs" />
