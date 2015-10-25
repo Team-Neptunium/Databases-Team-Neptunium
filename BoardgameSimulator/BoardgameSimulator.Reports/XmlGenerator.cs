@@ -7,7 +7,6 @@
     using System.Xml;
 
     using Models;
-    using Telerik.OpenAccess;
 
     public class XmlGenerator
     {
